@@ -231,6 +231,43 @@ section {
     font-size: 1.5rem;
 }
 
+/* Cursor effect */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-hover {
+    transform: translate(-50%, -50%) scale(1.5);
+    background: rgba(52, 152, 219, 0.1);
+}
+
+/* Scroll reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading animation */
+.loaded .hero-content > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
 /* Footer */
 footer {
     text-align: center;
