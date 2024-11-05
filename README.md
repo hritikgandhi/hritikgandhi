@@ -1,16 +1,19 @@
-## Hi there 👋
+# Hritik Gandhi's Portfolio
 
-<!--
-**hritikgandhi/hritikgandhi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+A personal portfolio website showcasing my skills, experience, and projects as a Process Automation Specialist and Full Stack Developer.
 
-Here are some ideas to get you started:
+## Features
+- Responsive design
+- Smooth scroll animations
+- Interactive skill bars
+- Project showcase
+- Contact information
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+
+## Contact
+- Email: hg@hritikgandhi.com
+- LinkedIn: hritikgandhi
