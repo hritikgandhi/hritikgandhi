@@ -1,323 +1,927 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <style>
-    body {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
-      font-family: Arial, sans-serif;
-    }
-    
-    #gameContainer {
-      position: relative;
-      margin: 20px 0;
-    }
-    
-    canvas {
-      border: 4px solid #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-    }
-    
-    #score {
-      position: absolute;
-      top: -40px;
-      width: 100%;
-      text-align: center;
-      color: #fff;
-      font-size: 24px;
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-    }
-    
-    #controls {
-      position: absolute;
-      bottom: -40px;
-      width: 100%;
-      text-align: center;
-      color: #fff;
-      font-size: 16px;
-    }
-
-    .title {
-      color: #fff;
-      text-align: center;
-      margin-bottom: 20px;
-      text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
-    }
-
-    .title h1 {
-      font-size: 48px;
-      margin: 0;
-      background: linear-gradient(45deg, #4479A1, #F7DF1E, #3776AB);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradient 5s ease infinite;
-    }
-
-    .title h2 {
-      font-size: 24px;
-      margin: 10px 0;
-      color: #aaa;
-    }
-
-    .social-links {
-      margin-top: 60px;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .social-links a {
-      color: #fff;
-      text-decoration: none;
-      padding: 15px 25px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .social-links a:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .social-links i {
-      font-size: 20px;
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-  </style>
-</head>
-<body>
-  <div class="title">
-    <h1>Hritik Gandhi</h1>
-    <h2>Process Automation Specialist | Full Stack Developer</h2>
-  </div>
-  
-  <div id="gameContainer">
-    <div id="score">Score: <span id="scoreValue">0</span></div>
-    <canvas id="gameCanvas" width="800" height="400"></canvas>
-    <div id="controls">Use mouse or W/S keys to move the paddle</div>
-  </div>
-
-  <div class="social-links">
-    <a href="mailto:hg@hritikgandhi.com" target="_blank">
-      <i class="fas fa-envelope"></i>
-      Email
-    </a>
-    <a href="https://linkedin.com/in/hritikgandhi" target="_blank">
-      <i class="fab fa-linkedin"></i>
-      LinkedIn
-    </a>
-    <a href="https://x.com/hritikkgandhi" target="_blank">
-      <i class="fab fa-x-twitter"></i>
-      Twitter
-    </a>
-  </div>
-
-  <script>
-    const canvas = document.getElementById('gameCanvas');
-    const ctx = canvas.getContext('2d');
-    const scoreElement = document.getElementById('scoreValue');
-
-    // Skills from your resume
-    const skills = [
-      { name: 'JavaScript', color: '#F7DF1E' },
-      { name: 'Python', color: '#3776AB' },
-      { name: 'SQL', color: '#4479A1' },
-      { name: 'VBA', color: '#217346' },
-      { name: 'PowerBI', color: '#F2C811' },
-      { name: 'TypeScript', color: '#007ACC' },
-      { name: 'Git', color: '#F05032' }
-    ];
-
-    const state = {
-      paddle: {
-        x: 50,
-        y: canvas.height / 2 - 50,
-        width: 10,
-        height: 100,
-        speed: 8
-      },
-      ball: {
-        x: canvas.width / 2,
-        y: canvas.height / 2,
-        radius: 10,
-        speedX: -7,
-        speedY: 7,
-        currentSkill: skills[0]
-      },
-      score: 0,
-      particles: []
-    };
-
-    function createParticles(x, y, color) {
-      for (let i = 0; i < 10; i++) {
-        state.particles.push({
-          x,
-          y,
-          speedX: (Math.random() - 0.5) * 10,
-          speedY: (Math.random() - 0.5) * 10,
-          radius: Math.random() * 3 + 1,
-          color,
-          life: 1
-        });
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Hritik Gandhi - Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --gh-dark: #0d1117;
+        --gh-darker: #010409;
+        --gh-light: #c9d1d9;
+        --gh-accent: #238636;
+        --gh-accent-hover: #2ea043;
+        --gh-secondary: #30363d;
+        --gh-border: #30363d;
+        --gh-link: #58a6ff;
+        --gh-header: #161b22;
+        --x-blue: #1da1f2;
       }
-    }
 
-    function updateParticles() {
-      for (let i = state.particles.length - 1; i >= 0; i--) {
-        const particle = state.particles[i];
-        particle.x += particle.speedX;
-        particle.y += particle.speedY;
-        particle.life -= 0.02;
-        
-        if (particle.life <= 0) {
-          state.particles.splice(i, 1);
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+          Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--gh-light);
+        background-color: var(--gh-dark);
+        overflow-x: hidden;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--gh-darker);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--gh-secondary);
+        border-radius: 5px;
+      }
+
+      .typing-text {
+        display: inline-block;
+        position: relative;
+        min-height: 1.6em;
+        color: var(--gh-link);
+      }
+
+      .typing-text::after {
+        content: "|";
+        position: absolute;
+        right: -8px;
+        animation: blink 0.75s step-end infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
         }
       }
-    }
 
-    function drawParticles() {
-      state.particles.forEach(particle => {
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${hexToRgb(particle.color).join(',')},${particle.life})`;
-        ctx.fill();
+      .header {
+        min-height: 30vh;
+        background: var(--gh-header);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        border-bottom: 1px solid var(--gh-border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      #particles-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .header-content {
+        max-width: 800px;
+        z-index: 2;
+        position: relative;
+      }
+
+      .header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        animation: fadeInDown 1s ease;
+        color: var(--gh-light);
+      }
+
+      .header h2 {
+        font-size: 1.5rem;
+        opacity: 0.8;
+        margin-bottom: 2rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+        animation: fadeIn 1s ease 0.5s forwards;
+        opacity: 0;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        border: 1px solid var(--gh-border);
+        background: var(--gh-secondary);
+        color: var(--gh-light);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+        gap: 0.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200%;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.1);
+        transform: translate(-50%, -50%) scale(0);
+        border-radius: 50%;
+        transition: transform 0.5s;
+      }
+
+      .btn:hover::after {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      .btn:hover {
+        background: var(--gh-accent);
+        border-color: var(--gh-accent-hover);
+        transform: translateY(-2px);
+      }
+
+      .btn-x:hover {
+        background: var(--x-blue);
+        border-color: var(--x-blue);
+      }
+
+      .section {
+        padding: 5rem 2rem;
+        border-bottom: 1px solid var(--gh-border);
+        position: relative;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--gh-light);
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .skills-section {
+        background: var(--gh-darker);
+      }
+
+      .skill-bar {
+        background: var(--gh-header);
+        border: 1px solid var(--gh-border);
+        border-radius: 6px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .skill-bar:hover {
+        transform: translateX(10px);
+        border-color: var(--gh-accent);
+      }
+
+      .skill-name {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+      }
+
+      .progress-bar {
+        height: 8px;
+        background: var(--gh-secondary);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .progress {
+        height: 100%;
+        background: var(--gh-accent);
+        transition: width 1s ease;
+        position: relative;
+      }
+
+      .progress::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        animation: progressShine 2s linear infinite;
+      }
+
+      @keyframes progressShine {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      .repo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .repo-card {
+        background: var(--gh-header);
+        border: 1px solid var(--gh-border);
+        border-radius: 6px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .repo-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.05),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .repo-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--gh-accent);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .repo-card:hover::before {
+        left: 100%;
+      }
+
+      .repo-title {
+        color: var(--gh-link);
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .repo-stats {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        color: var(--gh-light);
+        opacity: 0.8;
+        font-size: 0.9rem;
+      }
+
+      .timeline {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background: var(--gh-border);
+      }
+
+      .timeline-item {
+        margin-bottom: 3rem;
+        position: relative;
+        width: calc(50% - 30px);
+        animation: fadeIn 1s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+      }
+
+      .timeline-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .timeline-item:nth-child(odd) {
+        left: 0;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: calc(50% + 30px);
+      }
+
+      .timeline-content {
+        background: var(--gh-header);
+        padding: 1.5rem;
+        border-radius: 6px;
+        border: 1px solid var(--gh-border);
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      .timeline-date {
+        color: var(--gh-accent);
+        font-size: 0.9rem;
+        margin: 0.5rem 0 1rem;
+      }
+
+      .timeline-details {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0 0;
+      }
+
+      .timeline-details li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--gh-light);
+        opacity: 0.9;
+      }
+
+      .timeline-details li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--gh-accent);
+      }
+
+      .timeline-content h3 {
+        color: var(--gh-light);
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .timeline-content h4 {
+        color: var(--gh-accent);
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-content:hover {
+        transform: scale(1.03);
+        border-color: var(--gh-accent);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .language-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      .language-JavaScript {
+        background-color: #f1e05a;
+      }
+      .language-Python {
+        background-color: #3572a5;
+      }
+      .language-TypeScript {
+        background-color: #2b7489;
+      }
+      .language-PowerShell {
+        background-color: #012456;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2.5rem;
+        }
+
+        .timeline::before {
+          left: 0;
+        }
+
+        .timeline-item {
+          width: calc(100% - 30px);
+          left: 30px !important;
+        }
+
+        .social-links {
+          gap: 0.5rem;
+        }
+
+        .btn {
+          padding: 0.5rem 1rem;
+          font-size: 0.8rem;
+        }
+
+        .timeline-details li {
+          font-size: 0.85rem;
+          padding-left: 1.25rem;
+        }
+
+        .timeline-content {
+          padding: 1.25rem;
+        }
+
+        .timeline-content h3 {
+          font-size: 1.1rem;
+        }
+
+        .timeline-content h4 {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <canvas id="particles-canvas"></canvas>
+      <div class="header-content">
+        <h1>Hritik Gandhi</h1>
+        <h2>
+          <span class="typing-text"></span>
+        </h2>
+        <div class="social-links">
+          <a
+            href="https://github.com/hritikgandhi"
+            class="btn"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/hritikgandhi"
+            class="btn"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://x.com/hritikkgandhi"
+            class="btn btn-x"
+            target="_blank"
+          >
+            <span style="font-weight: bold; font-size: 1.1em">𝕏</span>
+          </a>
+          <a
+            href="mailto:hg@hritikgandhi.com"
+            class="btn"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-project-diagram"></i> Featured Projects
+        </h2>
+        <div class="repo-grid">
+          <div class="repo-card">
+            <h3 class="repo-title">PowerPlatform Automation Suite</h3>
+            <p>
+              Collection of PowerApps and PowerAutomate solutions for business
+              process automation
+            </p>
+            <div class="repo-stats">
+              <span><i class="fas fa-code-branch"></i> 50+ workflows</span>
+              <span
+                ><div class="language-dot language-PowerShell"></div>
+                PowerShell</span
+              >
+            </div>
+          </div>
+          <div class="repo-card">
+            <h3 class="repo-title">Knime Analytics Framework</h3>
+            <p>Automated data processing and analytics workflows using Knime</p>
+            <div class="repo-stats">
+              <span><i class="fas fa-code-branch"></i> 30+ nodes</span>
+              <span
+                ><div class="language-dot language-Python"></div>
+                Python</span
+              >
+              <span
+                ><div
+                  class="language-dot language-SQL"
+                  style="background-color: #4479a1"
+                ></div>
+                SQL</span
+              >
+            </div>
+          </div>
+          <div class="repo-card">
+            <h3 class="repo-title">Full Stack Web Applications</h3>
+            <p>Modern web applications built with React and Node.js</p>
+            <div class="repo-stats">
+              <span><i class="fas fa-star"></i> TypeScript</span>
+              <span
+                ><div class="language-dot language-TypeScript"></div>
+                TypeScript</span
+              >
+              <span
+                ><div class="language-dot language-JavaScript"></div>
+                JavaScript</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-history"></i> Experience Timeline
+        </h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Process Automation Specialist - Power Platform Developer</h3>
+              <h4>Canadian Tire Corporation</h4>
+              <p class="timeline-date">Jan 2022 - Present</p>
+              <ul class="timeline-details">
+                <li>
+                  Implemented 50+ Knime workflows for automating file uploads,
+                  database updates, and reporting processes
+                </li>
+                <li>
+                  Architected Azure Data Factory pipelines and stored procedures
+                  for optimized data flow management
+                </li>
+                <li>
+                  Developed 3 PowerApps solutions including CRM and task
+                  management applications
+                </li>
+                <li>
+                  Created PowerAutomate workflows for RPA automation in both
+                  desktop and web environments
+                </li>
+                <li>
+                  Built interactive PowerBI reports with row-level security
+                  implementation
+                </li>
+                <li>
+                  Automated Excel processes using VBA for enhanced operational
+                  efficiency
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Full Stack Web Developer</h3>
+              <h4>Millennial Pod</h4>
+              <p class="timeline-date">Jan 2022 - Present</p>
+              <ul class="timeline-details">
+                <li>
+                  Designed and implemented RESTful API services using Python
+                </li>
+                <li>
+                  Developed front-end solutions using React.js and modern
+                  JavaScript
+                </li>
+                <li>
+                  Managed Linux VPS deployment including CRON jobs for system
+                  automation
+                </li>
+                <li>
+                  Integrated MySQL database systems for robust data storage
+                </li>
+                <li>Conducted comprehensive API testing using Postman</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>API Scrum Developer</h3>
+              <h4>African Impact Challenge</h4>
+              <p class="timeline-date">Jan 2021 - Dec 2021</p>
+              <ul class="timeline-details">
+                <li>
+                  Developed website backend using Python Flask and Java applets
+                </li>
+                <li>
+                  Implemented graph database architecture using Neo4j and Cypher
+                </li>
+                <li>Created RESTful APIs for seamless front-end integration</li>
+                <li>Collaborated in an Agile development environment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      class Particle {
+        constructor(canvas, context) {
+          this.canvas = canvas;
+          this.ctx = context;
+          this.reset();
+        }
+
+        reset() {
+          this.x = Math.random() * this.canvas.width;
+          this.y = Math.random() * this.canvas.height;
+          this.size = Math.random() * 3 + 1;
+          this.speedX = (Math.random() - 0.5) * 2;
+          this.speedY = (Math.random() - 0.5) * 2;
+          this.life = 1;
+          this.lifeSpeed = 0.002;
+          this.maxLife = 1;
+          this.gravity = 0.02;
+          this.friction = 0.99;
+        }
+
+        update() {
+          this.speedY += this.gravity;
+          this.speedX *= this.friction;
+          this.speedY *= this.friction;
+
+          this.x += this.speedX;
+          this.y += this.speedY;
+          this.life -= this.lifeSpeed;
+
+          if (this.y > this.canvas.height || this.life <= 0) {
+            this.reset();
+          }
+
+          if (this.x < 0 || this.x > this.canvas.width) {
+            this.speedX *= -1;
+          }
+        }
+
+        draw() {
+          this.ctx.beginPath();
+          this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          this.ctx.fillStyle = `rgba(35, 134, 54, ${this.life * 0.5})`;
+          this.ctx.fill();
+        }
+      }
+
+      class ParticleSystem {
+        constructor() {
+          this.canvas = document.getElementById("particles-canvas");
+          this.ctx = this.canvas.getContext("2d");
+          this.particles = [];
+          this.numberOfParticles = 100;
+          this.mouse = {
+            x: null,
+            y: null,
+            radius: 150,
+          };
+
+          this.init();
+          this.setupEventListeners();
+          this.animate();
+        }
+
+        init() {
+          this.handleResize();
+          this.particles = [];
+          for (let i = 0; i < this.numberOfParticles; i++) {
+            this.particles.push(new Particle(this.canvas, this.ctx));
+          }
+        }
+
+        setupEventListeners() {
+          window.addEventListener("resize", () => this.handleResize());
+          this.canvas.addEventListener("mousemove", (e) => {
+            const rect = this.canvas.getBoundingClientRect();
+            this.mouse.x = e.clientX - rect.left;
+            this.mouse.y = e.clientY - rect.top;
+          });
+          this.canvas.addEventListener("mouseleave", () => {
+            this.mouse.x = null;
+            this.mouse.y = null;
+          });
+        }
+
+        handleResize() {
+          this.canvas.width = this.canvas.offsetWidth;
+          this.canvas.height = this.canvas.offsetHeight;
+        }
+
+        drawConnections() {
+          this.particles.forEach((p1, i) => {
+            for (let j = i + 1; j < this.particles.length; j++) {
+              const p2 = this.particles[j];
+              const dx = p1.x - p2.x;
+              const dy = p1.y - p2.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+
+              if (distance < 100) {
+                this.ctx.beginPath();
+                this.ctx.strokeStyle = `rgba(35, 134, 54, ${
+                  0.1 * (1 - distance / 100)
+                })`;
+                this.ctx.lineWidth = 1;
+                this.ctx.moveTo(p1.x, p1.y);
+                this.ctx.lineTo(p2.x, p2.y);
+                this.ctx.stroke();
+              }
+            }
+          });
+        }
+
+        animate() {
+          this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+          this.particles.forEach((particle) => {
+            particle.update();
+            particle.draw();
+
+            if (this.mouse.x != null && this.mouse.y != null) {
+              const dx = particle.x - this.mouse.x;
+              const dy = particle.y - this.mouse.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+
+              if (distance < this.mouse.radius) {
+                const force =
+                  (this.mouse.radius - distance) / this.mouse.radius;
+                const directionX = dx / distance;
+                const directionY = dy / distance;
+                particle.speedX += directionX * force * 0.6;
+                particle.speedY += directionY * force * 0.6;
+              }
+            }
+          });
+
+          this.drawConnections();
+          requestAnimationFrame(() => this.animate());
+        }
+      }
+
+      class TypingAnimation {
+        constructor(element, phrases, options = {}) {
+          this.element = element;
+          this.phrases = phrases;
+          this.currentPhrase = 0;
+          this.currentChar = 0;
+          this.isDeleting = false;
+          this.options = {
+            typeSpeed: options.typeSpeed || 100,
+            deleteSpeed: options.deleteSpeed || 50,
+            pauseTime: options.pauseTime || 1000,
+          };
+        }
+
+        type() {
+          const currentText = this.phrases[this.currentPhrase];
+
+          if (this.isDeleting) {
+            // Remove characters
+            this.currentChar--;
+          } else {
+            // Add characters
+            this.currentChar++;
+          }
+
+          this.element.textContent = currentText.substring(0, this.currentChar);
+
+          let typeSpeed = this.isDeleting
+            ? this.options.deleteSpeed
+            : this.options.typeSpeed;
+
+          if (!this.isDeleting && this.currentChar === currentText.length) {
+            // Finished typing
+            typeSpeed = this.options.pauseTime;
+            this.isDeleting = true;
+          } else if (this.isDeleting && this.currentChar === 0) {
+            // Finished deleting
+            this.isDeleting = false;
+            this.currentPhrase = (this.currentPhrase + 1) % this.phrases.length;
+          }
+
+          setTimeout(() => this.type(), typeSpeed);
+        }
+      }
+
+      // Initialize everything when the window loads
+      window.addEventListener("load", () => {
+        // Initialize particle system
+        new ParticleSystem();
+
+        // Initialize typing animation
+        const typingElement = document.querySelector(".typing-text");
+        const typingAnimation = new TypingAnimation(
+          typingElement,
+          [
+            "Process Automation Specialist",
+            "Full Stack Developer",
+            "PowerPlatform Developer",
+            "Efficiency Enthusiast",
+          ],
+          {
+            typeSpeed: 100,
+            deleteSpeed: 50,
+            pauseTime: 2000,
+          }
+        );
+        typingAnimation.type();
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        // Observe elements for animation
+        document
+          .querySelectorAll(".repo-card, .timeline-item, .skill-bar")
+          .forEach((item) => {
+            observer.observe(item);
+          });
+
+        // Progress bar animation
+        document.querySelectorAll(".progress").forEach((progress) => {
+          const width = progress.style.width;
+          progress.style.width = "0";
+          setTimeout(() => {
+            progress.style.width = width;
+          }, 500);
+        });
       });
-    }
-
-    function hexToRgb(hex) {
-      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-      return result ? [
-        parseInt(result[1], 16),
-        parseInt(result[2], 16),
-        parseInt(result[3], 16)
-      ] : [255, 255, 255];
-    }
-
-    function update() {
-      // Ball movement
-      state.ball.x += state.ball.speedX;
-      state.ball.y += state.ball.speedY;
-
-      // Ball collision with top and bottom
-      if (state.ball.y + state.ball.radius > canvas.height || state.ball.y - state.ball.radius < 0) {
-        state.ball.speedY *= -1;
-        createParticles(state.ball.x, state.ball.y, state.ball.currentSkill.color);
-      }
-
-      // Ball collision with paddle
-      if (state.ball.x - state.ball.radius < state.paddle.x + state.paddle.width &&
-          state.ball.y > state.paddle.y &&
-          state.ball.y < state.paddle.y + state.paddle.height &&
-          state.ball.speedX < 0) {
-        state.ball.speedX *= -1;
-        state.score += 10;
-        scoreElement.textContent = state.score;
-        // Change skill
-        state.ball.currentSkill = skills[Math.floor(Math.random() * skills.length)];
-        createParticles(state.ball.x, state.ball.y, state.ball.currentSkill.color);
-      }
-
-      // Ball out of bounds
-      if (state.ball.x + state.ball.radius < 0) {
-        resetBall();
-      }
-
-      // Ball hits right wall
-      if (state.ball.x + state.ball.radius > canvas.width) {
-        state.ball.speedX *= -1;
-        createParticles(state.ball.x, state.ball.y, state.ball.currentSkill.color);
-      }
-
-      updateParticles();
-    }
-
-    function draw() {
-      // Clear canvas
-      ctx.fillStyle = '#1a1a1a';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Draw paddle
-      ctx.fillStyle = '#fff';
-      ctx.fillRect(state.paddle.x, state.paddle.y, state.paddle.width, state.paddle.height);
-
-      // Draw ball with current skill color
-      ctx.beginPath();
-      ctx.arc(state.ball.x, state.ball.y, state.ball.radius, 0, Math.PI * 2);
-      ctx.fillStyle = state.ball.currentSkill.color;
-      ctx.fill();
-
-      // Draw skill name
-      ctx.font = '20px Arial';
-      ctx.fillStyle = state.ball.currentSkill.color;
-      ctx.fillText(state.ball.currentSkill.name, canvas.width - 150, 30);
-
-      // Draw particles
-      drawParticles();
-    }
-
-    function resetBall() {
-      state.ball.x = canvas.width / 2;
-      state.ball.y = canvas.height / 2;
-      state.ball.speedX = -7;
-      state.ball.speedY = 7;
-      state.score = Math.max(0, state.score - 50);
-      scoreElement.textContent = state.score;
-    }
-
-    function gameLoop() {
-      update();
-      draw();
-      requestAnimationFrame(gameLoop);
-    }
-
-    // Mouse movement
-    canvas.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      const mouseY = e.clientY - rect.top;
-      
-      // Ensure paddle stays within canvas bounds
-      if (mouseY >= state.paddle.height/2 && mouseY <= canvas.height - state.paddle.height/2) {
-        state.paddle.y = mouseY - state.paddle.height/2;
-      }
-    });
-
-    // Keyboard controls (as backup)
-    const keys = new Set();
-    
-    document.addEventListener('keydown', (e) => {
-      keys.add(e.key);
-      if ((e.key === 'w' || e.key === 'ArrowUp') && state.paddle.y > 0) {
-        state.paddle.y -= state.paddle.speed;
-      }
-      if ((e.key === 's' || e.key === 'ArrowDown') && state.paddle.y < canvas.height - state.paddle.height) {
-        state.paddle.y += state.paddle.speed;
-      }
-    });
-
-    document.addEventListener('keyup', (e) => {
-      keys.delete(e.key);
-    });
-
-    // Start the game
-    gameLoop();
-  </script>
-</body>
+    </script>
+  </body>
 </html>
