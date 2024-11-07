@@ -30,8 +30,9 @@
         --gh-dark: #0d1117;
         --gh-darker: #010409;
         --gh-light: #c9d1d9;
-        --gh-accent: #238636;
-        --gh-accent-hover: #2ea043;
+        --gh-accent: #86232d;
+        --gh-accent-hover: #a02e2e;
+        --gh-accent-hover-transp: #a02e2e3d;
         --gh-secondary: #30363d;
         --gh-border: #30363d;
         --gh-link: #58a6ff;
@@ -93,7 +94,6 @@
 
       .header {
         min-height: 30vh;
-        background: var(--gh-header);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -102,16 +102,28 @@
         border-bottom: 1px solid var(--gh-border);
         position: relative;
         overflow: hidden;
+        background: linear-gradient(45deg, var(--gh-header), var(--gh-darker));
+        transition: background 0.3s ease;
       }
 
-      #particles-canvas {
+      .header::before {
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          var(--gh-accent-hover-transp),
+          transparent 50%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .header:hover::before {
+        opacity: 1;
       }
 
       .header-content {
@@ -207,69 +219,6 @@
       .container {
         max-width: 1200px;
         margin: 0 auto;
-      }
-
-      .skills-section {
-        background: var(--gh-darker);
-      }
-
-      .skill-bar {
-        background: var(--gh-header);
-        border: 1px solid var(--gh-border);
-        border-radius: 6px;
-        padding: 1.5rem;
-        margin-bottom: 1rem;
-        transition: all 0.3s ease;
-      }
-
-      .skill-bar:hover {
-        transform: translateX(10px);
-        border-color: var(--gh-accent);
-      }
-
-      .skill-name {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 0.5rem;
-      }
-
-      .progress-bar {
-        height: 8px;
-        background: var(--gh-secondary);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      .progress {
-        height: 100%;
-        background: var(--gh-accent);
-        transition: width 1s ease;
-        position: relative;
-      }
-
-      .progress::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        animation: progressShine 2s linear infinite;
-      }
-
-      @keyframes progressShine {
-        0% {
-          transform: translateX(-100%);
-        }
-        100% {
-          transform: translateX(100%);
-        }
       }
 
       .repo-grid {
@@ -375,14 +324,18 @@
         border-radius: 6px;
         border: 1px solid var(--gh-border);
         transition: all 0.3s ease;
-        position: relative;
-        z-index: 2;
+      }
+
+      .timeline-content:hover {
+        transform: scale(1.03);
+        border-color: var(--gh-accent);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
       }
 
       .timeline-date {
         color: var(--gh-accent);
         font-size: 0.9rem;
-        margin: 0.5rem 0 1rem;
+        margin-bottom: 0.5rem;
       }
 
       .timeline-details {
@@ -407,24 +360,6 @@
         color: var(--gh-accent);
       }
 
-      .timeline-content h3 {
-        color: var(--gh-light);
-        font-size: 1.2rem;
-        margin-bottom: 0.25rem;
-      }
-
-      .timeline-content h4 {
-        color: var(--gh-accent);
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .timeline-content:hover {
-        transform: scale(1.03);
-        border-color: var(--gh-accent);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      }
-
       .language-dot {
         width: 12px;
         height: 12px;
@@ -446,77 +381,6 @@
         background-color: #012456;
       }
 
-      @keyframes fadeInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .header h1 {
-          font-size: 2.5rem;
-        }
-
-        .timeline::before {
-          left: 0;
-        }
-
-        .timeline-item {
-          width: calc(100% - 30px);
-          left: 30px !important;
-        }
-
-        .social-links {
-          gap: 0.5rem;
-        }
-
-        .btn {
-          padding: 0.5rem 1rem;
-          font-size: 0.8rem;
-        }
-
-        .timeline-details li {
-          font-size: 0.85rem;
-          padding-left: 1.25rem;
-        }
-
-        .timeline-content {
-          padding: 1.25rem;
-        }
-
-        .timeline-content h3 {
-          font-size: 1.1rem;
-        }
-
-        .timeline-content h4 {
-          font-size: 0.95rem;
-        }
-      }
       .footer {
         background: var(--gh-header);
         border-top: 1px solid var(--gh-border);
@@ -598,7 +462,60 @@
         opacity: 1;
       }
 
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
       @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2.5rem;
+        }
+
+        .timeline::before {
+          left: 0;
+        }
+
+        .timeline-item {
+          width: calc(100% - 30px);
+          left: 30px !important;
+        }
+
+        .social-links {
+          gap: 0.5rem;
+        }
+
+        .btn {
+          padding: 0.5rem 1rem;
+          font-size: 0.8rem;
+        }
+
         .footer-btc {
           flex-direction: column;
         }
@@ -612,7 +529,6 @@
   </head>
   <body>
     <header class="header">
-      <canvas id="particles-canvas"></canvas>
       <div class="header-content">
         <h1>Hritik Gandhi</h1>
         <h2>
@@ -791,146 +707,25 @@
       </div>
     </section>
 
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-text">© 2024 Hritik Gandhi. All rights reserved.</p>
+        <div class="footer-btc">
+          <span class="btc-address"
+            >bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz</span
+          >
+          <button
+            class="copy-btn"
+            onclick="copyBitcoinAddress()"
+          >
+            <i class="fab fa-bitcoin"></i>
+            Copy Address
+          </button>
+        </div>
+      </div>
+    </footer>
+
     <script>
-      class Particle {
-        constructor(canvas, context) {
-          this.canvas = canvas;
-          this.ctx = context;
-          this.reset();
-        }
-
-        reset() {
-          this.x = Math.random() * this.canvas.width;
-          this.y = Math.random() * this.canvas.height;
-          this.size = Math.random() * 3 + 1;
-          this.speedX = (Math.random() - 0.5) * 2;
-          this.speedY = (Math.random() - 0.5) * 2;
-          this.life = 1;
-          this.lifeSpeed = 0.002;
-          this.maxLife = 1;
-          this.gravity = 0.02;
-          this.friction = 0.99;
-        }
-
-        update() {
-          this.speedY += this.gravity;
-          this.speedX *= this.friction;
-          this.speedY *= this.friction;
-
-          this.x += this.speedX;
-          this.y += this.speedY;
-          this.life -= this.lifeSpeed;
-
-          if (this.y > this.canvas.height || this.life <= 0) {
-            this.reset();
-          }
-
-          if (this.x < 0 || this.x > this.canvas.width) {
-            this.speedX *= -1;
-          }
-        }
-
-        draw() {
-          this.ctx.beginPath();
-          this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          this.ctx.fillStyle = `rgba(35, 134, 54, ${this.life * 0.5})`;
-          this.ctx.fill();
-        }
-      }
-
-      class ParticleSystem {
-        constructor() {
-          this.canvas = document.getElementById("particles-canvas");
-          this.ctx = this.canvas.getContext("2d");
-          this.particles = [];
-          this.numberOfParticles = 100;
-          this.mouse = {
-            x: null,
-            y: null,
-            radius: 150,
-          };
-
-          this.init();
-          this.setupEventListeners();
-          this.animate();
-        }
-
-        init() {
-          this.handleResize();
-          this.particles = [];
-          for (let i = 0; i < this.numberOfParticles; i++) {
-            this.particles.push(new Particle(this.canvas, this.ctx));
-          }
-        }
-
-        setupEventListeners() {
-          window.addEventListener("resize", () => this.handleResize());
-          this.canvas.addEventListener("mousemove", (e) => {
-            const rect = this.canvas.getBoundingClientRect();
-            this.mouse.x = e.clientX - rect.left;
-            this.mouse.y = e.clientY - rect.top;
-          });
-          this.canvas.addEventListener("mouseleave", () => {
-            this.mouse.x = null;
-            this.mouse.y = null;
-          });
-        }
-
-        handleResize() {
-          this.canvas.width = this.canvas.offsetWidth;
-          this.canvas.height = this.canvas.offsetHeight;
-        }
-
-        drawConnections() {
-          this.particles.forEach((p1, i) => {
-            for (let j = i + 1; j < this.particles.length; j++) {
-              const p2 = this.particles[j];
-              const dx = p1.x - p2.x;
-              const dy = p1.y - p2.y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
-
-              if (distance < 100) {
-                this.ctx.beginPath();
-                this.ctx.strokeStyle = `rgba(35, 134, 54, ${
-                  0.1 * (1 - distance / 100)
-                })`;
-                this.ctx.lineWidth = 1;
-                this.ctx.moveTo(p1.x, p1.y);
-                this.ctx.lineTo(p2.x, p2.y);
-                this.ctx.stroke();
-              }
-            }
-          });
-        }
-
-        animate() {
-          this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-          this.particles.forEach((particle) => {
-            particle.update();
-            particle.draw();
-
-            if (this.mouse.x != null && this.mouse.y != null) {
-              const dx = particle.x - this.mouse.x;
-              const dy = particle.y - this.mouse.y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
-
-              if (distance < this.mouse.radius) {
-                const force =
-                  (this.mouse.radius - distance) / this.mouse.radius;
-                const directionX = dx / distance;
-                const directionY = dy / distance;
-                particle.speedX += directionX * force * 0.6;
-                particle.speedY += directionY * force * 0.6;
-              }
-            }
-          });
-
-          this.drawConnections();
-          requestAnimationFrame(() => this.animate());
-        }
-      }
-
       class TypingAnimation {
         constructor(element, phrases, options = {}) {
           this.element = element;
@@ -949,10 +744,8 @@
           const currentText = this.phrases[this.currentPhrase];
 
           if (this.isDeleting) {
-            // Remove characters
             this.currentChar--;
           } else {
-            // Add characters
             this.currentChar++;
           }
 
@@ -963,11 +756,9 @@
             : this.options.typeSpeed;
 
           if (!this.isDeleting && this.currentChar === currentText.length) {
-            // Finished typing
             typeSpeed = this.options.pauseTime;
             this.isDeleting = true;
           } else if (this.isDeleting && this.currentChar === 0) {
-            // Finished deleting
             this.isDeleting = false;
             this.currentPhrase = (this.currentPhrase + 1) % this.phrases.length;
           }
@@ -978,19 +769,22 @@
 
       // Initialize everything when the window loads
       window.addEventListener("load", () => {
-        // Initialize particle system
-        new ParticleSystem();
+        // Mouse move handler for gradient effect
+        const header = document.querySelector(".header");
+        header.addEventListener("mousemove", (e) => {
+          const rect = header.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width) * 100;
+          const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+          header.style.setProperty("--mouse-x", `${x}%`);
+          header.style.setProperty("--mouse-y", `${y}%`);
+        });
 
         // Initialize typing animation
         const typingElement = document.querySelector(".typing-text");
         const typingAnimation = new TypingAnimation(
           typingElement,
-          [
-            "Process Automation Specialist",
-            "Full Stack Developer",
-            "PowerPlatform Developer",
-            "Efficiency Enthusiast",
-          ],
+          ["Power Platform", "Web Developer", "Efficiency Enthusiast"],
           {
             typeSpeed: 100,
             deleteSpeed: 50,
@@ -1017,16 +811,9 @@
           .forEach((item) => {
             observer.observe(item);
           });
-
-        // Progress bar animation
-        document.querySelectorAll(".progress").forEach((progress) => {
-          const width = progress.style.width;
-          progress.style.width = "0";
-          setTimeout(() => {
-            progress.style.width = width;
-          }, 500);
-        });
       });
+
+      // Bitcoin address copying functionality
       function copyBitcoinAddress() {
         const bitcoinAddress = "bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz";
         navigator.clipboard
@@ -1043,31 +830,25 @@
       let tooltipElement;
 
       function showTooltip(message) {
-        // Remove existing tooltip if any
         if (tooltipElement) {
           tooltipElement.remove();
         }
 
-        // Clear existing timeout
         if (tooltipTimeout) {
           clearTimeout(tooltipTimeout);
         }
 
-        // Create and append tooltip
         tooltipElement = document.createElement("div");
         tooltipElement.className = "tooltip";
         tooltipElement.textContent = message;
         document.body.appendChild(tooltipElement);
 
-        // Position tooltip at mouse location
         document.addEventListener("mousemove", positionTooltip);
 
-        // Show tooltip
         requestAnimationFrame(() => {
           tooltipElement.classList.add("show");
         });
 
-        // Hide and remove tooltip after 2 seconds
         tooltipTimeout = setTimeout(() => {
           tooltipElement.classList.remove("show");
           setTimeout(() => {
@@ -1084,7 +865,6 @@
         const x = e.clientX;
         const y = e.clientY;
 
-        // Adjust tooltip position to stay within viewport
         const tooltipWidth = tooltipElement.offsetWidth;
         const tooltipHeight = tooltipElement.offsetHeight;
         const viewportWidth = window.innerWidth;
@@ -1093,12 +873,10 @@
         let left = x + 15;
         let top = y + 15;
 
-        // Adjust horizontal position if tooltip would overflow viewport
         if (left + tooltipWidth > viewportWidth) {
           left = x - tooltipWidth - 15;
         }
 
-        // Adjust vertical position if tooltip would overflow viewport
         if (top + tooltipHeight > viewportHeight) {
           top = y - tooltipHeight - 15;
         }
@@ -1107,24 +885,5 @@
         tooltipElement.style.top = top + "px";
       }
     </script>
-
-    <footer class="footer">
-      <div class="footer-content">
-        <p class="footer-text">© 2024 Hritik Gandhi. All rights reserved.</p>
-
-        <div class="footer-btc">
-          <span class="btc-address"
-            >bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz</span
-          >
-          <button
-            class="copy-btn"
-            onclick="copyBitcoinAddress()"
-          >
-            <i class="fab fa-bitcoin"></i>
-            Copy Address
-          </button>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>
