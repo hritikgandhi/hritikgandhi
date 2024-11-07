@@ -517,6 +517,97 @@
           font-size: 0.95rem;
         }
       }
+      .footer {
+        background: var(--gh-header);
+        border-top: 1px solid var(--gh-border);
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-text {
+        color: var(--gh-light);
+        opacity: 0.8;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-btc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 1rem 0;
+      }
+
+      .btc-address {
+        background: var(--gh-darker);
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        border: 1px solid var(--gh-border);
+        color: var(--gh-light);
+        font-family: monospace;
+        font-size: 0.9rem;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .copy-btn {
+        background: var(--gh-secondary);
+        border: 1px solid var(--gh-border);
+        color: var(--gh-light);
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .copy-btn:hover {
+        background: var(--gh-accent);
+        border-color: var(--gh-accent-hover);
+      }
+
+      .copy-btn i {
+        color: #f7931a;
+      }
+
+      .tooltip {
+        position: fixed;
+        padding: 8px 12px;
+        background: var(--gh-darker);
+        color: var(--gh-light);
+        border: 1px solid var(--gh-border);
+        border-radius: 4px;
+        font-size: 0.9rem;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .tooltip.show {
+        opacity: 1;
+      }
+
+      @media (max-width: 768px) {
+        .footer-btc {
+          flex-direction: column;
+        }
+
+        .btc-address {
+          font-size: 0.8rem;
+          padding: 0.5rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -936,6 +1027,104 @@
           }, 500);
         });
       });
+      function copyBitcoinAddress() {
+        const bitcoinAddress = "bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz";
+        navigator.clipboard
+          .writeText(bitcoinAddress)
+          .then(() => {
+            showTooltip("Bitcoin address copied to clipboard!");
+          })
+          .catch((err) => {
+            showTooltip("Failed to copy address. Please try again.");
+          });
+      }
+
+      let tooltipTimeout;
+      let tooltipElement;
+
+      function showTooltip(message) {
+        // Remove existing tooltip if any
+        if (tooltipElement) {
+          tooltipElement.remove();
+        }
+
+        // Clear existing timeout
+        if (tooltipTimeout) {
+          clearTimeout(tooltipTimeout);
+        }
+
+        // Create and append tooltip
+        tooltipElement = document.createElement("div");
+        tooltipElement.className = "tooltip";
+        tooltipElement.textContent = message;
+        document.body.appendChild(tooltipElement);
+
+        // Position tooltip at mouse location
+        document.addEventListener("mousemove", positionTooltip);
+
+        // Show tooltip
+        requestAnimationFrame(() => {
+          tooltipElement.classList.add("show");
+        });
+
+        // Hide and remove tooltip after 2 seconds
+        tooltipTimeout = setTimeout(() => {
+          tooltipElement.classList.remove("show");
+          setTimeout(() => {
+            document.removeEventListener("mousemove", positionTooltip);
+            tooltipElement.remove();
+            tooltipElement = null;
+          }, 300);
+        }, 2000);
+      }
+
+      function positionTooltip(e) {
+        if (!tooltipElement) return;
+
+        const x = e.clientX;
+        const y = e.clientY;
+
+        // Adjust tooltip position to stay within viewport
+        const tooltipWidth = tooltipElement.offsetWidth;
+        const tooltipHeight = tooltipElement.offsetHeight;
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+
+        let left = x + 15;
+        let top = y + 15;
+
+        // Adjust horizontal position if tooltip would overflow viewport
+        if (left + tooltipWidth > viewportWidth) {
+          left = x - tooltipWidth - 15;
+        }
+
+        // Adjust vertical position if tooltip would overflow viewport
+        if (top + tooltipHeight > viewportHeight) {
+          top = y - tooltipHeight - 15;
+        }
+
+        tooltipElement.style.left = left + "px";
+        tooltipElement.style.top = top + "px";
+      }
     </script>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-text">© 2024 Hritik Gandhi. All rights reserved.</p>
+
+        <div class="footer-btc">
+          <span class="btc-address"
+            >bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz</span
+          >
+          <button
+            class="copy-btn"
+            onclick="copyBitcoinAddress()"
+          >
+            <i class="fab fa-bitcoin"></i>
+            Copy Address
+          </button>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
