@@ -1,1235 +1,1533 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYVHKLG47S"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-KYVHKLG47S");
-    </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hritik Gandhi's Portfolio</title>
-    
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta name="description" content="Personal portfolio of Hritik Gandhi, showcasing projects in automation, web development, and more.">
-    <meta name="keywords" content="Hritik Gandhi, portfolio, web developer, automation specialist, Power Platform, full stack developer">
-    <meta property="og:title" content="Hritik Gandhi's Portfolio">
-    <meta property="og:description" content="Explore the projects and experiences of Hritik Gandhi, a skilled developer specializing in automation and web development.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.hritikgandhi.com">
-    <meta property="og:image" content="https://www.hritikgandhi.com/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@hritikkgandhi">
-    <meta name="twitter:title" content="Hritik Gandhi's Portfolio">
-    <meta name="twitter:description" content="Explore the projects and experiences of Hritik Gandhi.">
-    <meta name="twitter:image" content="https://www.hritikgandhi.com/og-image.png">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <style>
-      :root {
-        --retro-black: #111122;
-        --retro-darkblue: #0f2550;
-        --retro-blue: #0066FF;
-        --retro-lightblue: #73bed3;
-        --retro-purple: #8d2ab5;
-        --retro-darkpurple: #44018c;
-        --retro-pink: #ec1f64;
-        --retro-red: #ff0000;
-        --retro-orange: #ff7700;
-        --retro-yellow: #ffdd00;
-        --retro-green: #00aa00;
-        --retro-darkgreen: #005500;
-        --retro-white: #ffffff;
-        --retro-gray: #999999;
-        --retro-darkgray: #333344;
-        --pixel-size: 2px;
-        --primary-bg: var(--retro-black);
-        --primary-text: var(--retro-white);
-        --primary-accent: var(--retro-pink);
-        --secondary-accent: var(--retro-blue);
-      }
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYVHKLG47S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-KYVHKLG47S");
+  </script>
 
-      @font-face {
-        font-family: 'RetroPixel';
-        src: local('Courier New');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hritik Gandhi's Portfolio</title>
 
-      .pixel-text {
-        font-family: 'RetroPixel', monospace;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        line-height: 1.2;
-        text-shadow: 
-          var(--pixel-size) var(--pixel-size) 0 var(--retro-darkpurple),
-          calc(var(--pixel-size) * -1) calc(var(--pixel-size) * -1) 0 var(--retro-black);
-      }
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description"
+    content="Personal portfolio of Hritik Gandhi, showcasing projects in automation, web development, and more.">
+  <meta name="keywords"
+    content="Hritik Gandhi, portfolio, web developer, automation specialist, Power Platform, full stack developer">
+  <meta property="og:title" content="Hritik Gandhi's Portfolio">
+  <meta property="og:description"
+    content="Explore the projects and experiences of Hritik Gandhi, a skilled developer specializing in automation and web development.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.hritikgandhi.com">
+  <meta property="og:image" content="https://www.hritikgandhi.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@hritikkgandhi">
+  <meta name="twitter:title" content="Hritik Gandhi's Portfolio">
+  <meta name="twitter:description" content="Explore the projects and experiences of Hritik Gandhi.">
+  <meta name="twitter:image" content="https://www.hritikgandhi.com/og-image.png">
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        image-rendering: pixelated;
-      }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --retro-black: #111122;
+      --retro-darkblue: #0f2550;
+      --retro-blue: #0066FF;
+      --retro-lightblue: #73bed3;
+      --retro-purple: #8d2ab5;
+      --retro-darkpurple: #44018c;
+      --retro-pink: #ec1f64;
+      --retro-red: #ff0000;
+      --retro-orange: #ff7700;
+      --retro-yellow: #ffdd00;
+      --retro-green: #00aa00;
+      --retro-darkgreen: #005500;
+      --retro-white: #ffffff;
+      --retro-gray: #999999;
+      --retro-darkgray: #333344;
+      --pixel-size: 2px;
+      --primary-bg: var(--retro-black);
+      --primary-text: var(--retro-white);
+      --primary-accent: var(--retro-pink);
+      --secondary-accent: var(--retro-blue);
+    }
 
-      body {
-        font-family: 'RetroPixel', monospace;
-        line-height: 1.6;
-        color: var(--primary-text);
-        background-color: var(--primary-bg);
-        overflow-x: hidden;
-        background-image: 
-          linear-gradient(0deg, var(--retro-darkblue) 0%, var(--retro-black) 80%),
-          repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255, 255, 255, 0.03) 20px, rgba(255, 255, 255, 0.03) 22px);
-        background-attachment: fixed;
-      }
+    @font-face {
+      font-family: 'RetroPixel';
+      src: local('Courier New');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
 
-      ::-webkit-scrollbar {
-        width: calc(var(--pixel-size) * 5);
-        height: calc(var(--pixel-size) * 5);
-      }
+    .pixel-text {
+      font-family: 'RetroPixel', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      text-shadow:
+        var(--pixel-size) var(--pixel-size) 0 var(--retro-darkpurple),
+        calc(var(--pixel-size) * -1) calc(var(--pixel-size) * -1) 0 var(--retro-black);
+    }
 
-      ::-webkit-scrollbar-track {
-        background: var(--retro-darkgray);
-        border: var(--pixel-size) solid var(--retro-gray);
-      }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      image-rendering: pixelated;
+    }
 
-      ::-webkit-scrollbar-thumb {
-        background: var(--retro-purple);
-        border: var(--pixel-size) solid var(--retro-pink);
-      }
+    body {
+      font-family: 'RetroPixel', monospace;
+      line-height: 1.6;
+      color: var(--primary-text);
+      background-color: var(--primary-bg);
+      overflow-x: hidden;
+      background-image:
+        linear-gradient(0deg, var(--retro-darkblue) 0%, var(--retro-black) 80%),
+        repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255, 255, 255, 0.03) 20px, rgba(255, 255, 255, 0.03) 22px);
+      background-attachment: fixed;
+    }
 
-      .dialog-text {
-        display: inline-block;
-        position: relative;
-        min-height: 1.6em;
-        color: var(--retro-white);
-        text-shadow: 2px 2px 0 var(--retro-black);
-        overflow: hidden;
-        white-space: nowrap;
-        border: 0;
-        margin: 0;
-        padding: 0;
-      }
+    ::-webkit-scrollbar {
+      width: calc(var(--pixel-size) * 5);
+      height: calc(var(--pixel-size) * 5);
+    }
 
-      .dialog-text::after {
-        content: "▋";
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        animation: blink 0.75s step-end infinite;
-      }
+    ::-webkit-scrollbar-track {
+      background: var(--retro-darkgray);
+      border: var(--pixel-size) solid var(--retro-gray);
+    }
 
-      @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-      }
+    ::-webkit-scrollbar-thumb {
+      background: var(--retro-purple);
+      border: var(--pixel-size) solid var(--retro-pink);
+    }
 
-      .pixel-border {
-        position: relative;
-        border: calc(var(--pixel-size) * 2) solid var(--retro-white);
-        box-shadow: 
-          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray),
-          inset calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 rgba(0, 0, 0, 0.2);
-      }
+    .dialog-text {
+      display: inline-block;
+      position: relative;
+      min-height: 1.6em;
+      color: var(--retro-white);
+      text-shadow: 2px 2px 0 var(--retro-black);
+      overflow: hidden;
+      white-space: nowrap;
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
 
-      .pixel-border::before {
-        content: '';
-        position: absolute;
-        top: calc(var(--pixel-size) * -2);
-        left: calc(var(--pixel-size) * -2);
-        right: calc(var(--pixel-size) * -2);
-        bottom: calc(var(--pixel-size) * -2);
-        border: calc(var(--pixel-size) * 2) solid var(--retro-darkgray);
-        z-index: -1;
-      }
+    .dialog-text::after {
+      content: "▋";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      animation: blink 0.75s step-end infinite;
+    }
 
-      .game-header {
-        min-height: 40vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 2rem;
-        position: relative;
-        overflow: hidden;
-        background: var(--retro-darkblue);
-        border-bottom: calc(var(--pixel-size) * 3) solid var(--retro-blue);
-      }
+    @keyframes blink {
 
-      .game-header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: 
-          linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.2) 60%, transparent 100%),
-          linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.5) 100%),
-          repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255, 255, 255, 0.05) 10px, rgba(255, 255, 255, 0.05) 12px);
-      }
-
-      .clouds {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 50%;
-        z-index: 0;
-        overflow: hidden;
-      }
-
-      .cloud {
-        position: absolute;
-        width: 60px;
-        height: 20px;
-        background-color: rgba(255, 255, 255, 0.6);
-        border-radius: 10px;
-        animation: cloudFloat linear infinite;
-      }
-
-      @keyframes cloudFloat {
-        from { transform: translateX(-100px); }
-        to { transform: translateX(calc(100vw + 100px)); }
-      }
-
-      .cloud::before, .cloud::after {
-        content: '';
-        position: absolute;
-        background-color: rgba(255, 255, 255, 0.6);
-        border-radius: 50%;
-      }
-
-      .cloud::before {
-        width: 25px;
-        height: 25px;
-        top: -10px;
-        left: 10px;
-      }
-
-      .cloud::after {
-        width: 30px;
-        height: 30px;
-        top: -15px;
-        left: 30px;
-      }
-
-      .header-content {
-        max-width: 800px;
-        z-index: 3;
-        position: relative;
-      }
-
-      .game-title {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-        color: var(--retro-yellow);
-        text-transform: uppercase;
-        text-shadow: 
-          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-red),
-          calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkpurple);
-        transform-origin: center bottom;
-        animation: bounceInGame 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) forwards;
-      }
-
-      @keyframes bounceInGame {
-        0% { transform: scale(0.1) translateY(-500px); opacity: 0; }
-        50% { transform: scale(1.1) translateY(10px); opacity: 1; }
-        70% { transform: scale(0.9) translateY(-10px); }
-        85% { transform: scale(1.05) translateY(5px); }
-        100% { transform: scale(1) translateY(0); }
-      }
-
-      .game-subtitle {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        color: var(--retro-lightblue);
-        text-shadow: 2px 2px 0 var(--retro-darkblue);
-        animation: fadeIn 1s ease 1s forwards;
-        opacity: 0;
-      }
-
-      .game-social-links {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-        z-index: 5;
-      }
-
-      .game-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;
-        height: 50px;
-        border-radius: 0;
-        background-color: var(--retro-darkgray);
-        color: var(--retro-white);
-        text-decoration: none;
-        font-size: 1.2rem;
-        transition: all 0.2s ease;
-        position: relative;
-        overflow: hidden;
-        border: calc(var(--pixel-size) * 2) solid var(--retro-white);
-        box-shadow: 
-          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray),
-          inset calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 rgba(0, 0, 0, 0.2);
-      }
-
-      .game-btn:hover {
-        background-color: var(--retro-pink);
-        transform: translateY(-5px);
-        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="fill:none;stroke:white;stroke-width:2"><rect width="8" height="8"/></svg>') 8 8, auto;
-      }
-
-      .game-btn:active { transform: translateY(0); }
-
-      .game-btn:hover { animation: btnJump 0.5s ease; }
-
-      @keyframes btnJump {
-        0% { transform: translateY(0); }
-        40% { transform: translateY(-20px); }
-        60% { transform: translateY(-22px); }
-        80% { transform: translateY(-10px); }
-        90% { transform: translateY(-5px); }
-        100% { transform: translateY(0); }
-      }
-
-      .game-section {
-        padding: 5rem 2rem;
-        border-bottom: calc(var(--pixel-size) * 4) solid var(--retro-darkgray);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .game-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: 
-          repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255, 255, 255, 0.02) 20px, rgba(255, 255, 255, 0.02) 40px),
-          repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255, 255, 255, 0.01) 20px, rgba(255, 255, 255, 0.01) 40px);
-        z-index: -1;
-      }
-
-      .game-section-title {
-        text-align: center;
-        margin-bottom: 3rem;
-        color: var(--retro-yellow);
-        font-size: 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        text-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkpurple);
-      }
-
-      .game-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      /* Skill Arcade Cabinet Styling */
-      .skill-arcade {
-        background: var(--retro-darkgray);
-        border: calc(var(--pixel-size) * 4) solid var(--retro-purple);
-        padding: 2rem;
-        border-radius: calc(var(--pixel-size) * 2);
-        box-shadow: 
-          calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 4) 0 var(--retro-black),
-          inset 0 0 10px rgba(255, 255, 255, 0.1);
-      }
-
-      .arcade-marquee {
-        background: var(--retro-darkblue);
-        border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
-        padding: 1rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        color: var(--retro-yellow);
-        font-family: 'Press Start 2P', monospace;
-        font-size: clamp(1rem, 2vw, 1.5rem);
-        text-shadow: 2px 2px 0 var(--retro-red);
-        animation: marqueeGlow 2s infinite alternate;
-      }
-
-      @keyframes marqueeGlow {
-        0% { box-shadow: 0 0 5px var(--retro-yellow); }
-        100% { box-shadow: 0 0 15px var(--retro-yellow); }
-      }
-
-      .arcade-games {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
-        gap: 2rem;
-      }
-
-      .arcade-game {
-        background: var(--retro-darkblue);
-        border: calc(var(--pixel-size) * 3) solid var(--retro-blue);
-        padding: 1rem;
-        border-radius: calc(var(--pixel-size));
-        box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .game-title-text {
-        color: var(--retro-pink);
-        font-family: 'Press Start 2P', monospace;
-        font-size: clamp(0.7rem, 1.2vw, 0.9rem);
-        text-align: center;
-        margin-bottom: 1rem;
-        text-shadow: 2px 2px 0 var(--retro-black);
-        white-space: normal;
-        word-wrap: break-word;
-        max-width: 100%;
-      }
-
-      .game-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
-      }
-
-      .arcade-button {
-        display: inline-block;
-        background: var(--retro-black);
-        border: calc(var(--pixel-size) * 2) solid var(--retro-green);
-        color: var(--retro-white);
-        font-family: 'Press Start 2P', monospace;
-        font-size: clamp(0.4rem, 0.7vw, 0.7rem);
-        padding: 0.4rem 0.8rem;
-        text-align: center;
-        transition: all 0.2s ease;
-        cursor: pointer;
-        box-shadow: 0 0 5px var(--retro-green);
-        white-space: normal;
-        word-break: break-all;
-        max-width: 120px;
-        min-width: 80px;
-      }
-
-      .arcade-button:hover {
-        background: var(--retro-green);
-        color: var(--retro-black);
-        transform: scale(1.05);
-        box-shadow: 0 0 10px var(--retro-yellow);
-      }
-
-      #modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-        display: none;
-      }
-
-      #skill-modal {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 0;
-        transition: transform 0.3s, opacity 0.3s;
-        z-index: 1000;
-        background: var(--retro-darkblue);
-        border: calc(var(--pixel-size) * 3) solid var(--retro-yellow);
-        padding: 2rem;
-        width: clamp(250px, 50vw, 300px);
-        text-align: center;
-        font-family: 'Press Start 2P', monospace;
-        color: var(--retro-white);
-      }
-
-      #skill-modal.show {
-        transform: translate(-50%, -50%) scale(1);
+      0%,
+      100% {
         opacity: 1;
       }
 
-      .retro-close-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 100px;
-        height: 40px;
-        background: var(--retro-darkgray);
-        border: calc(var(--pixel-size) * 2) solid var(--retro-red);
-        color: var(--retro-white);
-        font-family: 'Press Start 2P', monospace;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        text-decoration: none;
-        transition: all 0.2s ease;
-        position: relative;
-        overflow: hidden;
-        box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-black);
-        margin-top: 1rem;
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .pixel-border {
+      position: relative;
+      border: calc(var(--pixel-size) * 2) solid var(--retro-white);
+      box-shadow:
+        calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray),
+        inset calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .pixel-border::before {
+      content: '';
+      position: absolute;
+      top: calc(var(--pixel-size) * -2);
+      left: calc(var(--pixel-size) * -2);
+      right: calc(var(--pixel-size) * -2);
+      bottom: calc(var(--pixel-size) * -2);
+      border: calc(var(--pixel-size) * 2) solid var(--retro-darkgray);
+      z-index: -1;
+    }
+
+    .game-header {
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      background: var(--retro-darkblue);
+      border-bottom: calc(var(--pixel-size) * 3) solid var(--retro-blue);
+    }
+
+    .game-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.2) 60%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.5) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255, 255, 255, 0.05) 10px, rgba(255, 255, 255, 0.05) 12px);
+    }
+
+    .clouds {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .cloud {
+      position: absolute;
+      width: 60px;
+      height: 20px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+      animation: cloudFloat linear infinite;
+    }
+
+    @keyframes cloudFloat {
+      from {
+        transform: translateX(-100px);
       }
 
-      .retro-close-btn:hover {
-        background: var(--retro-red);
-        transform: translateY(-3px);
-        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="fill:none;stroke:white;stroke-width:2"><rect width="8" height="8"/></svg>') 8 8, auto;
-        border-color: var(--retro-yellow);
+      to {
+        transform: translateX(calc(100vw + 100px));
+      }
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: '';
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+    }
+
+    .cloud::before {
+      width: 25px;
+      height: 25px;
+      top: -10px;
+      left: 10px;
+    }
+
+    .cloud::after {
+      width: 30px;
+      height: 30px;
+      top: -15px;
+      left: 30px;
+    }
+
+    .header-content {
+      max-width: 800px;
+      z-index: 3;
+      position: relative;
+    }
+
+    .game-title {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--retro-yellow);
+      text-transform: uppercase;
+      text-shadow:
+        calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-red),
+        calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkpurple);
+      transform-origin: center bottom;
+      animation: bounceInGame 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) forwards;
+    }
+
+    @keyframes bounceInGame {
+      0% {
+        transform: scale(0.1) translateY(-500px);
+        opacity: 0;
       }
 
-      .retro-close-btn:active {
+      50% {
+        transform: scale(1.1) translateY(10px);
+        opacity: 1;
+      }
+
+      70% {
+        transform: scale(0.9) translateY(-10px);
+      }
+
+      85% {
+        transform: scale(1.05) translateY(5px);
+      }
+
+      100% {
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .game-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--retro-lightblue);
+      text-shadow: 2px 2px 0 var(--retro-darkblue);
+      animation: fadeIn 1s ease 1s forwards;
+      opacity: 0;
+    }
+
+    .game-social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      z-index: 5;
+    }
+
+    .game-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 0;
+      background-color: var(--retro-darkgray);
+      color: var(--retro-white);
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+      border: calc(var(--pixel-size) * 2) solid var(--retro-white);
+      box-shadow:
+        calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray),
+        inset calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .game-btn:hover {
+      background-color: var(--retro-pink);
+      transform: translateY(-5px);
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="fill:none;stroke:white;stroke-width:2"><rect width="8" height="8"/></svg>') 8 8, auto;
+    }
+
+    .game-btn:active {
+      transform: translateY(0);
+    }
+
+    .game-btn:hover {
+      animation: btnJump 0.5s ease;
+    }
+
+    @keyframes btnJump {
+      0% {
         transform: translateY(0);
-        box-shadow: none;
       }
 
-      .game-path {
-        max-width: 1000px;
-        margin: 0 auto;
-        position: relative;
+      40% {
+        transform: translateY(-20px);
+      }
+
+      60% {
+        transform: translateY(-22px);
+      }
+
+      80% {
+        transform: translateY(-10px);
+      }
+
+      90% {
+        transform: translateY(-5px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .game-section {
+      padding: 5rem 2rem;
+      border-bottom: calc(var(--pixel-size) * 4) solid var(--retro-darkgray);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .game-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255, 255, 255, 0.02) 20px, rgba(255, 255, 255, 0.02) 40px),
+        repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255, 255, 255, 0.01) 20px, rgba(255, 255, 255, 0.01) 40px);
+      z-index: -1;
+    }
+
+    .game-section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--retro-yellow);
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkpurple);
+    }
+
+    .game-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Skill Arcade Cabinet Styling */
+    .skill-arcade {
+      background: var(--retro-darkgray);
+      border: calc(var(--pixel-size) * 4) solid var(--retro-purple);
+      padding: 2rem;
+      border-radius: calc(var(--pixel-size) * 2);
+      box-shadow:
+        calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 4) 0 var(--retro-black),
+        inset 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .arcade-marquee {
+      background: var(--retro-darkblue);
+      border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--retro-yellow);
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      text-shadow: 2px 2px 0 var(--retro-red);
+      animation: marqueeGlow 2s infinite alternate;
+    }
+
+    @keyframes marqueeGlow {
+      0% {
+        box-shadow: 0 0 5px var(--retro-yellow);
+      }
+
+      100% {
+        box-shadow: 0 0 15px var(--retro-yellow);
+      }
+    }
+
+    .arcade-games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+      gap: 2rem;
+    }
+
+    .arcade-game {
+      background: var(--retro-darkblue);
+      border: calc(var(--pixel-size) * 3) solid var(--retro-blue);
+      padding: 1rem;
+      border-radius: calc(var(--pixel-size));
+      box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .game-title-text {
+      color: var(--retro-pink);
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+      text-align: center;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 0 var(--retro-black);
+      white-space: normal;
+      word-wrap: break-word;
+      max-width: 100%;
+    }
+
+    .game-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .arcade-button {
+      display: inline-block;
+      background: var(--retro-black);
+      border: calc(var(--pixel-size) * 2) solid var(--retro-green);
+      color: var(--retro-white);
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(0.4rem, 0.7vw, 0.7rem);
+      padding: 0.4rem 0.8rem;
+      text-align: center;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      box-shadow: 0 0 5px var(--retro-green);
+      white-space: normal;
+      word-break: break-all;
+      max-width: 120px;
+      min-width: 80px;
+    }
+
+    .arcade-button:hover {
+      background: var(--retro-green);
+      color: var(--retro-black);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--retro-yellow);
+    }
+
+    #modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+
+    #skill-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+      z-index: 1000;
+      background: var(--retro-darkblue);
+      border: calc(var(--pixel-size) * 3) solid var(--retro-yellow);
+      padding: 2rem;
+      width: clamp(250px, 50vw, 300px);
+      text-align: center;
+      font-family: 'Press Start 2P', monospace;
+      color: var(--retro-white);
+    }
+
+    #skill-modal.show {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    .retro-close-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 40px;
+      background: var(--retro-darkgray);
+      border: calc(var(--pixel-size) * 2) solid var(--retro-red);
+      color: var(--retro-white);
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-black);
+      margin-top: 1rem;
+    }
+
+    .retro-close-btn:hover {
+      background: var(--retro-red);
+      transform: translateY(-3px);
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="fill:none;stroke:white;stroke-width:2"><rect width="8" height="8"/></svg>') 8 8, auto;
+      border-color: var(--retro-yellow);
+    }
+
+    .retro-close-btn:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    .game-path {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .game-path::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(var(--pixel-size) * 4);
+      height: 100%;
+      background: var(--retro-purple);
+      z-index: 0;
+    }
+
+    .game-path-marker {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(var(--pixel-size) * 10);
+      height: calc(var(--pixel-size) * 10);
+      background-color: var(--retro-yellow);
+      border: calc(var(--pixel-size) * 2) solid var(--retro-white);
+      box-shadow: 0 0 0 calc(var(--pixel-size) * 2) var(--retro-darkgray);
+      z-index: 2;
+    }
+
+    .game-stage {
+      margin-bottom: 5rem;
+      position: relative;
+      width: calc(50% - 40px);
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
+    .game-stage.visible {
+      animation: dropInWithBounce 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) forwards;
+    }
+
+    @keyframes dropInWithBounce {
+      0% {
+        transform: translateY(-300px);
+        opacity: 0;
+      }
+
+      60% {
+        transform: translateY(20px);
+        opacity: 1;
+      }
+
+      75% {
+        transform: translateY(-10px);
+      }
+
+      90% {
+        transform: translateY(5px);
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .game-stage:nth-child(odd) {
+      left: 0;
+    }
+
+    .game-stage:nth-child(even) {
+      left: calc(50% + 40px);
+    }
+
+    .game-stage::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      width: 40px;
+      height: calc(var(--pixel-size) * 4);
+      background-color: var(--retro-pink);
+      z-index: 1;
+    }
+
+    .game-stage:nth-child(odd)::after {
+      right: -40px;
+    }
+
+    .game-stage:nth-child(even)::after {
+      left: -40px;
+    }
+
+    .game-stage-content {
+      background: var(--retro-darkblue);
+      padding: 1.5rem;
+      border: calc(var(--pixel-size) * 3) solid var(--retro-blue);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+      box-shadow: calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkgray);
+    }
+
+    .game-stage-content:hover {
+      transform: scale(1.03);
+      border-color: var(--retro-yellow);
+    }
+
+    .game-stage-date {
+      color: var(--retro-pink);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .game-stage-title {
+      color: var(--retro-yellow);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0 var(--retro-darkpurple);
+    }
+
+    .game-stage-subtitle {
+      color: var(--retro-lightblue);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .game-stage-details {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+
+    .game-stage-details li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--retro-white);
+    }
+
+    .game-stage-details li::before {
+      content: "►";
+      position: absolute;
+      left: 0;
+      color: var(--retro-pink);
+    }
+
+    /* Contact Terminal Styling */
+    .contact-terminal {
+      background: var(--retro-black);
+      padding: 2rem;
+      border: calc(var(--pixel-size) * 4) solid var(--retro-green);
+      box-shadow:
+        calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 4) 0 var(--retro-darkgray),
+        inset 0 0 10px rgba(0, 255, 0, 0.2);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .terminal-title {
+      color: var(--retro-green);
+      font-family: 'Press Start 2P', monospace;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      text-shadow: 2px 2px 0 var(--retro-darkgreen);
+    }
+
+    .terminal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .terminal-input,
+    .terminal-textarea {
+      background: var(--retro-black);
+      border: calc(var(--pixel-size) * 2) solid var(--retro-green);
+      color: var(--retro-green);
+      font-family: 'RetroPixel', monospace;
+      font-size: 1rem;
+      padding: 0.75rem;
+      resize: none;
+      outline: none;
+      box-shadow: 0 0 5px var(--retro-green);
+    }
+
+    .terminal-input:focus,
+    .terminal-textarea:focus {
+      box-shadow: 0 0 10px var(--retro-green);
+    }
+
+    .terminal-input::placeholder,
+    .terminal-textarea::placeholder {
+      color: rgba(0, 170, 0, 0.7);
+    }
+
+    .terminal-btn {
+      background: var(--retro-darkgreen);
+      border: calc(var(--pixel-size) * 2) solid var(--retro-green);
+      color: var(--retro-green);
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.9rem;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+      align-self: center;
+      box-shadow: 0 0 5px var(--retro-green);
+    }
+
+    .terminal-btn:hover {
+      background: var(--retro-green);
+      color: var(--retro-black);
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px var(--retro-green);
+    }
+
+    .terminal-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 0 5px var(--retro-green);
+    }
+
+    .transmission-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0, 255, 0, 0.2) 0%, transparent 100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .transmission-animation.active {
+      animation: scanline 1s ease forwards;
+    }
+
+    @keyframes scanline {
+      0% {
+        opacity: 1;
+        transform: translateY(-100%);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+    }
+
+    .transmission-text {
+      color: var(--retro-green);
+      font-family: 'Press Start 2P', monospace;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-top: 1rem;
+      opacity: 0;
+    }
+
+    .transmission-text.active {
+      animation: fadeInOut 2s ease forwards;
+    }
+
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .status-bar {
+      background: var(--retro-darkgray);
+      border-top: calc(var(--pixel-size) * 4) solid var(--retro-gray);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .status-bar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .status-text {
+      color: var(--retro-white);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .bitcoin-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .btc-address-container {
+      position: relative;
+      background: var(--retro-black);
+      padding: 0.75rem 1rem;
+      border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
+      color: var(--retro-yellow);
+      font-family: monospace;
+      font-size: 0.9rem;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
+    }
+
+    .copy-coin-btn {
+      background: var(--retro-darkgray);
+      border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
+      color: var(--retro-white);
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-black);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .copy-coin-btn:hover {
+      background-color: var(--retro-pink);
+    }
+
+    .copy-coin-btn:active {
+      transform: translate(calc(var(--pixel-size) * 2), calc(var(--pixel-size) * 2));
+      box-shadow: 0 0 0 var(--retro-black);
+    }
+
+    .copy-coin-btn i {
+      color: var(--retro-yellow);
+      font-size: 1.2rem;
+    }
+
+    .coin-sprite {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--retro-yellow);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0;
+      box-shadow: 0 0 10px var(--retro-yellow);
+    }
+
+    .pixel-tooltip {
+      position: fixed;
+      padding: 8px 12px;
+      background: var(--retro-black);
+      color: var(--retro-white);
+      border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
+      font-size: 0.9rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+      box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
+    }
+
+    .pixel-tooltip.show {
+      opacity: 1;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes wobble {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(-5deg);
+      }
+
+      50% {
+        transform: rotate(3deg);
+      }
+
+      75% {
+        transform: rotate(-2deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .game-title {
+        font-size: 2.5rem;
       }
 
       .game-path::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(var(--pixel-size) * 4);
-        height: 100%;
-        background: var(--retro-purple);
-        z-index: 0;
-      }
-
-      .game-path-marker {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(var(--pixel-size) * 10);
-        height: calc(var(--pixel-size) * 10);
-        background-color: var(--retro-yellow);
-        border: calc(var(--pixel-size) * 2) solid var(--retro-white);
-        box-shadow: 0 0 0 calc(var(--pixel-size) * 2) var(--retro-darkgray);
-        z-index: 2;
+        left: 30px;
+        transform: none;
       }
 
       .game-stage {
-        margin-bottom: 5rem;
-        position: relative;
-        width: calc(50% - 40px);
-        opacity: 0;
-        transform: translateY(100px);
+        width: calc(100% - 60px);
+        left: 60px !important;
       }
-
-      .game-stage.visible {
-        animation: dropInWithBounce 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) forwards;
-      }
-
-      @keyframes dropInWithBounce {
-        0% { transform: translateY(-300px); opacity: 0; }
-        60% { transform: translateY(20px); opacity: 1; }
-        75% { transform: translateY(-10px); }
-        90% { transform: translateY(5px); }
-        100% { transform: translateY(0); opacity: 1; }
-      }
-
-      .game-stage:nth-child(odd) { left: 0; }
-      .game-stage:nth-child(even) { left: calc(50% + 40px); }
 
       .game-stage::after {
-        content: "";
-        position: absolute;
-        top: 10px;
+        left: -30px !important;
+        width: 30px;
+      }
+
+      .game-path-marker {
+        left: 30px;
+        transform: none;
+      }
+
+      .game-social-links {
+        gap: 0.5rem;
+      }
+
+      .game-btn {
         width: 40px;
-        height: calc(var(--pixel-size) * 4);
-        background-color: var(--retro-pink);
-        z-index: 1;
-      }
-
-      .game-stage:nth-child(odd)::after { right: -40px; }
-      .game-stage:nth-child(even)::after { left: -40px; }
-
-      .game-stage-content {
-        background: var(--retro-darkblue);
-        padding: 1.5rem;
-        border: calc(var(--pixel-size) * 3) solid var(--retro-blue);
-        transition: all 0.3s ease;
-        position: relative;
-        z-index: 2;
-        box-shadow: calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkgray);
-      }
-
-      .game-stage-content:hover {
-        transform: scale(1.03);
-        border-color: var(--retro-yellow);
-      }
-
-      .game-stage-date {
-        color: var(--retro-pink);
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-      }
-
-      .game-stage-title {
-        color: var(--retro-yellow);
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-        text-transform: uppercase;
-        text-shadow: 2px 2px 0 var(--retro-darkpurple);
-      }
-
-      .game-stage-subtitle {
-        color: var(--retro-lightblue);
+        height: 40px;
         font-size: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .game-stage-details {
-        list-style: none;
-        padding: 0;
-        margin: 1rem 0 0;
-      }
-
-      .game-stage-details li {
-        position: relative;
-        padding-left: 1.5rem;
-        margin-bottom: 0.5rem;
-        font-size: 0.9rem;
-        color: var(--retro-white);
-      }
-
-      .game-stage-details li::before {
-        content: "►";
-        position: absolute;
-        left: 0;
-        color: var(--retro-pink);
-      }
-
-      /* Contact Terminal Styling */
-      .contact-terminal {
-        background: var(--retro-black);
-        padding: 2rem;
-        border: calc(var(--pixel-size) * 4) solid var(--retro-green);
-        box-shadow: 
-          calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 4) 0 var(--retro-darkgray),
-          inset 0 0 10px rgba(0, 255, 0, 0.2);
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .terminal-title {
-        color: var(--retro-green);
-        font-family: 'Press Start 2P', monospace;
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        text-align: center;
-        text-shadow: 2px 2px 0 var(--retro-darkgreen);
-      }
-
-      .terminal-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .terminal-input,
-      .terminal-textarea {
-        background: var(--retro-black);
-        border: calc(var(--pixel-size) * 2) solid var(--retro-green);
-        color: var(--retro-green);
-        font-family: 'RetroPixel', monospace;
-        font-size: 1rem;
-        padding: 0.75rem;
-        resize: none;
-        outline: none;
-        box-shadow: 0 0 5px var(--retro-green);
-      }
-
-      .terminal-input:focus,
-      .terminal-textarea:focus {
-        box-shadow: 0 0 10px var(--retro-green);
-      }
-
-      .terminal-input::placeholder,
-      .terminal-textarea::placeholder {
-        color: rgba(0, 170, 0, 0.7);
-      }
-
-      .terminal-btn {
-        background: var(--retro-darkgreen);
-        border: calc(var(--pixel-size) * 2) solid var(--retro-green);
-        color: var(--retro-green);
-        font-family: 'Press Start 2P', monospace;
-        font-size: 0.9rem;
-        padding: 0.75rem 1.5rem;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: all 0.2s ease;
-        align-self: center;
-        box-shadow: 0 0 5px var(--retro-green);
-      }
-
-      .terminal-btn:hover {
-        background: var(--retro-green);
-        color: var(--retro-black);
-        transform: translateY(-3px);
-        box-shadow: 0 0 10px var(--retro-green);
-      }
-
-      .terminal-btn:active {
-        transform: translateY(0);
-        box-shadow: 0 0 5px var(--retro-green);
-      }
-
-      .transmission-animation {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(0, 255, 0, 0.2) 0%, transparent 100%);
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      .transmission-animation.active {
-        animation: scanline 1s ease forwards;
-      }
-
-      @keyframes scanline {
-        0% { opacity: 1; transform: translateY(-100%); }
-        50% { opacity: 1; transform: translateY(0); }
-        100% { opacity: 0; transform: translateY(100%); }
-      }
-
-      .transmission-text {
-        color: var(--retro-green);
-        font-family: 'Press Start 2P', monospace;
-        font-size: 1.2rem;
-        text-align: center;
-        margin-top: 1rem;
-        opacity: 0;
-      }
-
-      .transmission-text.active {
-        animation: fadeInOut 2s ease forwards;
-      }
-
-      @keyframes fadeInOut {
-        0% { opacity: 0; }
-        20% { opacity: 1; }
-        80% { opacity: 1; }
-        100% { opacity: 0; }
-      }
-
-      .status-bar {
-        background: var(--retro-darkgray);
-        border-top: calc(var(--pixel-size) * 4) solid var(--retro-gray);
-        padding: 2rem;
-        text-align: center;
-      }
-
-      .status-bar-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .status-text {
-        color: var(--retro-white);
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
       }
 
       .bitcoin-box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        margin: 1rem 0;
-        flex-wrap: wrap;
+        flex-direction: column;
       }
 
       .btc-address-container {
-        position: relative;
-        background: var(--retro-black);
-        padding: 0.75rem 1rem;
-        border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
-        color: var(--retro-yellow);
-        font-family: monospace;
-        font-size: 0.9rem;
-        max-width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        width: 100%;
       }
 
-      .copy-coin-btn {
-        background: var(--retro-darkgray);
-        border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
-        color: var(--retro-white);
-        padding: 0.75rem 1.5rem;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-black);
-        position: relative;
-        overflow: hidden;
+      .arcade-games {
+        grid-template-columns: 1fr;
       }
 
-      .copy-coin-btn:hover { background-color: var(--retro-pink); }
-      .copy-coin-btn:active {
-        transform: translate(calc(var(--pixel-size) * 2), calc(var(--pixel-size) * 2));
-        box-shadow: 0 0 0 var(--retro-black);
+      .contact-terminal {
+        padding: 1.5rem;
       }
 
-      .copy-coin-btn i {
-        color: var(--retro-yellow);
+      .terminal-title {
         font-size: 1.2rem;
       }
 
-      .coin-sprite {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background-color: var(--retro-yellow);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 1000;
-        opacity: 0;
-        box-shadow: 0 0 10px var(--retro-yellow);
+      .terminal-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
       }
+    }
 
-      .pixel-tooltip {
-        position: fixed;
-        padding: 8px 12px;
-        background: var(--retro-black);
-        color: var(--retro-white);
-        border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
-        font-size: 0.9rem;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: 1000;
-        box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
-      }
+    .retro-resume-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+      background: var(--retro-darkgray);
+      border: calc(var(--pixel-size) * 2) solid var(--retro-purple);
+      color: var(--retro-white);
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-black);
+      position: relative;
+      overflow: hidden;
+    }
 
-      .pixel-tooltip.show { opacity: 1; }
+    .retro-resume-btn:hover {
+      background: var(--retro-purple);
+      border-color: var(--retro-yellow);
+      transform: translateY(-3px);
+      box-shadow: calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkpurple);
+    }
 
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
+    .retro-resume-btn:active {
+      transform: translateY(0);
+      box-shadow: calc(var(--pixel-size) * 1) calc(var(--pixel-size) * 1) 0 var(--retro-black);
+    }
 
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
+    .retro-resume-btn i {
+      font-size: 1.2rem;
+      color: var(--retro-yellow);
+    }
+  </style>
+</head>
 
-      @keyframes wobble {
-        0% { transform: rotate(0deg); }
-        25% { transform: rotate(-5deg); }
-        50% { transform: rotate(3deg); }
-        75% { transform: rotate(-2deg); }
-        100% { transform: rotate(0deg); }
-      }
-
-      @media (max-width: 768px) {
-        .game-title { font-size: 2.5rem; }
-        .game-path::before { left: 30px; transform: none; }
-        .game-stage { width: calc(100% - 60px); left: 60px !important; }
-        .game-stage::after { left: -30px !important; width: 30px; }
-        .game-path-marker { left: 30px; transform: none; }
-        .game-social-links { gap: 0.5rem; }
-        .game-btn { width: 40px; height: 40px; font-size: 1rem; }
-        .bitcoin-box { flex-direction: column; }
-        .btc-address-container { font-size: 0.8rem; padding: 0.5rem; width: 100%; }
-        .arcade-games { grid-template-columns: 1fr; }
-        .contact-terminal { padding: 1.5rem; }
-        .terminal-title { font-size: 1.2rem; }
-        .terminal-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="game-header">
-      <div class="clouds"></div>
-      <div class="header-content">
-        <h1 class="game-title pixel-text">Hritik Gandhi</h1>
-        <h2 class="game-subtitle">
-          <span class="dialog-text"></span>
-        </h2>
-        <div class="game-social-links">
-          <a href="https://github.com/hritikgandhi" class="game-btn" target="_blank" aria-label="GitHub Profile">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://linkedin.com/in/hritikgandhi" class="game-btn" target="_blank" aria-label="LinkedIn Profile">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://x.com/hritikkgandhi" class="game-btn" target="_blank" aria-label="X Profile">
-            <span style="font-weight: bold; font-size: 1.1em">𝕏</span>
-          </a>
-        </div>
+<body>
+  <header class="game-header">
+    <div class="clouds"></div>
+    <div class="header-content">
+      <h1 class="game-title pixel-text">Hritik Gandhi</h1>
+      <h2 class="game-subtitle">
+        <span class="dialog-text"></span>
+      </h2>
+      <div class="game-social-links">
+        <a href="https://github.com/hritikgandhi" class="game-btn" target="_blank" aria-label="GitHub Profile">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/hritikgandhi" class="game-btn" target="_blank" aria-label="LinkedIn Profile">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://x.com/hritikkgandhi" class="game-btn" target="_blank" aria-label="X Profile">
+          <span style="font-weight: bold; font-size: 1.1em">𝕏</span>
+        </a>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <section class="game-section">
-      <div class="game-container">
-        <h2 class="game-section-title pixel-text">
-          <i class="fas fa-gamepad"></i> Skill Arcade
-        </h2>
-        <div class="skill-arcade">
-          <div class="arcade-marquee">Player Skills</div>
-          <div class="arcade-games">
-            <div class="arcade-game">
-              <div class="game-title-text">Front-end Development</div>
-              <div class="game-buttons">
-                <div class="arcade-button" id="react">React.js</div>
-                <div class="arcade-button" id="javascript">JavaScript</div>
-                <div class="arcade-button" id="html">HTML</div>
-                <div class="arcade-button" id="css">CSS</div>
-              </div>
+  <section class="game-section">
+    <div class="game-container">
+      <h2 class="game-section-title pixel-text">
+        <i class="fas fa-gamepad"></i> Skill Arcade
+      </h2>
+      <div class="skill-arcade">
+        <div class="arcade-marquee">Player Skills</div>
+        <div class="arcade-games">
+          <div class="arcade-game">
+            <div class="game-title-text">Front-end Development</div>
+            <div class="game-buttons">
+              <div class="arcade-button" id="react">React.js</div>
+              <div class="arcade-button" id="javascript">JavaScript</div>
+              <div class="arcade-button" id="html">HTML</div>
+              <div class="arcade-button" id="css">CSS</div>
             </div>
-            <div class="arcade-game">
-              <div class="game-title-text">Back-end Development</div>
-              <div class="game-buttons">
-                <div class="arcade-button" id="python">Python</div>
-                <div class="arcade-button" id="flask">Flask</div>
-                <div class="arcade-button" id="nodejs">Node.js</div>
-                <div class="arcade-button" id="express">Express</div>
-              </div>
+          </div>
+          <div class="arcade-game">
+            <div class="game-title-text">Back-end Development</div>
+            <div class="game-buttons">
+              <div class="arcade-button" id="python">Python</div>
+              <div class="arcade-button" id="flask">Flask</div>
+              <div class="arcade-button" id="nodejs">Node.js</div>
+              <div class="arcade-button" id="express">Express</div>
             </div>
-            <div class="arcade-game">
-              <div class="game-title-text">Automation and Scripting</div>
-              <div class="game-buttons">
-                <div class="arcade-button" id="knime">Knime</div>
-                <div class="arcade-button" id="powerautomate">PowerAutomate</div>
-                <div class="arcade-button" id="vba">VBA</div>
-                <div class="arcade-button" id="powershell">PowerShell</div>
-              </div>
+          </div>
+          <div class="arcade-game">
+            <div class="game-title-text">Automation and Scripting</div>
+            <div class="game-buttons">
+              <div class="arcade-button" id="knime">Knime</div>
+              <div class="arcade-button" id="powerautomate">PowerAutomate</div>
+              <div class="arcade-button" id="vba">VBA</div>
+              <div class="arcade-button" id="powershell">PowerShell</div>
             </div>
-            <div class="arcade-game">
-              <div class="game-title-text">Data Management and Analysis</div>
-              <div class="game-buttons">
-                <div class="arcade-button" id="sql">SQL</div>
-                <div class="arcade-button" id="powerbi">PowerBI</div>
-                <div class="arcade-button" id="adf">Azure Data Factory</div>
-              </div>
+          </div>
+          <div class="arcade-game">
+            <div class="game-title-text">Data Management and Analysis</div>
+            <div class="game-buttons">
+              <div class="arcade-button" id="sql">SQL</div>
+              <div class="arcade-button" id="powerbi">PowerBI</div>
+              <div class="arcade-button" id="adf">Azure Data Factory</div>
             </div>
-            <div class="arcade-game">
-              <div class="game-title-text">Low-code/No-code Solutions</div>
-              <div class="game-buttons">
-                <div class="arcade-button" id="powerapps">PowerApps</div>
-                <div class="arcade-button" id="powerplatform">Power Platform</div>
-              </div>
+          </div>
+          <div class="arcade-game">
+            <div class="game-title-text">Low-code/No-code Solutions</div>
+            <div class="game-buttons">
+              <div class="arcade-button" id="powerapps">PowerApps</div>
+              <div class="arcade-button" id="powerplatform">Power Platform</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="game-section">
-      <div class="game-container">
-        <h2 class="game-section-title pixel-text">
-          <i class="fas fa-history"></i> Adventure Log
-        </h2>
-        <div class="game-path">
-          <div class="game-stage">
-            <div class="game-stage-content">
-              <h3 class="game-stage-title">Process Automation Specialist</h3>
-              <h4 class="game-stage-subtitle">Canadian Tire Corporation</h4>
-              <p class="game-stage-date">Jan 2022 - Present</p>
-              <ul class="game-stage-details">
-                <li>Implemented 50+ Knime workflows for automating file uploads, database updates, and reporting processes</li>
-                <li>Architected Azure Data Factory pipelines and stored procedures for optimized data flow management</li>
-                <li>Developed 3 PowerApps solutions including CRM and task management applications</li>
-                <li>Created PowerAutomate workflows for RPA automation in both desktop and web environments</li>
-                <li>Built interactive PowerBI reports with row-level security implementation</li>
-                <li>Automated Excel processes using VBA for enhanced operational efficiency</li>
-              </ul>
-            </div>
+  <section class="game-section">
+    <div class="game-container">
+      <h2 class="game-section-title pixel-text">
+        <i class="fas fa-history"></i> Adventure Log
+      </h2>
+      <div class="game-path">
+        <div class="game-stage">
+          <div class="game-stage-content">
+            <h3 class="game-stage-title">Process Automation Specialist</h3>
+            <h4 class="game-stage-subtitle">Canadian Tire Corporation</h4>
+            <p class="game-stage-date">Jan 2022 - Present</p>
+            <ul class="game-stage-details">
+              <li>Implemented 50+ Knime workflows for automating file uploads, database updates, and reporting processes
+              </li>
+              <li>Architected Azure Data Factory pipelines and stored procedures for optimized data flow management</li>
+              <li>Developed 3 PowerApps solutions including CRM and task management applications</li>
+              <li>Created PowerAutomate workflows for RPA automation in both desktop and web environments</li>
+              <li>Built interactive PowerBI reports with row-level security implementation</li>
+              <li>Automated Excel processes using VBA for enhanced operational efficiency</li>
+            </ul>
           </div>
-          <div class="game-stage">
-            <div class="game-stage-content">
-              <h3 class="game-stage-title">Full Stack Web Developer</h3>
-              <h4 class="game-stage-subtitle">Millennial Pod</h4>
-              <p class="game-stage-date">Jan 2022 - Present</p>
-              <ul class="game-stage-details">
-                <li>Designed and implemented RESTful API services using Python</li>
-                <li>Developed front-end solutions using React.js and modern JavaScript</li>
-                <li>Managed Linux VPS deployment including CRON jobs for system automation</li>
-                <li>Integrated MySQL database systems for robust data storage</li>
-                <li>Conducted comprehensive API testing using Postman</li>
-              </ul>
-            </div>
+        </div>
+        <div class="game-stage">
+          <div class="game-stage-content">
+            <h3 class="game-stage-title">Full Stack Web Developer</h3>
+            <h4 class="game-stage-subtitle">Millennial Pod</h4>
+            <p class="game-stage-date">Jan 2022 - Present</p>
+            <ul class="game-stage-details">
+              <li>Designed and implemented RESTful API services using Python</li>
+              <li>Developed front-end solutions using React.js and modern JavaScript</li>
+              <li>Managed Linux VPS deployment including CRON jobs for system automation</li>
+              <li>Integrated MySQL database systems for robust data storage</li>
+              <li>Conducted comprehensive API testing using Postman</li>
+            </ul>
           </div>
-          <div class="game-stage">
-            <div class="game-stage-content">
-              <h3 class="game-stage-title">API Scrum Developer</h3>
-              <h4 class="game-stage-subtitle">African Impact Challenge</h4>
-              <p class="game-stage-date">Jan 2021 - Dec 2021</p>
-              <ul class="game-stage-details">
-                <li>Developed website backend using Python Flask and Java applets</li>
-                <li>Implemented graph database architecture using Neo4j and Cypher</li>
-                <li>Created RESTful APIs for seamless front-end integration</li>
-                <li>Collaborated in an Agile development environment</li>
-              </ul>
-            </div>
+        </div>
+        <div class="game-stage">
+          <div class="game-stage-content">
+            <h3 class="game-stage-title">API Scrum Developer</h3>
+            <h4 class="game-stage-subtitle">African Impact Challenge</h4>
+            <p class="game-stage-date">Jan 2021 - Dec 2021</p>
+            <ul class="game-stage-details">
+              <li>Developed website backend using Python Flask and Java applets</li>
+              <li>Implemented graph database architecture using Neo4j and Cypher</li>
+              <li>Created RESTful APIs for seamless front-end integration</li>
+              <li>Collaborated in an Agile development environment</li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="game-section">
-      <div class="game-container">
-        <h2 class="game-section-title pixel-text">
-          <i class="fas fa-terminal"></i> Contact Terminal
-        </h2>
-        <div class="contact-terminal pixel-border">
-          <h3 class="terminal-title">Transmit Your Message</h3>
-          <form class="terminal-form" id="contact-form">
-            <input type="text" name="name" class="terminal-input" placeholder="USER_NAME" required>
-            <input type="email" name="email" class="terminal-input" placeholder="EMAIL_ADDR" required>
-            <textarea name="message" class="terminal-textarea" rows="5" placeholder="ENTER_MESSAGE_HERE" required></textarea>
-            <button type="submit" class="terminal-btn">Send Signal</button>
-            <div class="transmission-animation" id="transmission-animation"></div>
-          </form>
-          <p class="transmission-text" id="transmission-text">Message Transmitted</p>
-        </div>
+  <section class="game-section">
+    <div class="game-container">
+      <h2 class="game-section-title pixel-text">
+        <i class="fas fa-terminal"></i> Contact Terminal
+      </h2>
+      <div class="contact-terminal pixel-border">
+        <h3 class="terminal-title">Transmit Your Message</h3>
+        <form class="terminal-form" id="contact-form">
+          <input type="text" name="name" class="terminal-input" placeholder="USER_NAME" required>
+          <input type="email" name="email" class="terminal-input" placeholder="EMAIL_ADDR" required>
+          <textarea name="message" class="terminal-textarea" rows="5" placeholder="ENTER_MESSAGE_HERE"
+            required></textarea>
+          <button type="submit" class="terminal-btn">Send Signal</button>
+          <div class="transmission-animation" id="transmission-animation"></div>
+        </form>
+        <p class="transmission-text" id="transmission-text">Message Transmitted</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="status-bar">
-      <div class="status-bar-content">
-        <p class="status-text">© 2025 Hritik Gandhi. All rights reserved.</p>
-        <div class="bitcoin-box">
-          <span class="btc-address-container">bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz</span>
-          <button class="copy-coin-btn" onclick="copyBitcoinAddress()" aria-label="Copy Bitcoin Address">
-            <i class="fab fa-bitcoin"></i>
-            Copy Address
-          </button>
-        </div>
+  <footer class="status-bar">
+    <div class="status-bar-content">
+      <p class="status-text">© 2025 Hritik Gandhi. All rights reserved.</p>
+      <div class="bitcoin-box">
+        <span class="btc-address-container">bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz</span>
+        <button class="copy-coin-btn" onclick="copyBitcoinAddress()" aria-label="Copy Bitcoin Address">
+          <i class="fab fa-bitcoin"></i>
+          Copy Address
+        </button>
       </div>
-    </footer>
+      <!-- New Resume Button -->
+      <button class="retro-resume-btn" onclick="downloadResume()" style="background-image: url('resume-button.png');">
+        <span>GET RESUME</span>
+      </button>
+    </div>
+  </footer>
 
-    <div id="modal-overlay"></div>
-    <div id="skill-modal"></div>
+  <div id="modal-overlay"></div>
+  <div id="skill-modal"></div>
 
-    <script>
-      class PhysicsSystem {
-        constructor() {
-          this.gravity = 0.8;
-          this.friction = 0.95;
-        }
-        
-        createParticle(x, y, vx, vy, element) {
-          return { x, y, vx, vy, element, isActive: true };
-        }
-        
-        updateParticle(particle) {
-          if (!particle.isActive) return;
-          particle.vy += this.gravity;
-          particle.vx *= this.friction;
-          particle.vy *= this.friction;
-          particle.x += particle.vx;
-          particle.y += particle.vy;
-          particle.element.style.transform = `translate(${particle.x}px, ${particle.y}px)`;
-          if (particle.y > window.innerHeight * 2) {
-            particle.isActive = false;
-            if (particle.element.parentNode) particle.element.parentNode.removeChild(particle.element);
-          }
+  <script>
+    class PhysicsSystem {
+      constructor() {
+        this.gravity = 0.8;
+        this.friction = 0.95;
+      }
+
+      createParticle(x, y, vx, vy, element) {
+        return { x, y, vx, vy, element, isActive: true };
+      }
+
+      updateParticle(particle) {
+        if (!particle.isActive) return;
+        particle.vy += this.gravity;
+        particle.vx *= this.friction;
+        particle.vy *= this.friction;
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        particle.element.style.transform = `translate(${particle.x}px, ${particle.y}px)`;
+        if (particle.y > window.innerHeight * 2) {
+          particle.isActive = false;
+          if (particle.element.parentNode) particle.element.parentNode.removeChild(particle.element);
         }
       }
+    }
 
-      class DialogTextAnimation {
-        constructor(element, phrases, options = {}) {
-          this.element = element;
-          this.phrases = phrases;
-          this.currentPhrase = 0;
-          this.currentChar = 0;
+    class DialogTextAnimation {
+      constructor(element, phrases, options = {}) {
+        this.element = element;
+        this.phrases = phrases;
+        this.currentPhrase = 0;
+        this.currentChar = 0;
+        this.isDeleting = false;
+        this.options = {
+          typeSpeed: options.typeSpeed || 80,
+          deleteSpeed: options.deleteSpeed || 40,
+          pauseTime: options.pauseTime || 1500,
+        };
+      }
+
+      type() {
+        const currentText = this.phrases[this.currentPhrase];
+        if (this.isDeleting) this.currentChar--;
+        else this.currentChar++;
+        this.element.textContent = currentText.substring(0, this.currentChar);
+        let typeSpeed = this.isDeleting ? this.options.deleteSpeed : this.options.typeSpeed;
+        typeSpeed += Math.random() * 50 - 25;
+        if (!this.isDeleting && this.currentChar === currentText.length) {
+          typeSpeed = this.options.pauseTime;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.currentChar === 0) {
           this.isDeleting = false;
-          this.options = {
-            typeSpeed: options.typeSpeed || 80,
-            deleteSpeed: options.deleteSpeed || 40,
-            pauseTime: options.pauseTime || 1500,
-          };
+          this.currentPhrase = (this.currentPhrase + 1) % this.phrases.length;
         }
+        setTimeout(() => this.type(), typeSpeed);
+      }
+    }
 
-        type() {
-          const currentText = this.phrases[this.currentPhrase];
-          if (this.isDeleting) this.currentChar--;
-          else this.currentChar++;
-          this.element.textContent = currentText.substring(0, this.currentChar);
-          let typeSpeed = this.isDeleting ? this.options.deleteSpeed : this.options.typeSpeed;
-          typeSpeed += Math.random() * 50 - 25;
-          if (!this.isDeleting && this.currentChar === currentText.length) {
-            typeSpeed = this.options.pauseTime;
-            this.isDeleting = true;
-          } else if (this.isDeleting && this.currentChar === 0) {
-            this.isDeleting = false;
-            this.currentPhrase = (this.currentPhrase + 1) % this.phrases.length;
-          }
-          setTimeout(() => this.type(), typeSpeed);
-        }
+    class CloudGenerator {
+      constructor(container) {
+        this.container = container;
+        this.clouds = [];
+        this.maxClouds = 8;
       }
 
-      class CloudGenerator {
-        constructor(container) {
-          this.container = container;
-          this.clouds = [];
-          this.maxClouds = 8;
-        }
-        
-        init() {
-          for (let i = 0; i < this.maxClouds; i++) this.createCloud();
-        }
-        
-        createCloud() {
-          const cloud = document.createElement('div');
-          cloud.className = 'cloud';
-          const size = Math.random() * 0.5 + 0.7;
-          const speed = Math.random() * 20 + 40;
-          const delay = Math.random() * 40;
-          const top = Math.random() * 30 + 5;
-          cloud.style.transform = `scale(${size})`;
-          cloud.style.top = `${top}%`;
-          cloud.style.animationDuration = `${speed}s`;
-          cloud.style.animationDelay = `-${delay}s`;
-          this.container.appendChild(cloud);
-          this.clouds.push(cloud);
-        }
+      init() {
+        for (let i = 0; i < this.maxClouds; i++) this.createCloud();
       }
 
-      function createCoinAnimation(x, y) {
-        const physicsSystem = new PhysicsSystem();
-        const coin = document.createElement('div');
-        coin.className = 'coin-sprite';
-        coin.style.left = `${x}px`;
-        coin.style.top = `${y}px`;
-        document.body.appendChild(coin);
-        
-        requestAnimationFrame(() => {
-          coin.style.opacity = '1';
-          const particle = physicsSystem.createParticle(x, y, (Math.random() - 0.5) * 15, -15 - Math.random() * 5, coin);
-          function animate() {
-            if (!particle.isActive) return;
-            physicsSystem.updateParticle(particle);
-            requestAnimationFrame(animate);
-          }
-          animate();
-          setTimeout(() => {
-            coin.style.opacity = '0';
-            setTimeout(() => { if (coin.parentNode) coin.parentNode.removeChild(coin); }, 500);
-          }, 2000);
-        });
+      createCloud() {
+        const cloud = document.createElement('div');
+        cloud.className = 'cloud';
+        const size = Math.random() * 0.5 + 0.7;
+        const speed = Math.random() * 20 + 40;
+        const delay = Math.random() * 40;
+        const top = Math.random() * 30 + 5;
+        cloud.style.transform = `scale(${size})`;
+        cloud.style.top = `${top}%`;
+        cloud.style.animationDuration = `${speed}s`;
+        cloud.style.animationDelay = `-${delay}s`;
+        this.container.appendChild(cloud);
+        this.clouds.push(cloud);
       }
+    }
 
-      const skillDetails = {
-        'react': { proficiency: 'Advanced', projects: ['Millennial Pod'], description: 'Built interactive UIs' },
-        'javascript': { proficiency: 'Advanced', projects: ['Millennial Pod'], description: 'Modern JS expertise' },
-        'html': { proficiency: 'Expert', projects: ['Portfolio'], description: 'Structured web content' },
-        'css': { proficiency: 'Expert', projects: ['Portfolio'], description: 'Styled retro designs' },
-        'python': { proficiency: 'Advanced', projects: ['Millennial Pod', 'African Impact'], description: 'Backend and automation' },
-        'flask': { proficiency: 'Intermediate', projects: ['African Impact'], description: 'API development' },
-        'nodejs': { proficiency: 'Intermediate', projects: [], description: 'Server-side JS' },
-        'express': { proficiency: 'Intermediate', projects: [], description: 'RESTful APIs' },
-        'knime': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Workflow automation' },
-        'powerautomate': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'RPA workflows' },
-        'vba': { proficiency: 'Intermediate', projects: ['Canadian Tire'], description: 'Excel automation' },
-        'powershell': { proficiency: 'Intermediate', projects: [], description: 'Scripting tasks' },
-        'sql': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Database management' },
-        'powerbi': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Interactive reports' },
-        'adf': { proficiency: 'Intermediate', projects: ['Canadian Tire'], description: 'Data pipelines' },
-        'powerapps': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'App development' },
-        'powerplatform': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Integrated solutions' }
-      };
+    function createCoinAnimation(x, y) {
+      const physicsSystem = new PhysicsSystem();
+      const coin = document.createElement('div');
+      coin.className = 'coin-sprite';
+      coin.style.left = `${x}px`;
+      coin.style.top = `${y}px`;
+      document.body.appendChild(coin);
 
-      function initializeSkillArcade() {
-        document.querySelectorAll('.arcade-button').forEach(button => {
-          button.addEventListener('click', () => {
-            const id = button.id;
-            const details = skillDetails[id] || { proficiency: 'N/A', projects: ['None listed'], description: 'Details coming soon!' };
-            const modal = document.getElementById('skill-modal');
-            const overlay = document.getElementById('modal-overlay');
-            modal.innerHTML = `
+      requestAnimationFrame(() => {
+        coin.style.opacity = '1';
+        const particle = physicsSystem.createParticle(x, y, (Math.random() - 0.5) * 15, -15 - Math.random() * 5, coin);
+        function animate() {
+          if (!particle.isActive) return;
+          physicsSystem.updateParticle(particle);
+          requestAnimationFrame(animate);
+        }
+        animate();
+        setTimeout(() => {
+          coin.style.opacity = '0';
+          setTimeout(() => { if (coin.parentNode) coin.parentNode.removeChild(coin); }, 500);
+        }, 2000);
+      });
+    }
+
+    const skillDetails = {
+      'react': { proficiency: 'Advanced', projects: ['Millennial Pod'], description: 'Built interactive UIs' },
+      'javascript': { proficiency: 'Advanced', projects: ['Millennial Pod'], description: 'Modern JS expertise' },
+      'html': { proficiency: 'Expert', projects: ['Portfolio'], description: 'Structured web content' },
+      'css': { proficiency: 'Expert', projects: ['Portfolio'], description: 'Styled retro designs' },
+      'python': { proficiency: 'Advanced', projects: ['Millennial Pod', 'African Impact'], description: 'Backend and automation' },
+      'flask': { proficiency: 'Intermediate', projects: ['African Impact'], description: 'API development' },
+      'nodejs': { proficiency: 'Intermediate', projects: [], description: 'Server-side JS' },
+      'express': { proficiency: 'Intermediate', projects: [], description: 'RESTful APIs' },
+      'knime': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Workflow automation' },
+      'powerautomate': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'RPA workflows' },
+      'vba': { proficiency: 'Intermediate', projects: ['Canadian Tire'], description: 'Excel automation' },
+      'powershell': { proficiency: 'Intermediate', projects: [], description: 'Scripting tasks' },
+      'sql': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Database management' },
+      'powerbi': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Interactive reports' },
+      'adf': { proficiency: 'Intermediate', projects: ['Canadian Tire'], description: 'Data pipelines' },
+      'powerapps': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'App development' },
+      'powerplatform': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Integrated solutions' }
+    };
+
+    function downloadResume() {
+      // ASCII art header
+      const asciiArt = `
+  ==============================
+  |       HRITIK GANDHI       |
+  ==============================
+  |  Power Platform Wizard    |
+  |  Full Stack Developer     |
+  ==============================
+  `;
+
+      // Resume content based on your portfolio
+      const resumeContent = `
+${asciiArt}
+Contact:
+  Email: [Redacted - I don't need more spam]
+  GitHub: https://github.com/hritikgandhi
+  LinkedIn: https://linkedin.com/in/hritikgandhi
+  X: https://x.com/hritikkgandhi
+
+Skills:
+  - Front-end: React.js, JavaScript, HTML, CSS
+  - Back-end: Python, Flask, Node.js, Express
+  - Automation: Knime, PowerAutomate, VBA, PowerShell
+  - Data: SQL, PowerBI, Azure Data Factory
+  - Low-code: PowerApps, Power Platform
+
+Experience:
+  Process Automation Specialist | Canadian Tire Corporation | Jan 2022 - Present
+    - Implemented 50+ Knime workflows for automation
+    - Built PowerApps CRM and task management solutions
+    - Created PowerBI reports with row-level security
+
+  Full Stack Web Developer | Millennial Pod | Jan 2022 - Present
+    - Designed RESTful APIs with Python
+    - Developed React.js front-end solutions
+    - Managed Linux VPS deployments
+
+  API Scrum Developer | African Impact Challenge | Jan 2021 - Dec 2021
+    - Built backend with Python Flask
+    - Implemented Neo4j graph database
+    - Worked in Agile environment
+
+Education:
+  Does it really matter?
+
+© 2025 Hritik Gandhi
+  `;
+
+      // Create and download the file
+      const blob = new Blob([resumeContent], { type: 'text/plain' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'Hritik_Gandhi_Resume.txt';
+      document.body.appendChild(link); // Required for Firefox
+      link.click();
+      document.body.removeChild(link);
+
+      // Optional: Trigger a tooltip for feedback
+      showPixelTooltip("Resume Downloaded!");
+
+      // Optional: Add a wobble animation like the Bitcoin button
+      const btn = document.querySelector('.retro-resume-btn');
+      btn.style.animation = 'wobble 0.5s ease';
+      setTimeout(() => btn.style.animation = '', 500);
+    }
+
+    function initializeSkillArcade() {
+      document.querySelectorAll('.arcade-button').forEach(button => {
+        button.addEventListener('click', () => {
+          const id = button.id;
+          const details = skillDetails[id] || { proficiency: 'N/A', projects: ['None listed'], description: 'Details coming soon!' };
+          const modal = document.getElementById('skill-modal');
+          const overlay = document.getElementById('modal-overlay');
+          modal.innerHTML = `
               <h3>${id}</h3>
               <p>Proficiency: ${details.proficiency}</p>
               <p>Projects: ${details.projects.join(', ')}</p>
               <p>${details.description}</p>
               <button class="retro-close-btn" onclick="closeModal()">Close</button>
             `;
-            overlay.style.display = 'block';
-            modal.classList.add('show');
-          });
+          overlay.style.display = 'block';
+          modal.classList.add('show');
         });
+      });
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('skill-modal');
+      const overlay = document.getElementById('modal-overlay');
+      modal.classList.remove('show');
+      overlay.style.display = 'none';
+    }
+
+    function handleContactFormSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const name = form.querySelector('input[name="name"]').value.trim();
+      const email = form.querySelector('input[name="email"]').value.trim();
+      const message = form.querySelector('textarea[name="message"]').value.trim();
+
+      // Basic validation
+      if (!name || !email || !message) {
+        showPixelTooltip("All fields required!");
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showPixelTooltip("Invalid email format!");
+        return;
       }
 
-      function closeModal() {
-        const modal = document.getElementById('skill-modal');
-        const overlay = document.getElementById('modal-overlay');
-        modal.classList.remove('show');
-        overlay.style.display = 'none';
-      }
+      // Prepare form data
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('message', message);
 
-      function handleContactFormSubmit(event) {
-        event.preventDefault();
-        const form = event.target;
-        const name = form.querySelector('input[name="name"]').value.trim();
-        const email = form.querySelector('input[name="email"]').value.trim();
-        const message = form.querySelector('textarea[name="message"]').value.trim();
-        
-        // Basic validation
-        if (!name || !email || !message) {
-          showPixelTooltip("All fields required!");
-          return;
+      // Trigger transmission animation
+      const animation = document.getElementById('transmission-animation');
+      const text = document.getElementById('transmission-text');
+      animation.classList.add('active');
+      text.classList.add('active');
+
+      // Submit form via AJAX
+      fetch('https://formspree.io/f/mkgodnlj', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
         }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          showPixelTooltip("Invalid email format!");
-          return;
-        }
-
-        // Prepare form data
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('email', email);
-        formData.append('message', message);
-
-        // Trigger transmission animation
-        const animation = document.getElementById('transmission-animation');
-        const text = document.getElementById('transmission-text');
-        animation.classList.add('active');
-        text.classList.add('active');
-
-        // Submit form via AJAX
-        fetch('https://formspree.io/f/mkgodnlj', {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        })
+      })
         .then(response => {
           if (response.ok) {
             setTimeout(() => {
@@ -1250,124 +1548,125 @@
             showPixelTooltip("Failed to send message!");
           }, 2000);
         });
-      }
+    }
 
-      window.addEventListener("load", () => {
-        const cloudsContainer = document.querySelector(".clouds");
-        const cloudGenerator = new CloudGenerator(cloudsContainer);
-        cloudGenerator.init();
+    window.addEventListener("load", () => {
+      const cloudsContainer = document.querySelector(".clouds");
+      const cloudGenerator = new CloudGenerator(cloudsContainer);
+      cloudGenerator.init();
 
-        const dialogElement = document.querySelector(".dialog-text");
-        const dialogAnimation = new DialogTextAnimation(
-          dialogElement,
-          ["Power Platform Wizard", "Web Development Mage", "Efficiency Enthusiast", "Automation Expert", "Full Stack Developer"],
-          { typeSpeed: 80, deleteSpeed: 40, pauseTime: 2000 }
-        );
-        dialogAnimation.type();
+      const dialogElement = document.querySelector(".dialog-text");
+      const dialogAnimation = new DialogTextAnimation(
+        dialogElement,
+        ["Power Platform Wizard", "Web Development Mage", "Efficiency Enthusiast", "Automation Expert", "Full Stack Developer"],
+        { typeSpeed: 80, deleteSpeed: 40, pauseTime: 2000 }
+      );
+      dialogAnimation.type();
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) entry.target.classList.add("visible");
-          });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll(".game-stage").forEach((item) => observer.observe(item));
-
-        const timelinePath = document.querySelector('.game-path');
-        const stages = document.querySelectorAll('.game-stage');
-        stages.forEach((stage) => {
-          const marker = document.createElement('div');
-          marker.className = 'game-path-marker';
-          const stageRect = stage.getBoundingClientRect();
-          const pathRect = timelinePath.getBoundingClientRect();
-          const relativeTop = (stageRect.top - pathRect.top) + 20;
-          marker.style.top = `${relativeTop}px`;
-          timelinePath.appendChild(marker);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
         });
+      }, { threshold: 0.1 });
 
-        document.querySelectorAll('.game-btn').forEach(btn => {
-          btn.addEventListener('mouseover', function() {
-            this.style.animation = 'none';
-            void this.offsetWidth;
-            this.style.animation = 'btnJump 0.5s ease';
-          });
-        });
+      document.querySelectorAll(".game-stage").forEach((item) => observer.observe(item));
 
-        const btcAddress = document.querySelector('.btc-address-container');
-        btcAddress.addEventListener('click', function() {
-          this.style.animation = 'wobble 0.5s ease';
-          setTimeout(() => this.style.animation = '', 500);
-        });
-
-        initializeSkillArcade();
-
-        // Initialize contact form
-        const contactForm = document.getElementById('contact-form');
-        contactForm.addEventListener('submit', handleContactFormSubmit);
+      const timelinePath = document.querySelector('.game-path');
+      const stages = document.querySelectorAll('.game-stage');
+      stages.forEach((stage) => {
+        const marker = document.createElement('div');
+        marker.className = 'game-path-marker';
+        const stageRect = stage.getBoundingClientRect();
+        const pathRect = timelinePath.getBoundingClientRect();
+        const relativeTop = (stageRect.top - pathRect.top) + 20;
+        marker.style.top = `${relativeTop}px`;
+        timelinePath.appendChild(marker);
       });
 
-      function copyBitcoinAddress() {
-        const bitcoinAddress = "bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz";
-        const btn = document.querySelector('.copy-coin-btn');
-        const btnRect = btn.getBoundingClientRect();
-        
-        for (let i = 0; i < 5; i++) {
-          setTimeout(() => {
-            const coinX = btnRect.left + btnRect.width / 2;
-            const coinY = btnRect.top + btnRect.height / 2;
-            createCoinAnimation(coinX, coinY);
-          }, i * 100);
-        }
-        
-        navigator.clipboard.writeText(bitcoinAddress)
-          .then(() => showPixelTooltip("Address copied!"))
-          .catch(() => showPixelTooltip("Failed to copy!"));
-        
-        btn.style.animation = 'wobble 0.5s ease';
-        setTimeout(() => btn.style.animation = '', 500);
+      document.querySelectorAll('.game-btn').forEach(btn => {
+        btn.addEventListener('mouseover', function () {
+          this.style.animation = 'none';
+          void this.offsetWidth;
+          this.style.animation = 'btnJump 0.5s ease';
+        });
+      });
+
+      const btcAddress = document.querySelector('.btc-address-container');
+      btcAddress.addEventListener('click', function () {
+        this.style.animation = 'wobble 0.5s ease';
+        setTimeout(() => this.style.animation = '', 500);
+      });
+
+      initializeSkillArcade();
+
+      // Initialize contact form
+      const contactForm = document.getElementById('contact-form');
+      contactForm.addEventListener('submit', handleContactFormSubmit);
+    });
+
+    function copyBitcoinAddress() {
+      const bitcoinAddress = "bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz";
+      const btn = document.querySelector('.copy-coin-btn');
+      const btnRect = btn.getBoundingClientRect();
+
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          const coinX = btnRect.left + btnRect.width / 2;
+          const coinY = btnRect.top + btnRect.height / 2;
+          createCoinAnimation(coinX, coinY);
+        }, i * 100);
       }
 
-      let pixelTooltipTimeout;
-      let pixelTooltipElement;
+      navigator.clipboard.writeText(bitcoinAddress)
+        .then(() => showPixelTooltip("Address copied!"))
+        .catch(() => showPixelTooltip("Failed to copy!"));
 
-      function showPixelTooltip(message) {
-        if (pixelTooltipElement) pixelTooltipElement.remove();
-        if (pixelTooltipTimeout) clearTimeout(pixelTooltipTimeout);
+      btn.style.animation = 'wobble 0.5s ease';
+      setTimeout(() => btn.style.animation = '', 500);
+    }
 
-        pixelTooltipElement = document.createElement("div");
-        pixelTooltipElement.className = "pixel-tooltip";
-        pixelTooltipElement.textContent = message;
-        document.body.appendChild(pixelTooltipElement);
+    let pixelTooltipTimeout;
+    let pixelTooltipElement;
 
-        document.addEventListener("mousemove", positionPixelTooltip);
+    function showPixelTooltip(message) {
+      if (pixelTooltipElement) pixelTooltipElement.remove();
+      if (pixelTooltipTimeout) clearTimeout(pixelTooltipTimeout);
 
-        requestAnimationFrame(() => pixelTooltipElement.classList.add("show"));
+      pixelTooltipElement = document.createElement("div");
+      pixelTooltipElement.className = "pixel-tooltip";
+      pixelTooltipElement.textContent = message;
+      document.body.appendChild(pixelTooltipElement);
 
-        pixelTooltipTimeout = setTimeout(() => {
-          pixelTooltipElement.classList.remove("show");
-          setTimeout(() => {
-            document.removeEventListener("mousemove", positionPixelTooltip);
-            pixelTooltipElement.remove();
-            pixelTooltipElement = null;
-          }, 300);
-        }, 2000);
-      }
+      document.addEventListener("mousemove", positionPixelTooltip);
 
-      function positionPixelTooltip(e) {
-        if (!pixelTooltipElement) return;
-        const x = e.clientX;
-        const y = e.clientY;
-        const tooltipWidth = pixelTooltipElement.offsetWidth;
-        const tooltipHeight = pixelTooltipElement.offsetHeight;
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        let left = x + 15;
-        let top = y + 15;
-        if (left + tooltipWidth > viewportWidth) left = x - tooltipWidth - 15;
-        if (top + tooltipHeight > viewportHeight) top = y - tooltipHeight - 15;
-        pixelTooltipElement.style.left = left + "px";
-        pixelTooltipElement.style.top = top + "px";
-      }
-    </script>
-  </body>
+      requestAnimationFrame(() => pixelTooltipElement.classList.add("show"));
+
+      pixelTooltipTimeout = setTimeout(() => {
+        pixelTooltipElement.classList.remove("show");
+        setTimeout(() => {
+          document.removeEventListener("mousemove", positionPixelTooltip);
+          pixelTooltipElement.remove();
+          pixelTooltipElement = null;
+        }, 300);
+      }, 2000);
+    }
+
+    function positionPixelTooltip(e) {
+      if (!pixelTooltipElement) return;
+      const x = e.clientX;
+      const y = e.clientY;
+      const tooltipWidth = pixelTooltipElement.offsetWidth;
+      const tooltipHeight = pixelTooltipElement.offsetHeight;
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+      let left = x + 15;
+      let top = y + 15;
+      if (left + tooltipWidth > viewportWidth) left = x - tooltipWidth - 15;
+      if (top + tooltipHeight > viewportHeight) top = y - tooltipHeight - 15;
+      pixelTooltipElement.style.left = left + "px";
+      pixelTooltipElement.style.top = top + "px";
+    }
+  </script>
+</body>
+
 </html>
