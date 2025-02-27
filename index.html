@@ -26,451 +26,766 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <style>
+      /* 8-bit Retro Game Theme Variables */
       :root {
-        --gh-dark: #0d1117;
-        --gh-darker: #010409;
-        --gh-light: #c9d1d9;
-        --gh-accent: #86232d;
-        --gh-accent-hover: #a02e2e;
-        --gh-accent-hover-transp: #a02e2e3d;
-        --gh-secondary: #30363d;
-        --gh-border: #30363d;
-        --gh-link: #58a6ff;
-        --gh-header: #161b22;
-        --x-blue: #1da1f2;
+        --retro-black: #111122;
+        --retro-darkblue: #0f2550;
+        --retro-blue: #0066FF;
+        --retro-lightblue: #73bed3;
+        --retro-purple: #8d2ab5;
+        --retro-darkpurple: #44018c;
+        --retro-pink: #ec1f64;
+        --retro-red: #ff0000;
+        --retro-orange: #ff7700;
+        --retro-yellow: #ffdd00;
+        --retro-green: #00aa00;
+        --retro-darkgreen: #005500;
+        --retro-white: #ffffff;
+        --retro-gray: #999999;
+        --retro-darkgray: #333344;
+        --pixel-size: 2px;
+        --primary-bg: var(--retro-black);
+        --primary-text: var(--retro-white);
+        --primary-accent: var(--retro-pink);
+        --secondary-accent: var(--retro-blue);
+      }
+
+      @font-face {
+        font-family: 'RetroPixel';
+        src: local('Courier New');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Pixelated Text Styling */
+      .pixel-text {
+        font-family: 'RetroPixel', monospace;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        text-shadow: 
+          var(--pixel-size) var(--pixel-size) 0 var(--retro-darkpurple),
+          calc(var(--pixel-size) * -1) calc(var(--pixel-size) * -1) 0 var(--retro-black);
       }
 
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        image-rendering: pixelated;
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
-          Helvetica, Arial, sans-serif;
+        font-family: 'RetroPixel', monospace;
         line-height: 1.6;
-        color: var(--gh-light);
-        background-color: var(--gh-dark);
+        color: var(--primary-text);
+        background-color: var(--primary-bg);
         overflow-x: hidden;
+        background-image: 
+          linear-gradient(0deg, 
+            var(--retro-darkblue) 0%, 
+            var(--retro-black) 80%),
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 20px,
+            rgba(255, 255, 255, 0.03) 20px,
+            rgba(255, 255, 255, 0.03) 22px
+          );
+        background-attachment: fixed;
       }
 
+      /* Pixelated Scrollbar */
       ::-webkit-scrollbar {
-        width: 10px;
+        width: calc(var(--pixel-size) * 5);
+        height: calc(var(--pixel-size) * 5);
       }
 
       ::-webkit-scrollbar-track {
-        background: var(--gh-darker);
+        background: var(--retro-darkgray);
+        border: var(--pixel-size) solid var(--retro-gray);
       }
 
       ::-webkit-scrollbar-thumb {
-        background: var(--gh-secondary);
-        border-radius: 5px;
+        background: var(--retro-purple);
+        border: var(--pixel-size) solid var(--retro-pink);
       }
 
-      .typing-text {
+      /* Dialog Box Text Styling */
+      .dialog-text {
         display: inline-block;
         position: relative;
         min-height: 1.6em;
-        color: var(--gh-link);
+        color: var(--retro-white);
+        text-shadow: 2px 2px 0 var(--retro-black);
+        overflow: hidden;
+        white-space: nowrap;
+        border: 0;
+        margin: 0;
+        padding: 0;
       }
 
-      .typing-text::after {
-        content: "|";
+      .dialog-text::after {
+        content: "▋";
         position: absolute;
-        right: -8px;
+        right: 0;
+        bottom: 0;
         animation: blink 0.75s step-end infinite;
       }
 
       @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0;
-        }
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
       }
 
-      .header {
-        min-height: 30vh;
+      /* Pixelated borders and elements */
+      .pixel-border {
+        position: relative;
+        border: calc(var(--pixel-size) * 2) solid var(--retro-white);
+        box-shadow: 
+          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray),
+          inset calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .pixel-border::before {
+        content: '';
+        position: absolute;
+        top: calc(var(--pixel-size) * -2);
+        left: calc(var(--pixel-size) * -2);
+        right: calc(var(--pixel-size) * -2);
+        bottom: calc(var(--pixel-size) * -2);
+        border: calc(var(--pixel-size) * 2) solid var(--retro-darkgray);
+        z-index: -1;
+      }
+
+      /* Header Game Style */
+      .game-header {
+        min-height: 40vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
         padding: 2rem;
-        border-bottom: 1px solid var(--gh-border);
         position: relative;
         overflow: hidden;
-        background: linear-gradient(45deg, var(--gh-header), var(--gh-darker));
-        transition: background 0.3s ease;
+        background: var(--retro-darkblue);
+        border-bottom: calc(var(--pixel-size) * 3) solid var(--retro-blue);
       }
 
-      .header::before {
+      .game-header::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: radial-gradient(
-          circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-          var(--gh-accent-hover-transp),
-          transparent 50%
-        );
-        opacity: 0;
-        transition: opacity 0.3s ease;
+        background-image: 
+          linear-gradient(
+            to right,
+            transparent 0%, 
+            rgba(0, 0, 0, 0.2) 40%,
+            rgba(0, 0, 0, 0.2) 60%,
+            transparent 100%
+          ),
+          linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.1) 20%,
+            rgba(0, 0, 0, 0.2) 40%,
+            rgba(0, 0, 0, 0.5) 100%
+          ),
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.05) 10px,
+            rgba(255, 255, 255, 0.05) 12px
+          );
       }
 
-      .header:hover::before {
-        opacity: 1;
+      .clouds {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .cloud {
+        position: absolute;
+        width: 60px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+        animation: cloudFloat linear infinite;
+      }
+
+      @keyframes cloudFloat {
+        from { transform: translateX(-100px); }
+        to { transform: translateX(calc(100vw + 100px)); }
+      }
+
+      .cloud::before, .cloud::after {
+        content: '';
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+      }
+
+      .cloud::before {
+        width: 25px;
+        height: 25px;
+        top: -10px;
+        left: 10px;
+      }
+
+      .cloud::after {
+        width: 30px;
+        height: 30px;
+        top: -15px;
+        left: 30px;
       }
 
       .header-content {
         max-width: 800px;
-        z-index: 2;
+        z-index: 3;
         position: relative;
       }
 
-      .header h1 {
+      .game-title {
         font-size: 3.5rem;
         margin-bottom: 1rem;
-        animation: fadeInDown 1s ease;
-        color: var(--gh-light);
+        color: var(--retro-yellow);
+        text-transform: uppercase;
+        text-shadow: 
+          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-red),
+          calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkpurple);
+        transform-origin: center bottom;
+        animation: bounceInGame 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) forwards;
       }
 
-      .header h2 {
+      @keyframes bounceInGame {
+        0% { 
+          transform: scale(0.1) translateY(-500px);
+          opacity: 0;
+        }
+        50% { 
+          transform: scale(1.1) translateY(10px);
+          opacity: 1;
+        }
+        70% { transform: scale(0.9) translateY(-10px); }
+        85% { transform: scale(1.05) translateY(5px); }
+        100% { transform: scale(1) translateY(0); }
+      }
+
+      .game-subtitle {
         font-size: 1.5rem;
-        opacity: 0.8;
         margin-bottom: 2rem;
+        color: var(--retro-lightblue);
+        text-shadow: 2px 2px 0 var(--retro-darkblue);
+        animation: fadeIn 1s ease 1s forwards;
+        opacity: 0;
       }
 
-      .social-links {
+      .game-social-links {
         display: flex;
         gap: 1rem;
         justify-content: center;
         margin-top: 2rem;
-        animation: fadeIn 1s ease 0.5s forwards;
-        opacity: 0;
         flex-wrap: wrap;
+        z-index: 5;
       }
 
-      .btn {
+      .game-btn {
         display: inline-flex;
         align-items: center;
-        padding: 0.75rem 1.5rem;
-        border-radius: 6px;
-        border: 1px solid var(--gh-border);
-        background: var(--gh-secondary);
-        color: var(--gh-light);
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 0;
+        background-color: var(--retro-darkgray);
+        color: var(--retro-white);
         text-decoration: none;
-        font-size: 0.9rem;
+        font-size: 1.2rem;
         transition: all 0.2s ease;
-        gap: 0.5rem;
+        position: relative;
+        overflow: hidden;
+        border: calc(var(--pixel-size) * 2) solid var(--retro-white);
+        box-shadow: 
+          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray),
+          inset calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 rgba(0, 0, 0, 0.2);
+        opacity: 1; /* Changed from opacity: 0 */
+      }
+
+      @keyframes socialBtnIn {
+        0% { 
+          opacity: 0;
+          transform: scale(0);
+        }
+        100% { 
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Animation delays removed */
+
+      .game-btn:hover {
+        background-color: var(--retro-pink);
+        transform: translateY(-5px);
+        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="fill:none;stroke:white;stroke-width:2"><rect width="8" height="8"/></svg>') 8 8, auto;
+      }
+
+      .game-btn:active {
+        transform: translateY(0);
+      }
+
+      /* Physics-based animations for jump effect */
+      .game-btn:hover {
+        animation: btnJump 0.5s ease;
+      }
+
+      @keyframes btnJump {
+        0% { transform: translateY(0); }
+        40% { transform: translateY(-20px); }
+        60% { transform: translateY(-22px); }
+        80% { transform: translateY(-10px); }
+        90% { transform: translateY(-5px); }
+        100% { transform: translateY(0); }
+      }
+
+      /* Game Section Styling */
+      .game-section {
+        padding: 5rem 2rem;
+        border-bottom: calc(var(--pixel-size) * 4) solid var(--retro-darkgray);
         position: relative;
         overflow: hidden;
       }
 
-      .btn::after {
+      .game-section::before {
         content: "";
         position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 200%;
-        height: 200%;
-        background: rgba(255, 255, 255, 0.1);
-        transform: translate(-50%, -50%) scale(0);
-        border-radius: 50%;
-        transition: transform 0.5s;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 20px,
+            rgba(255, 255, 255, 0.02) 20px,
+            rgba(255, 255, 255, 0.02) 40px
+          ),
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 20px,
+            rgba(255, 255, 255, 0.01) 20px,
+            rgba(255, 255, 255, 0.01) 40px
+          );
+        z-index: -1;
       }
 
-      .btn:hover::after {
-        transform: translate(-50%, -50%) scale(1);
-      }
-
-      .btn:hover {
-        background: var(--gh-accent);
-        border-color: var(--gh-accent-hover);
-        transform: translateY(-2px);
-      }
-
-      .btn-x:hover {
-        background: var(--x-blue);
-        border-color: var(--x-blue);
-      }
-
-      .section {
-        padding: 5rem 2rem;
-        border-bottom: 1px solid var(--gh-border);
-        position: relative;
-      }
-
-      .section-title {
+      .game-section-title {
         text-align: center;
         margin-bottom: 3rem;
-        color: var(--gh-light);
+        color: var(--retro-yellow);
         font-size: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 
+          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkpurple);
       }
 
-      .container {
+      .game-container {
         max-width: 1200px;
         margin: 0 auto;
       }
 
-      .repo-grid {
+      /* Projects as Game Levels */
+      .level-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
+        gap: 2rem;
         margin-top: 2rem;
       }
 
-      .repo-card {
-        background: var(--gh-header);
-        border: 1px solid var(--gh-border);
-        border-radius: 6px;
+      .level-card {
+        background: var(--retro-darkblue);
+        border: calc(var(--pixel-size) * 3) solid var(--retro-blue);
         padding: 1.5rem;
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
+        transform: translateX(-1000px);
+        opacity: 0;
+        box-shadow: 
+          calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkgray);
       }
 
-      .repo-card::before {
+      .level-card.visible {
+        animation: slideInWithPhysics 1s forwards;
+      }
+
+      @keyframes slideInWithPhysics {
+        0% { 
+          transform: translateX(-1000px);
+          opacity: 0;
+        }
+        60% { 
+          transform: translateX(30px);
+          opacity: 1;
+        }
+        75% { transform: translateX(-20px); }
+        90% { transform: translateX(10px); }
+        100% { 
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .level-card:nth-child(1).visible { animation-delay: 0.1s; }
+      .level-card:nth-child(2).visible { animation-delay: 0.3s; }
+      .level-card:nth-child(3).visible { animation-delay: 0.5s; }
+
+      .level-card:hover {
+        transform: scale(1.05);
+        z-index: 2;
+        border-color: var(--retro-yellow);
+      }
+
+      .level-card::before {
         content: "";
         position: absolute;
-        top: 0;
+        top: -100%;
         left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.05),
-          transparent
-        );
-        transition: 0.5s;
+        width: 300%;
+        height: 300%;
+        background: 
+          radial-gradient(
+            circle, 
+            rgba(255, 255, 255, 0.2) 0%, 
+            transparent 70%
+          );
+        transform: rotate(0deg);
+        transition: all 0.5s ease;
+        opacity: 0;
       }
 
-      .repo-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--gh-accent);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      .level-card:hover::before {
+        opacity: 1;
+        animation: pulsateLight 2s infinite linear;
       }
 
-      .repo-card:hover::before {
-        left: 100%;
+      @keyframes pulsateLight {
+        0% { transform: scale(0.8); opacity: 0.2; }
+        50% { transform: scale(1); opacity: 0.5; }
+        100% { transform: scale(0.8); opacity: 0.2; }
       }
 
-      .repo-title {
-        color: var(--gh-link);
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
+      .level-title {
+        color: var(--retro-yellow);
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 0 var(--retro-darkpurple);
       }
 
-      .repo-stats {
+      .level-description {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+        color: var(--retro-white);
+      }
+
+      .level-stats {
         display: flex;
         gap: 1rem;
         margin-top: 1rem;
-        color: var(--gh-light);
-        opacity: 0.8;
+        color: var(--retro-lightblue);
+        flex-wrap: wrap;
         font-size: 0.9rem;
       }
 
-      .timeline {
-        max-width: 800px;
+      .pixelated-dot {
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        margin-right: 5px;
+        box-shadow: 0 0 0 2px var(--retro-darkgray);
+      }
+
+      .language-JavaScript { background-color: var(--retro-yellow); }
+      .language-Python { background-color: var(--retro-blue); }
+      .language-TypeScript { background-color: var(--retro-purple); }
+      .language-PowerShell { background-color: var(--retro-green); }
+      .language-SQL { background-color: var(--retro-orange); }
+
+      /* Game Path Timeline */
+      .game-path {
+        max-width: 1000px;
         margin: 0 auto;
         position: relative;
       }
 
-      .timeline::before {
+      .game-path::before {
         content: "";
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        width: 2px;
+        width: calc(var(--pixel-size) * 4);
         height: 100%;
-        background: var(--gh-border);
+        background: var(--retro-purple);
+        z-index: 0;
       }
 
-      .timeline-item {
-        margin-bottom: 3rem;
+      .game-path-marker {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(var(--pixel-size) * 10);
+        height: calc(var(--pixel-size) * 10);
+        background-color: var(--retro-yellow);
+        border: calc(var(--pixel-size) * 2) solid var(--retro-white);
+        box-shadow: 0 0 0 calc(var(--pixel-size) * 2) var(--retro-darkgray);
+        z-index: 2;
+      }
+
+      .game-stage {
+        margin-bottom: 5rem;
         position: relative;
-        width: calc(50% - 30px);
-        animation: fadeIn 1s ease;
+        width: calc(50% - 40px);
         opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.5s ease;
+        transform: translateY(100px);
       }
 
-      .timeline-item.visible {
-        opacity: 1;
-        transform: translateY(0);
+      .game-stage.visible {
+        animation: dropInWithBounce 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) forwards;
       }
 
-      .timeline-item:nth-child(odd) {
+      @keyframes dropInWithBounce {
+        0% { 
+          transform: translateY(-300px);
+          opacity: 0;
+        }
+        60% { 
+          transform: translateY(20px);
+          opacity: 1;
+        }
+        75% { transform: translateY(-10px); }
+        90% { transform: translateY(5px); }
+        100% { 
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .game-stage:nth-child(odd) {
         left: 0;
       }
 
-      .timeline-item:nth-child(even) {
-        left: calc(50% + 30px);
+      .game-stage:nth-child(even) {
+        left: calc(50% + 40px);
       }
 
-      .timeline-content {
-        background: var(--gh-header);
+      .game-stage::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        width: 40px;
+        height: calc(var(--pixel-size) * 4);
+        background-color: var(--retro-pink);
+        z-index: 1;
+      }
+
+      .game-stage:nth-child(odd)::after {
+        right: -40px;
+      }
+
+      .game-stage:nth-child(even)::after {
+        left: -40px;
+      }
+
+      .game-stage-content {
+        background: var(--retro-darkblue);
         padding: 1.5rem;
-        border-radius: 6px;
-        border: 1px solid var(--gh-border);
+        border: calc(var(--pixel-size) * 3) solid var(--retro-blue);
         transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+        box-shadow: 
+          calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkgray);
       }
 
-      .timeline-content:hover {
+      .game-stage-content:hover {
         transform: scale(1.03);
-        border-color: var(--gh-accent);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        border-color: var(--retro-yellow);
       }
 
-      .timeline-date {
-        color: var(--gh-accent);
+      .game-stage-date {
+        color: var(--retro-pink);
         font-size: 0.9rem;
         margin-bottom: 0.5rem;
+        font-weight: bold;
       }
 
-      .timeline-details {
+      .game-stage-title {
+        color: var(--retro-yellow);
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 0 var(--retro-darkpurple);
+      }
+
+      .game-stage-subtitle {
+        color: var(--retro-lightblue);
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .game-stage-details {
         list-style: none;
         padding: 0;
         margin: 1rem 0 0;
       }
 
-      .timeline-details li {
+      .game-stage-details li {
         position: relative;
         padding-left: 1.5rem;
         margin-bottom: 0.5rem;
         font-size: 0.9rem;
-        color: var(--gh-light);
-        opacity: 0.9;
+        color: var(--retro-white);
       }
 
-      .timeline-details li::before {
-        content: "•";
+      .game-stage-details li::before {
+        content: "►";
         position: absolute;
         left: 0;
-        color: var(--gh-accent);
+        color: var(--retro-pink);
       }
 
-      .language-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        display: inline-block;
-        margin-right: 5px;
-      }
-
-      .language-JavaScript {
-        background-color: #f1e05a;
-      }
-      .language-Python {
-        background-color: #3572a5;
-      }
-      .language-TypeScript {
-        background-color: #2b7489;
-      }
-      .language-PowerShell {
-        background-color: #012456;
-      }
-
-      .footer {
-        background: var(--gh-header);
-        border-top: 1px solid var(--gh-border);
+      /* Game Status Bar Footer */
+      .status-bar {
+        background: var(--retro-darkgray);
+        border-top: calc(var(--pixel-size) * 4) solid var(--retro-gray);
         padding: 2rem;
         text-align: center;
       }
 
-      .footer-content {
+      .status-bar-content {
         max-width: 1200px;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
-      .footer-text {
-        color: var(--gh-light);
-        opacity: 0.8;
+      .status-text {
+        color: var(--retro-white);
         font-size: 0.9rem;
         margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
 
-      .footer-btc {
+      .bitcoin-box {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 1rem;
         margin: 1rem 0;
+        flex-wrap: wrap;
       }
 
-      .btc-address {
-        background: var(--gh-darker);
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        border: 1px solid var(--gh-border);
-        color: var(--gh-light);
+      .btc-address-container {
+        position: relative;
+        background: var(--retro-black);
+        padding: 0.75rem 1rem;
+        border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
+        color: var(--retro-yellow);
         font-family: monospace;
         font-size: 0.9rem;
         max-width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
+        box-shadow: 
+          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
       }
 
-      .copy-btn {
-        background: var(--gh-secondary);
-        border: 1px solid var(--gh-border);
-        color: var(--gh-light);
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
+      .copy-coin-btn {
+        background: var(--retro-darkgray);
+        border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
+        color: var(--retro-white);
+        padding: 0.75rem 1.5rem;
         cursor: pointer;
-        transition: all 0.2s ease;
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        box-shadow: 
+          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-black);
+        position: relative;
+        overflow: hidden;
       }
 
-      .copy-btn:hover {
-        background: var(--gh-accent);
-        border-color: var(--gh-accent-hover);
+      .copy-coin-btn:hover {
+        background-color: var(--retro-pink);
       }
 
-      .copy-btn i {
-        color: #f7931a;
+      .copy-coin-btn:active {
+        transform: translate(calc(var(--pixel-size) * 2), calc(var(--pixel-size) * 2));
+        box-shadow: 0 0 0 var(--retro-black);
       }
 
-      .tooltip {
+      .copy-coin-btn i {
+        color: var(--retro-yellow);
+        font-size: 1.2rem;
+      }
+
+      /* Coin animation sprite */
+      .coin-sprite {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: var(--retro-yellow);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 1000;
+        opacity: 0;
+        box-shadow: 0 0 10px var(--retro-yellow);
+      }
+
+      .pixel-tooltip {
         position: fixed;
         padding: 8px 12px;
-        background: var(--gh-darker);
-        color: var(--gh-light);
-        border: 1px solid var(--gh-border);
-        border-radius: 4px;
+        background: var(--retro-black);
+        color: var(--retro-white);
+        border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
         font-size: 0.9rem;
         pointer-events: none;
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: 1000;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 
+          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
       }
 
-      .tooltip.show {
+      .pixel-tooltip.show {
         opacity: 1;
       }
 
-      @keyframes fadeInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      /* Animations */
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
 
       @keyframes fadeInUp {
@@ -484,81 +799,107 @@
         }
       }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+      /* Physics animation for wobble effect */
+      @keyframes wobble {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(-5deg); }
+        50% { transform: rotate(3deg); }
+        75% { transform: rotate(-2deg); }
+        100% { transform: rotate(0deg); }
       }
 
+      /* Responsive styles */
       @media (max-width: 768px) {
-        .header h1 {
+        .game-title {
           font-size: 2.5rem;
         }
 
-        .timeline::before {
-          left: 0;
+        .game-path::before {
+          left: 30px;
+          transform: none;
         }
 
-        .timeline-item {
-          width: calc(100% - 30px);
-          left: 30px !important;
+        .game-stage {
+          width: calc(100% - 60px);
+          left: 60px !important;
         }
 
-        .social-links {
+        .game-stage::after {
+          left: -30px !important;
+          width: 30px;
+        }
+
+        .game-path-marker {
+          left: 30px;
+          transform: none;
+        }
+
+        .game-social-links {
           gap: 0.5rem;
         }
 
-        .btn {
-          padding: 0.5rem 1rem;
-          font-size: 0.8rem;
+        .game-btn {
+          width: 40px;
+          height: 40px;
+          font-size: 1rem;
         }
 
-        .footer-btc {
+        .bitcoin-box {
           flex-direction: column;
         }
 
-        .btc-address {
+        .btc-address-container {
           font-size: 0.8rem;
           padding: 0.5rem;
+          width: 100%;
         }
       }
     </style>
   </head>
   <body>
-    <header class="header">
+    <!-- Game-style header with falling title and physics -->
+    <header class="game-header">
+      <div class="clouds">
+        <!-- Cloud elements will be created by JavaScript -->
+      </div>
       <div class="header-content">
-        <h1>Hritik Gandhi</h1>
-        <h2>
-          <span class="typing-text"></span>
+        <h1 class="game-title pixel-text">Hritik Gandhi</h1>
+        <h2 class="game-subtitle">
+          <span class="dialog-text"></span>
         </h2>
-        <div class="social-links">
+        <div class="game-social-links">
           <a
             href="https://github.com/hritikgandhi"
-            class="btn"
+            class="game-btn"
             target="_blank"
+            aria-label="GitHub Profile"
+            style="animation: none; display: inline-flex !important;"
           >
             <i class="fab fa-github"></i>
           </a>
           <a
             href="https://linkedin.com/in/hritikgandhi"
-            class="btn"
+            class="game-btn"
             target="_blank"
+            aria-label="LinkedIn Profile"
+            style="animation: none; display: inline-flex !important;"
           >
             <i class="fab fa-linkedin"></i>
           </a>
           <a
             href="https://x.com/hritikkgandhi"
-            class="btn"
+            class="game-btn"
             target="_blank"
+            aria-label="X Profile"
+            style="animation: none; display: inline-flex !important;"
           >
             <span style="font-weight: bold; font-size: 1.1em">𝕏</span>
           </a>
           <a
             href="mailto:hg@hritikgandhi.com"
-            class="btn"
+            class="game-btn"
+            aria-label="Email Contact"
+            style="animation: none; display: inline-flex !important;"
           >
             <i class="fas fa-envelope"></i>
           </a>
@@ -566,75 +907,21 @@
       </div>
     </header>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">
-          <i class="fas fa-project-diagram"></i> Featured Projects
-        </h2>
-        <div class="repo-grid">
-          <div class="repo-card">
-            <h3 class="repo-title">PowerPlatform Automation Suite</h3>
-            <p>
-              Collection of PowerApps and PowerAutomate solutions for business
-              process automation
-            </p>
-            <div class="repo-stats">
-              <span><i class="fas fa-code-branch"></i> 50+ workflows</span>
-              <span
-                ><div class="language-dot language-PowerShell"></div>
-                PowerShell</span
-              >
-            </div>
-          </div>
-          <div class="repo-card">
-            <h3 class="repo-title">Knime Analytics Framework</h3>
-            <p>Automated data processing and analytics workflows using Knime</p>
-            <div class="repo-stats">
-              <span><i class="fas fa-code-branch"></i> 30+ nodes</span>
-              <span
-                ><div class="language-dot language-Python"></div>
-                Python</span
-              >
-              <span
-                ><div
-                  class="language-dot language-SQL"
-                  style="background-color: #4479a1"
-                ></div>
-                SQL</span
-              >
-            </div>
-          </div>
-          <div class="repo-card">
-            <h3 class="repo-title">Full Stack Web Applications</h3>
-            <p>Modern web applications built with React and Node.js</p>
-            <div class="repo-stats">
-              <span><i class="fas fa-star"></i> TypeScript</span>
-              <span
-                ><div class="language-dot language-TypeScript"></div>
-                TypeScript</span
-              >
-              <span
-                ><div class="language-dot language-JavaScript"></div>
-                JavaScript</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Featured Quests section removed as requested -->
 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">
-          <i class="fas fa-history"></i> Experience Timeline
+    <!-- Experience as Game Path -->
+    <section class="game-section">
+      <div class="game-container">
+        <h2 class="game-section-title pixel-text">
+          <i class="fas fa-history"></i> Adventure Log
         </h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Process Automation Specialist - Power Platform Developer</h3>
-              <h4>Canadian Tire Corporation</h4>
-              <p class="timeline-date">Jan 2022 - Present</p>
-              <ul class="timeline-details">
+        <div class="game-path">
+          <div class="game-stage">
+            <div class="game-stage-content">
+              <h3 class="game-stage-title">Process Automation Specialist</h3>
+              <h4 class="game-stage-subtitle">Canadian Tire Corporation</h4>
+              <p class="game-stage-date">Jan 2022 - Present</p>
+              <ul class="game-stage-details">
                 <li>
                   Implemented 50+ Knime workflows for automating file uploads,
                   database updates, and reporting processes
@@ -662,12 +949,12 @@
               </ul>
             </div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Full Stack Web Developer</h3>
-              <h4>Millennial Pod</h4>
-              <p class="timeline-date">Jan 2022 - Present</p>
-              <ul class="timeline-details">
+          <div class="game-stage">
+            <div class="game-stage-content">
+              <h3 class="game-stage-title">Full Stack Web Developer</h3>
+              <h4 class="game-stage-subtitle">Millennial Pod</h4>
+              <p class="game-stage-date">Jan 2022 - Present</p>
+              <ul class="game-stage-details">
                 <li>
                   Designed and implemented RESTful API services using Python
                 </li>
@@ -686,12 +973,12 @@
               </ul>
             </div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>API Scrum Developer</h3>
-              <h4>African Impact Challenge</h4>
-              <p class="timeline-date">Jan 2021 - Dec 2021</p>
-              <ul class="timeline-details">
+          <div class="game-stage">
+            <div class="game-stage-content">
+              <h3 class="game-stage-title">API Scrum Developer</h3>
+              <h4 class="game-stage-subtitle">African Impact Challenge</h4>
+              <p class="game-stage-date">Jan 2021 - Dec 2021</p>
+              <ul class="game-stage-details">
                 <li>
                   Developed website backend using Python Flask and Java applets
                 </li>
@@ -707,16 +994,16 @@
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="footer-content">
-        <p class="footer-text">© 2024 Hritik Gandhi. All rights reserved.</p>
-        <div class="footer-btc">
-          <span class="btc-address"
-            >bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz</span
-          >
+    <!-- Game Status Bar Footer -->
+    <footer class="status-bar">
+      <div class="status-bar-content">
+        <p class="status-text">© 2025 Hritik Gandhi. All rights reserved.</p>
+        <div class="bitcoin-box">
+          <span class="btc-address-container">bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz</span>
           <button
-            class="copy-btn"
+            class="copy-coin-btn"
             onclick="copyBitcoinAddress()"
+            aria-label="Copy Bitcoin Address"
           >
             <i class="fab fa-bitcoin"></i>
             Copy Address
@@ -726,7 +1013,53 @@
     </footer>
 
     <script>
-      class TypingAnimation {
+      // Physics-based animation system
+      class PhysicsSystem {
+        constructor() {
+          this.gravity = 0.8;
+          this.friction = 0.95;
+        }
+        
+        // Create a simple particle with physics properties
+        createParticle(x, y, vx, vy, element) {
+          return {
+            x, y,         // Position
+            vx, vy,       // Velocity
+            element,      // DOM element
+            isActive: true
+          };
+        }
+        
+        // Update particle position based on physics
+        updateParticle(particle) {
+          if (!particle.isActive) return;
+          
+          // Apply gravity
+          particle.vy += this.gravity;
+          
+          // Apply friction
+          particle.vx *= this.friction;
+          particle.vy *= this.friction;
+          
+          // Update position
+          particle.x += particle.vx;
+          particle.y += particle.vy;
+          
+          // Update DOM element position
+          particle.element.style.transform = `translate(${particle.x}px, ${particle.y}px)`;
+          
+          // Check if particle is out of bounds (for cleanup)
+          if (particle.y > window.innerHeight * 2) {
+            particle.isActive = false;
+            if (particle.element.parentNode) {
+              particle.element.parentNode.removeChild(particle.element);
+            }
+          }
+        }
+      }
+
+      // Dialog Box Text Animation (RPG style)
+      class DialogTextAnimation {
         constructor(element, phrases, options = {}) {
           this.element = element;
           this.phrases = phrases;
@@ -734,9 +1067,9 @@
           this.currentChar = 0;
           this.isDeleting = false;
           this.options = {
-            typeSpeed: options.typeSpeed || 100,
-            deleteSpeed: options.deleteSpeed || 50,
-            pauseTime: options.pauseTime || 1000,
+            typeSpeed: options.typeSpeed || 80,
+            deleteSpeed: options.deleteSpeed || 40,
+            pauseTime: options.pauseTime || 1500,
           };
         }
 
@@ -755,6 +1088,9 @@
             ? this.options.deleteSpeed
             : this.options.typeSpeed;
 
+          // Add random variation to typing speed for more natural effect
+          typeSpeed += Math.random() * 50 - 25;
+
           if (!this.isDeleting && this.currentChar === currentText.length) {
             typeSpeed = this.options.pauseTime;
             this.isDeleting = true;
@@ -767,33 +1103,110 @@
         }
       }
 
+      // Retro Clouds Generator
+      class CloudGenerator {
+        constructor(container) {
+          this.container = container;
+          this.clouds = [];
+          this.maxClouds = 8;
+        }
+        
+        init() {
+          for (let i = 0; i < this.maxClouds; i++) {
+            this.createCloud();
+          }
+        }
+        
+        createCloud() {
+          const cloud = document.createElement('div');
+          cloud.className = 'cloud';
+          
+          // Random cloud properties
+          const size = Math.random() * 0.5 + 0.7; // Scale between 0.7 and 1.2
+          const speed = Math.random() * 20 + 40; // Duration between 40s and 60s
+          const delay = Math.random() * 40; // Random start position
+          const top = Math.random() * 30 + 5; // Random vertical position
+          
+          cloud.style.transform = `scale(${size})`;
+          cloud.style.top = `${top}%`;
+          cloud.style.animationDuration = `${speed}s`;
+          cloud.style.animationDelay = `-${delay}s`; // Negative delay for immediate start
+          
+          this.container.appendChild(cloud);
+          this.clouds.push(cloud);
+        }
+      }
+
+      // Coin Animation for BTC clicks
+      function createCoinAnimation(x, y) {
+        const physicsSystem = new PhysicsSystem();
+        const coin = document.createElement('div');
+        coin.className = 'coin-sprite';
+        coin.style.left = `${x}px`;
+        coin.style.top = `${y}px`;
+        document.body.appendChild(coin);
+        
+        // Make coin visible
+        requestAnimationFrame(() => {
+          coin.style.opacity = '1';
+          
+          // Create physics particle for this coin
+          const particle = physicsSystem.createParticle(
+            x, 
+            y, 
+            (Math.random() - 0.5) * 15,  // Random X velocity
+            -15 - Math.random() * 5,      // Upward Y velocity (jump)
+            coin
+          );
+          
+          // Animation loop
+          function animate() {
+            if (!particle.isActive) return;
+            physicsSystem.updateParticle(particle);
+            requestAnimationFrame(animate);
+          }
+          
+          animate();
+          
+          // Remove coin after animation
+          setTimeout(() => {
+            coin.style.opacity = '0';
+            setTimeout(() => {
+              if (coin.parentNode) {
+                coin.parentNode.removeChild(coin);
+              }
+            }, 500);
+          }, 2000);
+        });
+      }
+
       // Initialize everything when the window loads
       window.addEventListener("load", () => {
-        // Mouse move handler for gradient effect
-        const header = document.querySelector(".header");
-        header.addEventListener("mousemove", (e) => {
-          const rect = header.getBoundingClientRect();
-          const x = ((e.clientX - rect.left) / rect.width) * 100;
-          const y = ((e.clientY - rect.top) / rect.height) * 100;
+        // Create 8-bit clouds
+        const cloudsContainer = document.querySelector(".clouds");
+        const cloudGenerator = new CloudGenerator(cloudsContainer);
+        cloudGenerator.init();
 
-          header.style.setProperty("--mouse-x", `${x}%`);
-          header.style.setProperty("--mouse-y", `${y}%`);
-        });
-
-        // Initialize typing animation
-        const typingElement = document.querySelector(".typing-text");
-        const typingAnimation = new TypingAnimation(
-          typingElement,
-          ["Power Platform", "Web Developer", "Efficiency Enthusiast"],
+        // Initialize dialog text animation (RPG style)
+        const dialogElement = document.querySelector(".dialog-text");
+        const dialogAnimation = new DialogTextAnimation(
+          dialogElement,
+          [
+            "Power Platform Wizard",
+            "Web Development Mage",
+            "Efficiency Enthusiast",
+            "Automation Expert",
+            "Full Stack Developer"
+          ],
           {
-            typeSpeed: 100,
-            deleteSpeed: 50,
+            typeSpeed: 80,
+            deleteSpeed: 40,
             pauseTime: 2000,
           }
         );
-        typingAnimation.type();
+        dialogAnimation.type();
 
-        // Intersection Observer for animations
+        // Physics-based animations for card and timeline elements
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -807,66 +1220,122 @@
 
         // Observe elements for animation
         document
-          .querySelectorAll(".repo-card, .timeline-item, .skill-bar")
+          .querySelectorAll(".level-card, .game-stage")
           .forEach((item) => {
             observer.observe(item);
           });
+
+        // Add game marker positions to timeline
+        const timelinePath = document.querySelector('.game-path');
+        const stages = document.querySelectorAll('.game-stage');
+        
+        stages.forEach((stage, index) => {
+          const marker = document.createElement('div');
+          marker.className = 'game-path-marker';
+          
+          // Calculate vertical position based on stage position
+          const stageRect = stage.getBoundingClientRect();
+          const pathRect = timelinePath.getBoundingClientRect();
+          const relativeTop = (stageRect.top - pathRect.top) + 20; // + offset for positioning
+          
+          marker.style.top = `${relativeTop}px`;
+          timelinePath.appendChild(marker);
+        });
+
+        // Social button hover sound effect (using timing, no actual audio)
+        document.querySelectorAll('.game-btn').forEach(btn => {
+          btn.addEventListener('mouseover', function() {
+            // Trigger animation instead of sound
+            this.style.animation = 'none';
+            void this.offsetWidth; // Reflow to restart animation
+            this.style.animation = 'btnJump 0.5s ease';
+          });
+        });
+
+        // Add wobble effect to BTC address on click
+        const btcAddress = document.querySelector('.btc-address-container');
+        btcAddress.addEventListener('click', function() {
+          this.style.animation = 'wobble 0.5s ease';
+          setTimeout(() => {
+            this.style.animation = '';
+          }, 500);
+        });
       });
 
-      // Bitcoin address copying functionality
+      // Bitcoin address copying functionality with coin animation
       function copyBitcoinAddress() {
         const bitcoinAddress = "bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz";
+        const btn = document.querySelector('.copy-coin-btn');
+        const btnRect = btn.getBoundingClientRect();
+        
+        // Spawn 5 coins at the button location
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            const coinX = btnRect.left + btnRect.width/2;
+            const coinY = btnRect.top + btnRect.height/2;
+            createCoinAnimation(coinX, coinY);
+          }, i * 100); // Stagger the coin animations
+        }
+        
         navigator.clipboard
           .writeText(bitcoinAddress)
           .then(() => {
-            showTooltip("Bitcoin address copied to clipboard!");
+            showPixelTooltip("Address copied!");
           })
           .catch((err) => {
-            showTooltip("Failed to copy address. Please try again.");
+            showPixelTooltip("Failed to copy!");
           });
+        
+        // Apply wobble animation to the button
+        btn.style.animation = 'wobble 0.5s ease';
+        setTimeout(() => {
+          btn.style.animation = '';
+        }, 500);
       }
 
-      let tooltipTimeout;
-      let tooltipElement;
+      let pixelTooltipTimeout;
+      let pixelTooltipElement;
 
-      function showTooltip(message) {
-        if (tooltipElement) {
-          tooltipElement.remove();
+      // Show pixelated tooltip
+      function showPixelTooltip(message) {
+        if (pixelTooltipElement) {
+          pixelTooltipElement.remove();
         }
 
-        if (tooltipTimeout) {
-          clearTimeout(tooltipTimeout);
+        if (pixelTooltipTimeout) {
+          clearTimeout(pixelTooltipTimeout);
         }
 
-        tooltipElement = document.createElement("div");
-        tooltipElement.className = "tooltip";
-        tooltipElement.textContent = message;
-        document.body.appendChild(tooltipElement);
+        pixelTooltipElement = document.createElement("div");
+        pixelTooltipElement.className = "pixel-tooltip";
+        pixelTooltipElement.textContent = message;
+        document.body.appendChild(pixelTooltipElement);
 
-        document.addEventListener("mousemove", positionTooltip);
+        document.addEventListener("mousemove", positionPixelTooltip);
 
         requestAnimationFrame(() => {
-          tooltipElement.classList.add("show");
+          pixelTooltipElement.classList.add("show");
         });
 
-        tooltipTimeout = setTimeout(() => {
-          tooltipElement.classList.remove("show");
+        pixelTooltipTimeout = setTimeout(() => {
+          pixelTooltipElement.classList.remove("show");
           setTimeout(() => {
-            document.removeEventListener("mousemove", positionTooltip);
-            tooltipElement.remove();
-            tooltipElement = null;
+            document.removeEventListener("mousemove", positionPixelTooltip);
+            pixelTooltipElement.remove();
+            pixelTooltipElement = null;
           }, 300);
         }, 2000);
       }
 
-      function positionTooltip(e) {
-        if (!tooltipElement) return;
+      // Position the pixelated tooltip
+      function positionPixelTooltip(e) {
+        if (!pixelTooltipElement) return;
 
         const x = e.clientX;
         const y = e.clientY;
 
-        const tooltipWidth = tooltipElement.offsetWidth;
-        const tooltipHeight = tooltipElement.offsetHeight;
+        const tooltipWidth = pixelTooltipElement.offsetWidth;
+        const tooltipHeight = pixelTooltipElement.offsetHeight;
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
 
@@ -881,8 +1350,8 @@
           top = y - tooltipHeight - 15;
         }
 
-        tooltipElement.style.left = left + "px";
-        tooltipElement.style.top = top + "px";
+        pixelTooltipElement.style.left = left + "px";
+        pixelTooltipElement.style.top = top + "px";
       }
     </script>
   </body>
