@@ -5,9 +5,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYVHKLG47S"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag() { dataLayer.push(arguments); }
       gtag("js", new Date());
       gtag("config", "G-KYVHKLG47S");
     </script>
@@ -16,21 +14,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hritik Gandhi's Portfolio</title>
     
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
-    
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Personal portfolio of Hritik Gandhi, showcasing projects in automation, web development, and more.">
     <meta name="keywords" content="Hritik Gandhi, portfolio, web developer, automation specialist, Power Platform, full stack developer">
-    
-    <!-- Open Graph Tags for Social Media -->
     <meta property="og:title" content="Hritik Gandhi's Portfolio">
     <meta property="og:description" content="Explore the projects and experiences of Hritik Gandhi, a skilled developer specializing in automation and web development.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.hritikgandhi.com">
     <meta property="og:image" content="https://www.hritikgandhi.com/og-image.png">
-    
-    <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@hritikkgandhi">
     <meta name="twitter:title" content="Hritik Gandhi's Portfolio">
@@ -38,8 +29,8 @@
     <meta name="twitter:image" content="https://www.hritikgandhi.com/og-image.png">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-      /* 8-bit Retro Game Theme Variables */
       :root {
         --retro-black: #111122;
         --retro-darkblue: #0f2550;
@@ -71,7 +62,6 @@
         font-display: swap;
       }
 
-      /* Pixelated Text Styling */
       .pixel-text {
         font-family: 'RetroPixel', monospace;
         text-transform: uppercase;
@@ -96,20 +86,11 @@
         background-color: var(--primary-bg);
         overflow-x: hidden;
         background-image: 
-          linear-gradient(0deg, 
-            var(--retro-darkblue) 0%, 
-            var(--retro-black) 80%),
-          repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 20px,
-            rgba(255, 255, 255, 0.03) 20px,
-            rgba(255, 255, 255, 0.03) 22px
-          );
+          linear-gradient(0deg, var(--retro-darkblue) 0%, var(--retro-black) 80%),
+          repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255, 255, 255, 0.03) 20px, rgba(255, 255, 255, 0.03) 22px);
         background-attachment: fixed;
       }
 
-      /* Pixelated Scrollbar */
       ::-webkit-scrollbar {
         width: calc(var(--pixel-size) * 5);
         height: calc(var(--pixel-size) * 5);
@@ -125,7 +106,6 @@
         border: var(--pixel-size) solid var(--retro-pink);
       }
 
-      /* Dialog Box Text Styling */
       .dialog-text {
         display: inline-block;
         position: relative;
@@ -152,7 +132,6 @@
         50% { opacity: 0; }
       }
 
-      /* Pixelated borders and elements */
       .pixel-border {
         position: relative;
         border: calc(var(--pixel-size) * 2) solid var(--retro-white);
@@ -172,7 +151,6 @@
         z-index: -1;
       }
 
-      /* Header Game Style */
       .game-header {
         min-height: 40vh;
         display: flex;
@@ -195,27 +173,9 @@
         right: 0;
         bottom: 0;
         background-image: 
-          linear-gradient(
-            to right,
-            transparent 0%, 
-            rgba(0, 0, 0, 0.2) 40%,
-            rgba(0, 0, 0, 0.2) 60%,
-            transparent 100%
-          ),
-          linear-gradient(
-            to bottom,
-            transparent 0%,
-            rgba(0, 0, 0, 0.1) 20%,
-            rgba(0, 0, 0, 0.2) 40%,
-            rgba(0, 0, 0, 0.5) 100%
-          ),
-          repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 10px,
-            rgba(255, 255, 255, 0.05) 10px,
-            rgba(255, 255, 255, 0.05) 12px
-          );
+          linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.2) 60%, transparent 100%),
+          linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.5) 100%),
+          repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255, 255, 255, 0.05) 10px, rgba(255, 255, 255, 0.05) 12px);
       }
 
       .clouds {
@@ -282,14 +242,8 @@
       }
 
       @keyframes bounceInGame {
-        0% { 
-          transform: scale(0.1) translateY(-500px);
-          opacity: 0;
-        }
-        50% { 
-          transform: scale(1.1) translateY(10px);
-          opacity: 1;
-        }
+        0% { transform: scale(0.1) translateY(-500px); opacity: 0; }
+        50% { transform: scale(1.1) translateY(10px); opacity: 1; }
         70% { transform: scale(0.9) translateY(-10px); }
         85% { transform: scale(1.05) translateY(5px); }
         100% { transform: scale(1) translateY(0); }
@@ -331,21 +285,7 @@
         box-shadow: 
           calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray),
           inset calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 rgba(0, 0, 0, 0.2);
-        opacity: 1; /* Changed from opacity: 0 */
       }
-
-      @keyframes socialBtnIn {
-        0% { 
-          opacity: 0;
-          transform: scale(0);
-        }
-        100% { 
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
-      /* Animation delays removed */
 
       .game-btn:hover {
         background-color: var(--retro-pink);
@@ -353,14 +293,9 @@
         cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="fill:none;stroke:white;stroke-width:2"><rect width="8" height="8"/></svg>') 8 8, auto;
       }
 
-      .game-btn:active {
-        transform: translateY(0);
-      }
+      .game-btn:active { transform: translateY(0); }
 
-      /* Physics-based animations for jump effect */
-      .game-btn:hover {
-        animation: btnJump 0.5s ease;
-      }
+      .game-btn:hover { animation: btnJump 0.5s ease; }
 
       @keyframes btnJump {
         0% { transform: translateY(0); }
@@ -371,7 +306,6 @@
         100% { transform: translateY(0); }
       }
 
-      /* Game Section Styling */
       .game-section {
         padding: 5rem 2rem;
         border-bottom: calc(var(--pixel-size) * 4) solid var(--retro-darkgray);
@@ -387,20 +321,8 @@
         right: 0;
         bottom: 0;
         background-image: 
-          repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 20px,
-            rgba(255, 255, 255, 0.02) 20px,
-            rgba(255, 255, 255, 0.02) 40px
-          ),
-          repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 20px,
-            rgba(255, 255, 255, 0.01) 20px,
-            rgba(255, 255, 255, 0.01) 40px
-          );
+          repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255, 255, 255, 0.02) 20px, rgba(255, 255, 255, 0.02) 40px),
+          repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255, 255, 255, 0.01) 20px, rgba(255, 255, 255, 0.01) 40px);
         z-index: -1;
       }
 
@@ -415,8 +337,7 @@
         gap: 1rem;
         text-transform: uppercase;
         letter-spacing: 2px;
-        text-shadow: 
-          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkpurple);
+        text-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkpurple);
       }
 
       .game-container {
@@ -424,126 +345,161 @@
         margin: 0 auto;
       }
 
-      /* Projects as Game Levels */
-      .level-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
+      /* Updated Skill Arcade Cabinet Styling */
+      .skill-arcade {
+        background: var(--retro-darkgray);
+        border: calc(var(--pixel-size) * 4) solid var(--retro-purple);
+        padding: 2rem;
+        border-radius: calc(var(--pixel-size) * 2);
+        box-shadow: 
+          calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 4) 0 var(--retro-black),
+          inset 0 0 10px rgba(255, 255, 255, 0.1);
       }
 
-      .level-card {
+      .arcade-marquee {
+        background: var(--retro-darkblue);
+        border: calc(var(--pixel-size) * 2) solid var(--retro-yellow);
+        padding: 1rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--retro-yellow);
+        font-family: 'Press Start 2P', monospace;
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        text-shadow: 2px 2px 0 var(--retro-red);
+        animation: marqueeGlow 2s infinite alternate;
+      }
+
+      @keyframes marqueeGlow {
+        0% { box-shadow: 0 0 5px var(--retro-yellow); }
+        100% { box-shadow: 0 0 15px var(--retro-yellow); }
+      }
+
+      .arcade-games {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+        gap: 2rem;
+      }
+
+      .arcade-game {
         background: var(--retro-darkblue);
         border: calc(var(--pixel-size) * 3) solid var(--retro-blue);
-        padding: 1.5rem;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        transform: translateX(-1000px);
-        opacity: 0;
-        box-shadow: 
-          calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkgray);
+        padding: 1rem;
+        border-radius: calc(var(--pixel-size));
+        box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
-      .level-card.visible {
-        animation: slideInWithPhysics 1s forwards;
+      .game-title-text {
+        color: var(--retro-pink);
+        font-family: 'Press Start 2P', monospace;
+        font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+        text-align: center;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 0 var(--retro-black);
+        white-space: normal;
+        word-wrap: break-word;
+        max-width: 100%;
       }
 
-      @keyframes slideInWithPhysics {
-        0% { 
-          transform: translateX(-1000px);
-          opacity: 0;
-        }
-        60% { 
-          transform: translateX(30px);
-          opacity: 1;
-        }
-        75% { transform: translateX(-20px); }
-        90% { transform: translateX(10px); }
-        100% { 
-          transform: translateX(0);
-          opacity: 1;
-        }
+      .game-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
       }
 
-      .level-card:nth-child(1).visible { animation-delay: 0.1s; }
-      .level-card:nth-child(2).visible { animation-delay: 0.3s; }
-      .level-card:nth-child(3).visible { animation-delay: 0.5s; }
+      .arcade-button {
+        display: inline-block;
+        background: var(--retro-black);
+        border: calc(var(--pixel-size) * 2) solid var(--retro-green);
+        color: var(--retro-white);
+        font-family: 'Press Start 2P', monospace;
+        font-size: clamp(0.4rem, 0.7vw, 0.7rem);
+        padding: 0.4rem 0.8rem;
+        text-align: center;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        box-shadow: 0 0 5px var(--retro-green);
+        white-space: normal;
+        word-break: break-all;
+        max-width: 120px;
+        min-width: 80px;
+      }
 
-      .level-card:hover {
+      .arcade-button:hover {
+        background: var(--retro-green);
+        color: var(--retro-black);
         transform: scale(1.05);
-        z-index: 2;
-        border-color: var(--retro-yellow);
+        box-shadow: 0 0 10px var(--retro-yellow);
       }
 
-      .level-card::before {
-        content: "";
-        position: absolute;
-        top: -100%;
-        left: -100%;
-        width: 300%;
-        height: 300%;
-        background: 
-          radial-gradient(
-            circle, 
-            rgba(255, 255, 255, 0.2) 0%, 
-            transparent 70%
-          );
-        transform: rotate(0deg);
-        transition: all 0.5s ease;
+      #modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+      }
+
+      #skill-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
         opacity: 0;
-      }
-
-      .level-card:hover::before {
-        opacity: 1;
-        animation: pulsateLight 2s infinite linear;
-      }
-
-      @keyframes pulsateLight {
-        0% { transform: scale(0.8); opacity: 0.2; }
-        50% { transform: scale(1); opacity: 0.5; }
-        100% { transform: scale(0.8); opacity: 0.2; }
-      }
-
-      .level-title {
-        color: var(--retro-yellow);
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-        text-shadow: 2px 2px 0 var(--retro-darkpurple);
-      }
-
-      .level-description {
-        font-size: 1rem;
-        line-height: 1.4;
-        margin-bottom: 1rem;
+        transition: transform 0.3s, opacity 0.3s;
+        z-index: 1000;
+        background: var(--retro-darkblue);
+        border: calc(var(--pixel-size) * 3) solid var(--retro-yellow);
+        padding: 2rem;
+        width: clamp(250px, 50vw, 300px);
+        text-align: center;
+        font-family: 'Press Start 2P', monospace;
         color: var(--retro-white);
       }
 
-      .level-stats {
-        display: flex;
-        gap: 1rem;
+      #skill-modal.show {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+
+      .retro-close-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 40px;
+        background: var(--retro-darkgray);
+        border: calc(var(--pixel-size) * 2) solid var(--retro-red);
+        color: var(--retro-white);
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-black);
         margin-top: 1rem;
-        color: var(--retro-lightblue);
-        flex-wrap: wrap;
-        font-size: 0.9rem;
       }
 
-      .pixelated-dot {
-        width: 12px;
-        height: 12px;
-        display: inline-block;
-        margin-right: 5px;
-        box-shadow: 0 0 0 2px var(--retro-darkgray);
+      .retro-close-btn:hover {
+        background: var(--retro-red);
+        transform: translateY(-3px);
+        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="fill:none;stroke:white;stroke-width:2"><rect width="8" height="8"/></svg>') 8 8, auto;
+        border-color: var(--retro-yellow);
       }
 
-      .language-JavaScript { background-color: var(--retro-yellow); }
-      .language-Python { background-color: var(--retro-blue); }
-      .language-TypeScript { background-color: var(--retro-purple); }
-      .language-PowerShell { background-color: var(--retro-green); }
-      .language-SQL { background-color: var(--retro-orange); }
+      .retro-close-btn:active {
+        transform: translateY(0);
+        box-shadow: none;
+      }
 
-      /* Game Path Timeline */
       .game-path {
         max-width: 1000px;
         margin: 0 auto;
@@ -586,29 +542,15 @@
       }
 
       @keyframes dropInWithBounce {
-        0% { 
-          transform: translateY(-300px);
-          opacity: 0;
-        }
-        60% { 
-          transform: translateY(20px);
-          opacity: 1;
-        }
+        0% { transform: translateY(-300px); opacity: 0; }
+        60% { transform: translateY(20px); opacity: 1; }
         75% { transform: translateY(-10px); }
         90% { transform: translateY(5px); }
-        100% { 
-          transform: translateY(0);
-          opacity: 1;
-        }
+        100% { transform: translateY(0); opacity: 1; }
       }
 
-      .game-stage:nth-child(odd) {
-        left: 0;
-      }
-
-      .game-stage:nth-child(even) {
-        left: calc(50% + 40px);
-      }
+      .game-stage:nth-child(odd) { left: 0; }
+      .game-stage:nth-child(even) { left: calc(50% + 40px); }
 
       .game-stage::after {
         content: "";
@@ -620,13 +562,8 @@
         z-index: 1;
       }
 
-      .game-stage:nth-child(odd)::after {
-        right: -40px;
-      }
-
-      .game-stage:nth-child(even)::after {
-        left: -40px;
-      }
+      .game-stage:nth-child(odd)::after { right: -40px; }
+      .game-stage:nth-child(even)::after { left: -40px; }
 
       .game-stage-content {
         background: var(--retro-darkblue);
@@ -635,8 +572,7 @@
         transition: all 0.3s ease;
         position: relative;
         z-index: 2;
-        box-shadow: 
-          calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkgray);
+        box-shadow: calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkgray);
       }
 
       .game-stage-content:hover {
@@ -686,7 +622,6 @@
         color: var(--retro-pink);
       }
 
-      /* Game Status Bar Footer */
       .status-bar {
         background: var(--retro-darkgray);
         border-top: calc(var(--pixel-size) * 4) solid var(--retro-gray);
@@ -730,8 +665,7 @@
         max-width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
-        box-shadow: 
-          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
+        box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
       }
 
       .copy-coin-btn {
@@ -743,16 +677,12 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        box-shadow: 
-          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-black);
+        box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-black);
         position: relative;
         overflow: hidden;
       }
 
-      .copy-coin-btn:hover {
-        background-color: var(--retro-pink);
-      }
-
+      .copy-coin-btn:hover { background-color: var(--retro-pink); }
       .copy-coin-btn:active {
         transform: translate(calc(var(--pixel-size) * 2), calc(var(--pixel-size) * 2));
         box-shadow: 0 0 0 var(--retro-black);
@@ -763,7 +693,6 @@
         font-size: 1.2rem;
       }
 
-      /* Coin animation sprite */
       .coin-sprite {
         position: absolute;
         width: 20px;
@@ -787,32 +716,21 @@
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: 1000;
-        box-shadow: 
-          calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
+        box-shadow: calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-darkgray);
       }
 
-      .pixel-tooltip.show {
-        opacity: 1;
-      }
+      .pixel-tooltip.show { opacity: 1; }
 
-      /* Animations */
       @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
       }
 
       @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
-      /* Physics animation for wobble effect */
       @keyframes wobble {
         0% { transform: rotate(0deg); }
         25% { transform: rotate(-5deg); }
@@ -821,101 +739,97 @@
         100% { transform: rotate(0deg); }
       }
 
-      /* Responsive styles */
       @media (max-width: 768px) {
-        .game-title {
-          font-size: 2.5rem;
-        }
-
-        .game-path::before {
-          left: 30px;
-          transform: none;
-        }
-
-        .game-stage {
-          width: calc(100% - 60px);
-          left: 60px !important;
-        }
-
-        .game-stage::after {
-          left: -30px !important;
-          width: 30px;
-        }
-
-        .game-path-marker {
-          left: 30px;
-          transform: none;
-        }
-
-        .game-social-links {
-          gap: 0.5rem;
-        }
-
-        .game-btn {
-          width: 40px;
-          height: 40px;
-          font-size: 1rem;
-        }
-
-        .bitcoin-box {
-          flex-direction: column;
-        }
-
-        .btc-address-container {
-          font-size: 0.8rem;
-          padding: 0.5rem;
-          width: 100%;
-        }
+        .game-title { font-size: 2.5rem; }
+        .game-path::before { left: 30px; transform: none; }
+        .game-stage { width: calc(100% - 60px); left: 60px !important; }
+        .game-stage::after { left: -30px !important; width: 30px; }
+        .game-path-marker { left: 30px; transform: none; }
+        .game-social-links { gap: 0.5rem; }
+        .game-btn { width: 40px; height: 40px; font-size: 1rem; }
+        .bitcoin-box { flex-direction: column; }
+        .btc-address-container { font-size: 0.8rem; padding: 0.5rem; width: 100%; }
+        .arcade-games { grid-template-columns: 1fr; }
       }
     </style>
   </head>
   <body>
-    <!-- Game-style header with falling title and physics -->
     <header class="game-header">
-      <div class="clouds">
-        <!-- Cloud elements will be created by JavaScript -->
-      </div>
+      <div class="clouds"></div>
       <div class="header-content">
         <h1 class="game-title pixel-text">Hritik Gandhi</h1>
         <h2 class="game-subtitle">
           <span class="dialog-text"></span>
         </h2>
         <div class="game-social-links">
-          <a
-            href="https://github.com/hritikgandhi"
-            class="game-btn"
-            target="_blank"
-            aria-label="GitHub Profile"
-            style="animation: none; display: inline-flex !important;"
-          >
+          <a href="https://github.com/hritikgandhi" class="game-btn" target="_blank" aria-label="GitHub Profile">
             <i class="fab fa-github"></i>
           </a>
-          <a
-            href="https://linkedin.com/in/hritikgandhi"
-            class="game-btn"
-            target="_blank"
-            aria-label="LinkedIn Profile"
-            style="animation: none; display: inline-flex !important;"
-          >
+          <a href="https://linkedin.com/in/hritikgandhi" class="game-btn" target="_blank" aria-label="LinkedIn Profile">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a
-            href="https://x.com/hritikkgandhi"
-            class="game-btn"
-            target="_blank"
-            aria-label="X Profile"
-            style="animation: none; display: inline-flex !important;"
-          >
+          <a href="https://x.com/hritikkgandhi" class="game-btn" target="_blank" aria-label="X Profile">
             <span style="font-weight: bold; font-size: 1.1em">𝕏</span>
-          </a>
-          <a href="/cdn-cgi/l/email-protection#3b535c7b5349524f52505c5a555f535215585456" class="game-btn" aria-label="Email Contact" style="animation: none; display: inline-flex !important;">
-            <i class="fas fa-envelope"></i>
           </a>
         </div>
       </div>
     </header>
 
-    <!-- Experience as Game Path -->
+    <section class="game-section">
+      <div class="game-container">
+        <h2 class="game-section-title pixel-text">
+          <i class="fas fa-gamepad"></i> Skill Arcade
+        </h2>
+        <div class="skill-arcade">
+          <div class="arcade-marquee">Player Skills</div>
+          <div class="arcade-games">
+            <div class="arcade-game">
+              <div class="game-title-text">Front-end Development</div>
+              <div class="game-buttons">
+                <div class="arcade-button" id="react">React.js</div>
+                <div class="arcade-button" id="javascript">JavaScript</div>
+                <div class="arcade-button" id="html">HTML</div>
+                <div class="arcade-button" id="css">CSS</div>
+              </div>
+            </div>
+            <div class="arcade-game">
+              <div class="game-title-text">Back-end Development</div>
+              <div class="game-buttons">
+                <div class="arcade-button" id="python">Python</div>
+                <div class="arcade-button" id="flask">Flask</div>
+                <div class="arcade-button" id="nodejs">Node.js</div>
+                <div class="arcade-button" id="express">Express</div>
+              </div>
+            </div>
+            <div class="arcade-game">
+              <div class="game-title-text">Automation and Scripting</div>
+              <div class="game-buttons">
+                <div class="arcade-button" id="knime">Knime</div>
+                <div class="arcade-button" id="powerautomate">PowerAutomate</div>
+                <div class="arcade-button" id="vba">VBA</div>
+                <div class="arcade-button" id="powershell">PowerShell</div>
+              </div>
+            </div>
+            <div class="arcade-game">
+              <div class="game-title-text">Data Management and Analysis</div>
+              <div class="game-buttons">
+                <div class="arcade-button" id="sql">SQL</div>
+                <div class="arcade-button" id="powerbi">PowerBI</div>
+                <div class="arcade-button" id="adf">Azure Data Factory</div>
+              </div>
+            </div>
+            <div class="arcade-game">
+              <div class="game-title-text">Low-code/No-code Solutions</div>
+              <div class="game-buttons">
+                <div class="arcade-button" id="powerapps">PowerApps</div>
+                <div class="arcade-button" id="powerplatform">Power Platform</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="game-section">
       <div class="game-container">
         <h2 class="game-section-title pixel-text">
@@ -928,30 +842,12 @@
               <h4 class="game-stage-subtitle">Canadian Tire Corporation</h4>
               <p class="game-stage-date">Jan 2022 - Present</p>
               <ul class="game-stage-details">
-                <li>
-                  Implemented 50+ Knime workflows for automating file uploads,
-                  database updates, and reporting processes
-                </li>
-                <li>
-                  Architected Azure Data Factory pipelines and stored procedures
-                  for optimized data flow management
-                </li>
-                <li>
-                  Developed 3 PowerApps solutions including CRM and task
-                  management applications
-                </li>
-                <li>
-                  Created PowerAutomate workflows for RPA automation in both
-                  desktop and web environments
-                </li>
-                <li>
-                  Built interactive PowerBI reports with row-level security
-                  implementation
-                </li>
-                <li>
-                  Automated Excel processes using VBA for enhanced operational
-                  efficiency
-                </li>
+                <li>Implemented 50+ Knime workflows for automating file uploads, database updates, and reporting processes</li>
+                <li>Architected Azure Data Factory pipelines and stored procedures for optimized data flow management</li>
+                <li>Developed 3 PowerApps solutions including CRM and task management applications</li>
+                <li>Created PowerAutomate workflows for RPA automation in both desktop and web environments</li>
+                <li>Built interactive PowerBI reports with row-level security implementation</li>
+                <li>Automated Excel processes using VBA for enhanced operational efficiency</li>
               </ul>
             </div>
           </div>
@@ -961,20 +857,10 @@
               <h4 class="game-stage-subtitle">Millennial Pod</h4>
               <p class="game-stage-date">Jan 2022 - Present</p>
               <ul class="game-stage-details">
-                <li>
-                  Designed and implemented RESTful API services using Python
-                </li>
-                <li>
-                  Developed front-end solutions using React.js and modern
-                  JavaScript
-                </li>
-                <li>
-                  Managed Linux VPS deployment including CRON jobs for system
-                  automation
-                </li>
-                <li>
-                  Integrated MySQL database systems for robust data storage
-                </li>
+                <li>Designed and implemented RESTful API services using Python</li>
+                <li>Developed front-end solutions using React.js and modern JavaScript</li>
+                <li>Managed Linux VPS deployment including CRON jobs for system automation</li>
+                <li>Integrated MySQL database systems for robust data storage</li>
                 <li>Conducted comprehensive API testing using Postman</li>
               </ul>
             </div>
@@ -985,12 +871,8 @@
               <h4 class="game-stage-subtitle">African Impact Challenge</h4>
               <p class="game-stage-date">Jan 2021 - Dec 2021</p>
               <ul class="game-stage-details">
-                <li>
-                  Developed website backend using Python Flask and Java applets
-                </li>
-                <li>
-                  Implemented graph database architecture using Neo4j and Cypher
-                </li>
+                <li>Developed website backend using Python Flask and Java applets</li>
+                <li>Implemented graph database architecture using Neo4j and Cypher</li>
                 <li>Created RESTful APIs for seamless front-end integration</li>
                 <li>Collaborated in an Agile development environment</li>
               </ul>
@@ -1000,17 +882,12 @@
       </div>
     </section>
 
-    <!-- Game Status Bar Footer -->
     <footer class="status-bar">
       <div class="status-bar-content">
         <p class="status-text">© 2025 Hritik Gandhi. All rights reserved.</p>
         <div class="bitcoin-box">
           <span class="btc-address-container">bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz</span>
-          <button
-            class="copy-coin-btn"
-            onclick="copyBitcoinAddress()"
-            aria-label="Copy Bitcoin Address"
-          >
+          <button class="copy-coin-btn" onclick="copyBitcoinAddress()" aria-label="Copy Bitcoin Address">
             <i class="fab fa-bitcoin"></i>
             Copy Address
           </button>
@@ -1018,54 +895,35 @@
       </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <div id="modal-overlay"></div>
+    <div id="skill-modal"></div>
+
     <script>
-      // Physics-based animation system
       class PhysicsSystem {
         constructor() {
           this.gravity = 0.8;
           this.friction = 0.95;
         }
         
-        // Create a simple particle with physics properties
         createParticle(x, y, vx, vy, element) {
-          return {
-            x, y,         // Position
-            vx, vy,       // Velocity
-            element,      // DOM element
-            isActive: true
-          };
+          return { x, y, vx, vy, element, isActive: true };
         }
         
-        // Update particle position based on physics
         updateParticle(particle) {
           if (!particle.isActive) return;
-          
-          // Apply gravity
           particle.vy += this.gravity;
-          
-          // Apply friction
           particle.vx *= this.friction;
           particle.vy *= this.friction;
-          
-          // Update position
           particle.x += particle.vx;
           particle.y += particle.vy;
-          
-          // Update DOM element position
           particle.element.style.transform = `translate(${particle.x}px, ${particle.y}px)`;
-          
-          // Check if particle is out of bounds (for cleanup)
           if (particle.y > window.innerHeight * 2) {
             particle.isActive = false;
-            if (particle.element.parentNode) {
-              particle.element.parentNode.removeChild(particle.element);
-            }
+            if (particle.element.parentNode) particle.element.parentNode.removeChild(particle.element);
           }
         }
       }
 
-      // Dialog Box Text Animation (RPG style)
       class DialogTextAnimation {
         constructor(element, phrases, options = {}) {
           this.element = element;
@@ -1082,22 +940,11 @@
 
         type() {
           const currentText = this.phrases[this.currentPhrase];
-
-          if (this.isDeleting) {
-            this.currentChar--;
-          } else {
-            this.currentChar++;
-          }
-
+          if (this.isDeleting) this.currentChar--;
+          else this.currentChar++;
           this.element.textContent = currentText.substring(0, this.currentChar);
-
-          let typeSpeed = this.isDeleting
-            ? this.options.deleteSpeed
-            : this.options.typeSpeed;
-
-          // Add random variation to typing speed for more natural effect
+          let typeSpeed = this.isDeleting ? this.options.deleteSpeed : this.options.typeSpeed;
           typeSpeed += Math.random() * 50 - 25;
-
           if (!this.isDeleting && this.currentChar === currentText.length) {
             typeSpeed = this.options.pauseTime;
             this.isDeleting = true;
@@ -1105,12 +952,10 @@
             this.isDeleting = false;
             this.currentPhrase = (this.currentPhrase + 1) % this.phrases.length;
           }
-
           setTimeout(() => this.type(), typeSpeed);
         }
       }
 
-      // Retro Clouds Generator
       class CloudGenerator {
         constructor(container) {
           this.container = container;
@@ -1119,32 +964,25 @@
         }
         
         init() {
-          for (let i = 0; i < this.maxClouds; i++) {
-            this.createCloud();
-          }
+          for (let i = 0; i < this.maxClouds; i++) this.createCloud();
         }
         
         createCloud() {
           const cloud = document.createElement('div');
           cloud.className = 'cloud';
-          
-          // Random cloud properties
-          const size = Math.random() * 0.5 + 0.7; // Scale between 0.7 and 1.2
-          const speed = Math.random() * 20 + 40; // Duration between 40s and 60s
-          const delay = Math.random() * 40; // Random start position
-          const top = Math.random() * 30 + 5; // Random vertical position
-          
+          const size = Math.random() * 0.5 + 0.7;
+          const speed = Math.random() * 20 + 40;
+          const delay = Math.random() * 40;
+          const top = Math.random() * 30 + 5;
           cloud.style.transform = `scale(${size})`;
           cloud.style.top = `${top}%`;
           cloud.style.animationDuration = `${speed}s`;
-          cloud.style.animationDelay = `-${delay}s`; // Negative delay for immediate start
-          
+          cloud.style.animationDelay = `-${delay}s`;
           this.container.appendChild(cloud);
           this.clouds.push(cloud);
         }
       }
 
-      // Coin Animation for BTC clicks
       function createCoinAnimation(x, y) {
         const physicsSystem = new PhysicsSystem();
         const coin = document.createElement('div');
@@ -1153,165 +991,146 @@
         coin.style.top = `${y}px`;
         document.body.appendChild(coin);
         
-        // Make coin visible
         requestAnimationFrame(() => {
           coin.style.opacity = '1';
-          
-          // Create physics particle for this coin
-          const particle = physicsSystem.createParticle(
-            x, 
-            y, 
-            (Math.random() - 0.5) * 15,  // Random X velocity
-            -15 - Math.random() * 5,      // Upward Y velocity (jump)
-            coin
-          );
-          
-          // Animation loop
+          const particle = physicsSystem.createParticle(x, y, (Math.random() - 0.5) * 15, -15 - Math.random() * 5, coin);
           function animate() {
             if (!particle.isActive) return;
             physicsSystem.updateParticle(particle);
             requestAnimationFrame(animate);
           }
-          
           animate();
-          
-          // Remove coin after animation
           setTimeout(() => {
             coin.style.opacity = '0';
-            setTimeout(() => {
-              if (coin.parentNode) {
-                coin.parentNode.removeChild(coin);
-              }
-            }, 500);
+            setTimeout(() => { if (coin.parentNode) coin.parentNode.removeChild(coin); }, 500);
           }, 2000);
         });
       }
 
-      // Initialize everything when the window loads
+      const skillDetails = {
+        'react': { proficiency: 'Advanced', projects: ['Millennial Pod'], description: 'Built interactive UIs' },
+        'javascript': { proficiency: 'Advanced', projects: ['Millennial Pod'], description: 'Modern JS expertise' },
+        'html': { proficiency: 'Expert', projects: ['Portfolio'], description: 'Structured web content' },
+        'css': { proficiency: 'Expert', projects: ['Portfolio'], description: 'Styled retro designs' },
+        'python': { proficiency: 'Advanced', projects: ['Millennial Pod', 'African Impact'], description: 'Backend and automation' },
+        'flask': { proficiency: 'Intermediate', projects: ['African Impact'], description: 'API development' },
+        'nodejs': { proficiency: 'Intermediate', projects: [], description: 'Server-side JS' },
+        'express': { proficiency: 'Intermediate', projects: [], description: 'RESTful APIs' },
+        'knime': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Workflow automation' },
+        'powerautomate': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'RPA workflows' },
+        'vba': { proficiency: 'Intermediate', projects: ['Canadian Tire'], description: 'Excel automation' },
+        'powershell': { proficiency: 'Intermediate', projects: [], description: 'Scripting tasks' },
+        'sql': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Database management' },
+        'powerbi': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Interactive reports' },
+        'adf': { proficiency: 'Intermediate', projects: ['Canadian Tire'], description: 'Data pipelines' },
+        'powerapps': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'App development' },
+        'powerplatform': { proficiency: 'Advanced', projects: ['Canadian Tire'], description: 'Integrated solutions' }
+      };
+
+      function initializeSkillArcade() {
+        document.querySelectorAll('.arcade-button').forEach(button => {
+          button.addEventListener('click', () => {
+            const id = button.id;
+            const details = skillDetails[id] || { proficiency: 'N/A', projects: ['None listed'], description: 'Details coming soon!' };
+            const modal = document.getElementById('skill-modal');
+            const overlay = document.getElementById('modal-overlay');
+            modal.innerHTML = `
+              <h3>${id}</h3>
+              <p>Proficiency: ${details.proficiency}</p>
+              <p>Projects: ${details.projects.join(', ')}</p>
+              <p>${details.description}</p>
+              <button class="retro-close-btn" onclick="closeModal()">Close</button>
+            `;
+            overlay.style.display = 'block';
+            modal.classList.add('show');
+          });
+        });
+      }
+
+      function closeModal() {
+        const modal = document.getElementById('skill-modal');
+        const overlay = document.getElementById('modal-overlay');
+        modal.classList.remove('show');
+        overlay.style.display = 'none';
+      }
+
       window.addEventListener("load", () => {
-        // Create 8-bit clouds
         const cloudsContainer = document.querySelector(".clouds");
         const cloudGenerator = new CloudGenerator(cloudsContainer);
         cloudGenerator.init();
 
-        // Initialize dialog text animation (RPG style)
         const dialogElement = document.querySelector(".dialog-text");
         const dialogAnimation = new DialogTextAnimation(
           dialogElement,
-          [
-            "Power Platform Wizard",
-            "Web Development Mage",
-            "Efficiency Enthusiast",
-            "Automation Expert",
-            "Full Stack Developer"
-          ],
-          {
-            typeSpeed: 80,
-            deleteSpeed: 40,
-            pauseTime: 2000,
-          }
+          ["Power Platform Wizard", "Web Development Mage", "Efficiency Enthusiast", "Automation Expert", "Full Stack Developer"],
+          { typeSpeed: 80, deleteSpeed: 40, pauseTime: 2000 }
         );
         dialogAnimation.type();
 
-        // Physics-based animations for card and timeline elements
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-              }
-            });
-          },
-          { threshold: 0.1 }
-        );
-
-        // Observe elements for animation
-        document
-          .querySelectorAll(".level-card, .game-stage")
-          .forEach((item) => {
-            observer.observe(item);
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
           });
+        }, { threshold: 0.1 });
 
-        // Add game marker positions to timeline
+        document.querySelectorAll(".game-stage").forEach((item) => observer.observe(item));
+
         const timelinePath = document.querySelector('.game-path');
         const stages = document.querySelectorAll('.game-stage');
-        
-        stages.forEach((stage, index) => {
+        stages.forEach((stage) => {
           const marker = document.createElement('div');
           marker.className = 'game-path-marker';
-          
-          // Calculate vertical position based on stage position
           const stageRect = stage.getBoundingClientRect();
           const pathRect = timelinePath.getBoundingClientRect();
-          const relativeTop = (stageRect.top - pathRect.top) + 20; // + offset for positioning
-          
+          const relativeTop = (stageRect.top - pathRect.top) + 20;
           marker.style.top = `${relativeTop}px`;
           timelinePath.appendChild(marker);
         });
 
-        // Social button hover sound effect (using timing, no actual audio)
         document.querySelectorAll('.game-btn').forEach(btn => {
           btn.addEventListener('mouseover', function() {
-            // Trigger animation instead of sound
             this.style.animation = 'none';
-            void this.offsetWidth; // Reflow to restart animation
+            void this.offsetWidth;
             this.style.animation = 'btnJump 0.5s ease';
           });
         });
 
-        // Add wobble effect to BTC address on click
         const btcAddress = document.querySelector('.btc-address-container');
         btcAddress.addEventListener('click', function() {
           this.style.animation = 'wobble 0.5s ease';
-          setTimeout(() => {
-            this.style.animation = '';
-          }, 500);
+          setTimeout(() => this.style.animation = '', 500);
         });
+
+        initializeSkillArcade();
       });
 
-      // Bitcoin address copying functionality with coin animation
       function copyBitcoinAddress() {
         const bitcoinAddress = "bc1qxmrw8f4e225vvg6p4k4ae4ymj4slfkx4qlvhlz";
         const btn = document.querySelector('.copy-coin-btn');
         const btnRect = btn.getBoundingClientRect();
         
-        // Spawn 5 coins at the button location
         for (let i = 0; i < 5; i++) {
           setTimeout(() => {
-            const coinX = btnRect.left + btnRect.width/2;
-            const coinY = btnRect.top + btnRect.height/2;
+            const coinX = btnRect.left + btnRect.width / 2;
+            const coinY = btnRect.top + btnRect.height / 2;
             createCoinAnimation(coinX, coinY);
-          }, i * 100); // Stagger the coin animations
+          }, i * 100);
         }
         
-        navigator.clipboard
-          .writeText(bitcoinAddress)
-          .then(() => {
-            showPixelTooltip("Address copied!");
-          })
-          .catch((err) => {
-            showPixelTooltip("Failed to copy!");
-          });
+        navigator.clipboard.writeText(bitcoinAddress)
+          .then(() => showPixelTooltip("Address copied!"))
+          .catch(() => showPixelTooltip("Failed to copy!"));
         
-        // Apply wobble animation to the button
         btn.style.animation = 'wobble 0.5s ease';
-        setTimeout(() => {
-          btn.style.animation = '';
-        }, 500);
+        setTimeout(() => btn.style.animation = '', 500);
       }
 
       let pixelTooltipTimeout;
       let pixelTooltipElement;
 
-      // Show pixelated tooltip
       function showPixelTooltip(message) {
-        if (pixelTooltipElement) {
-          pixelTooltipElement.remove();
-        }
-
-        if (pixelTooltipTimeout) {
-          clearTimeout(pixelTooltipTimeout);
-        }
+        if (pixelTooltipElement) pixelTooltipElement.remove();
+        if (pixelTooltipTimeout) clearTimeout(pixelTooltipTimeout);
 
         pixelTooltipElement = document.createElement("div");
         pixelTooltipElement.className = "pixel-tooltip";
@@ -1320,9 +1139,7 @@
 
         document.addEventListener("mousemove", positionPixelTooltip);
 
-        requestAnimationFrame(() => {
-          pixelTooltipElement.classList.add("show");
-        });
+        requestAnimationFrame(() => pixelTooltipElement.classList.add("show"));
 
         pixelTooltipTimeout = setTimeout(() => {
           pixelTooltipElement.classList.remove("show");
@@ -1334,29 +1151,18 @@
         }, 2000);
       }
 
-      // Position the pixelated tooltip
       function positionPixelTooltip(e) {
         if (!pixelTooltipElement) return;
-
         const x = e.clientX;
         const y = e.clientY;
-
         const tooltipWidth = pixelTooltipElement.offsetWidth;
         const tooltipHeight = pixelTooltipElement.offsetHeight;
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
-
         let left = x + 15;
         let top = y + 15;
-
-        if (left + tooltipWidth > viewportWidth) {
-          left = x - tooltipWidth - 15;
-        }
-
-        if (top + tooltipHeight > viewportHeight) {
-          top = y - tooltipHeight - 15;
-        }
-
+        if (left + tooltipWidth > viewportWidth) left = x - tooltipWidth - 15;
+        if (top + tooltipHeight > viewportHeight) top = y - tooltipHeight - 15;
         pixelTooltipElement.style.left = left + "px";
         pixelTooltipElement.style.top = top + "px";
       }
