@@ -1,4 +1,4 @@
-# 🎮 HRITIK GANDHI 🎮
+# HRITIK GANDHI
 
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Press+Start+2P&size=18&duration=3000&pause=1000&color=FFDD00&center=true&vCenter=true&width=435&lines=PROCESS+AUTOMATION+WIZARD;FULL+STACK+DEVELOPER;POWERPLATFORM+MASTER;EFFICIENCY+ENTHUSIAST" alt="Typing SVG" />
