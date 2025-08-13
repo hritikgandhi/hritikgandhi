@@ -255,31 +255,7 @@
         calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--retro-red),
         calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--retro-darkpurple);
       transform-origin: center bottom;
-      animation: bounceInGame 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) forwards;
-    }
-
-    @keyframes bounceInGame {
-      0% {
-        transform: scale(0.1) translateY(-500px);
-        opacity: 0;
-      }
-
-      50% {
-        transform: scale(1.1) translateY(10px);
-        opacity: 1;
-      }
-
-      70% {
-        transform: scale(0.9) translateY(-10px);
-      }
-
-      85% {
-        transform: scale(1.05) translateY(5px);
-      }
-
-      100% {
-        transform: scale(1) translateY(0);
-      }
+      animation: none !important;
     }
 
     .game-subtitle {
@@ -287,8 +263,8 @@
       margin-bottom: 2rem;
       color: var(--retro-lightblue);
       text-shadow: 2px 2px 0 var(--retro-darkblue);
-      animation: fadeIn 1s ease 1s forwards;
-      opacity: 0;
+      animation: none !important;
+      opacity: 1 !important;
     }
 
     .game-social-links {
@@ -324,6 +300,7 @@
       background-color: var(--retro-pink);
       transform: translateY(-5px);
       cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="fill:none;stroke:white;stroke-width:2"><rect width="8" height="8"/></svg>') 8 8, auto;
+      animation: none !important;
     }
 
     .game-btn:active {
@@ -420,17 +397,7 @@
       font-family: 'Press Start 2P', monospace;
       font-size: clamp(1rem, 2vw, 1.5rem);
       text-shadow: 2px 2px 0 var(--retro-red);
-      animation: marqueeGlow 2s infinite alternate;
-    }
-
-    @keyframes marqueeGlow {
-      0% {
-        box-shadow: 0 0 5px var(--retro-yellow);
-      }
-
-      100% {
-        box-shadow: 0 0 15px var(--retro-yellow);
-      }
+      animation: none !important;
     }
 
     .arcade-games {
@@ -597,32 +564,7 @@
     }
 
     .game-stage.visible {
-      animation: dropInWithBounce 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) forwards;
-    }
-
-    @keyframes dropInWithBounce {
-      0% {
-        transform: translateY(-300px);
-        opacity: 0;
-      }
-
-      60% {
-        transform: translateY(20px);
-        opacity: 1;
-      }
-
-      75% {
-        transform: translateY(-10px);
-      }
-
-      90% {
-        transform: translateY(5px);
-      }
-
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      animation: none !important;
     }
 
     .game-stage:nth-child(odd) {
@@ -796,24 +738,7 @@
     }
 
     .transmission-animation.active {
-      animation: scanline 1s ease forwards;
-    }
-
-    @keyframes scanline {
-      0% {
-        opacity: 1;
-        transform: translateY(-100%);
-      }
-
-      50% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      100% {
-        opacity: 0;
-        transform: translateY(100%);
-      }
+      animation: none !important;
     }
 
     .transmission-text {
@@ -826,25 +751,8 @@
     }
 
     .transmission-text.active {
-      animation: fadeInOut 2s ease forwards;
-    }
-
-    @keyframes fadeInOut {
-      0% {
-        opacity: 0;
-      }
-
-      20% {
-        opacity: 1;
-      }
-
-      80% {
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0;
-      }
+      animation: none !important;
+      opacity: 1 !important;
     }
 
     .status-bar {
@@ -1096,6 +1004,268 @@
       color: var(--retro-yellow);
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #0b0f1a;
+      --color-bg-elev-1: #0f172a;
+      --color-surface: rgba(17, 24, 39, 0.7);
+      --color-border: rgba(255, 255, 255, 0.08);
+      --color-text: #e6e9ef;
+      --color-text-dim: #a0a8b8;
+      --color-accent: #7c3aed;
+      --color-accent-2: #06b6d4;
+      --accent-gradient: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-2) 100%);
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 10px;
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.45);
+      --shadow-md: 0 10px 30px rgba(0,0,0,0.35);
+      --shadow-sm: 0 6px 18px rgba(0,0,0,0.25);
+      --blur-md: 12px;
+    }
+
+    html, body, * {
+      image-rendering: auto !important;
+      text-shadow: none !important;
+      letter-spacing: normal;
+    }
+
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+      color: var(--color-text);
+      background: radial-gradient(120% 80% at 50% 0%, #111827 0%, var(--color-bg) 60%) fixed;
+      background-color: var(--color-bg) !important;
+      line-height: 1.6;
+    }
+
+    .game-header::before,
+    .game-section::before { background-image: none !important; }
+
+    .clouds, .cloud { display: none !important; }
+
+    .pixel-text {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial !important;
+      text-transform: none;
+      letter-spacing: -0.02em;
+      text-shadow: none;
+    }
+
+    .game-header {
+      min-height: 60vh;
+      background: transparent;
+      border-bottom: 1px solid var(--color-border);
+      padding: 6rem 2rem 4rem;
+      position: relative;
+    }
+
+    .header-content { max-width: 1000px; margin: 0 auto; }
+
+    .game-title {
+      font-weight: 800;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.1;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .game-subtitle {
+      color: var(--color-text-dim) !important;
+      font-weight: 500;
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      opacity: 0.95;
+      margin-bottom: 2rem;
+    }
+
+    .game-social-links { gap: 0.75rem; }
+
+    .game-btn {
+      height: auto;
+      min-height: 44px;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border) !important;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      color: var(--color-text) !important;
+      box-shadow: var(--shadow-sm);
+      transform: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .game-btn:hover {
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+      border-color: rgba(255,255,255,0.14) !important;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+      cursor: pointer !important;
+    }
+
+    .game-btn:active { transform: translateY(0); }
+
+    .game-section {
+      padding: 6rem 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      background: transparent;
+    }
+
+    .game-container { max-width: 1100px; margin: 0 auto; }
+
+    .game-section-title {
+      color: var(--color-text);
+      font-weight: 800;
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      letter-spacing: -0.02em;
+      text-transform: none;
+      text-shadow: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .skill-arcade, .contact-terminal, .game-stage-content {
+      background: linear-gradient(180deg, rgba(17,24,39,0.7), rgba(17,24,39,0.55));
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(var(--blur-md));
+    }
+
+    .arcade-game { background: transparent !important; border: none !important; }
+    .contact-terminal { padding: 1.5rem !important; }
+    .dialog-text { color: var(--color-text) !important; text-shadow: none !important; }
+
+    .arcade-marquee {
+      background: transparent;
+      border: 0;
+      color: var(--color-text);
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-weight: 700;
+      text-shadow: none;
+      padding: 0 0 1rem 0;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .game-title-text {
+      color: var(--color-text);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .game-buttons { flex-wrap: wrap; gap: 0.5rem; }
+
+    .arcade-button {
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      border-radius: 9999px;
+      background: rgba(255,255,255,0.06) !important;
+      border: 1px solid var(--color-border) !important;
+      color: var(--color-text);
+      box-shadow: none;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .arcade-button:hover { background: rgba(255,255,255,0.12) !important; border-color: rgba(255,255,255,0.18) !important; transform: translateY(-1px); }
+
+    #modal-overlay {
+      background: rgba(2,6,23,0.6) !important;
+      backdrop-filter: blur(6px);
+    }
+
+    #skill-modal {
+      background: linear-gradient(180deg, rgba(17,24,39,0.9), rgba(17,24,39,0.8));
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 1.25rem;
+      color: var(--color-text);
+      width: min(520px, 92vw);
+    }
+
+    .game-path { max-width: 900px; margin: 0 auto; position: static; }
+    .game-path::before, .game-stage::after { display: none !important; }
+
+    .game-stage { position: static; transform: none !important; opacity: 1; }
+    .game-stage.visible { transform: none !important; }
+
+    .game-stage-title { color: var(--color-text); font-weight: 700; }
+    .game-stage-subtitle { color: var(--color-text-dim) !important; font-weight: 500; }
+    .game-stage-date { color: var(--color-text-dim) !important; font-weight: 500; }
+
+    .game-stage-details { padding-left: 1.25rem; }
+    .game-stage-details li::before { content: ''; width: 6px; height: 6px; border-radius: 9999px; background: var(--color-text-dim); top: 0.6rem; }
+
+    .pixel-border { border: 1px solid var(--color-border); box-shadow: none; border-radius: var(--radius-lg); }
+    .pixel-border::before { display: none; }
+
+    .terminal-title {
+      color: var(--color-text);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+
+    .terminal-form { gap: 0.75rem; }
+
+    .terminal-input, .terminal-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 0.9rem;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .terminal-input:focus, .terminal-textarea:focus { border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.08); }
+
+    .terminal-btn, .retro-close-btn, .retro-resume-btn, .game-buttons .arcade-button.cta {
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      color: white !important;
+      background: var(--accent-gradient) !important;
+      box-shadow: 0 8px 24px rgba(124,58,237,0.35);
+      transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .terminal-btn:hover, .retro-close-btn:hover, .retro-resume-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(124,58,237,0.45); filter: saturate(1.1); }
+    .terminal-btn:active, .retro-close-btn:active, .retro-resume-btn:active { transform: translateY(0); }
+
+    .retro-resume-btn {
+      background: var(--accent-gradient) !important;
+      border: none !important;
+      border-radius: var(--radius-sm) !important;
+      box-shadow: 0 10px 30px rgba(124,58,237,0.35) !important;
+      color: white !important;
+      height: auto !important;
+      padding: 0.9rem 1.1rem !important;
+      min-height: 44px !important;
+    }
+
+    .game-title-text,
+    .arcade-marquee,
+    .retro-resume-btn span,
+    .terminal-btn,
+    .terminal-title,
+    .transmission-text {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial !important;
+      text-transform: none;
+      letter-spacing: -0.01em;
+    }
+  </style>
 </head>
 
 <body>
@@ -1259,7 +1429,7 @@
         </button>
       </div>
       <!-- New Resume Button -->
-      <button class="retro-resume-btn" onclick="downloadResume()" style="background-image: url('resume-button.png');">
+      <button class="retro-resume-btn" onclick="downloadResume()">
         <span>GET RESUME</span>
       </button>
     </div>
